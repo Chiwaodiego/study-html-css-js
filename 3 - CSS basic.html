@@ -8,14 +8,47 @@
   <title>Css basic</title>
   <!--tipos stylos-->
   <!--a la derecha del input se puede selecionar que type se modifica
-  	input [type=text] {  -->
+  	input [type=text] 
+  	* enstyle hace objetivo a todos los atribustos que pusiste dentro de style
+  	  	*{
+  		
+  	}
+  	input [type="text"],
+  	select,textarea  -->
   <style>
   	input{
-  		width: 100%;
+  		width: 200%;
+  		height:40px;
   		padding: 12px 20px;
-  		box-sizing: border-box; 
+  		margin: 10px 2px;
+  		border: 1px solid Black;
+  		border-radius: 4px 10px;
+  		background-color:white;
+  		color:black;
+  		background-image:url("s.png");
+  		background-repeat: no-repeat;
+  		background-position:1px 6px;
+  		box-sizing: border-box;
+   	}
+   	input:focus{
+   		border:4px solid blue;
+   		border-radius:5px;
+   	}
+  	::placeholder {color:black;
+  	}
+  	select{
+  		width:100%;
+  		height:40px;
   		margin: 10px 0px;
-
+  	}
+  	button{
+  		background-color:green;
+  		border:none;
+  		color:white;
+  		padding:12px 32px;
+  		text-decoration:none;
+  		margin:4px 2px;
+  		
   	}
   </style>
 </head>
@@ -23,9 +56,20 @@
 	<body>
 		<h1>Formulario estilizado con css</h1>
 		<div>
-			<form action="/action_page.php" method="POST">
+			<form action="/action_page.php" method="GET">
 				<label for="nombre">Nombre</label>
-				<input type="text" name="nombre" id="nombre" placeholder="Escribe aqui">
+				<input type="text" name="nombre" id="nombre" placeholder="Escribe aqui" required>
+				<label for="apellido">Apellido</label>
+				<input type="text" name="apellido" id="apellido" placeholder="Escribe aqui" required>
+				<laber for="pais">País</label>
+				<select name="pais" id="pais" required>
+					<option disabled selected hidden>Seleccione Pais</option>
+					<option>Colombia</option>
+					<option>Argentina</option>
+					<option>Japon</option>
+
+				</select>
+				<button type="submmit">Enviar</button>
 			</label>
 
 			</form>
