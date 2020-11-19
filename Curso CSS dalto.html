@@ -68,11 +68,24 @@ width:100px;ancho
 box-sizing: content-box;
 text-aling: center;
 margin:10px; / se para el marge de la caja con el resto
-border-radius: 10px o 50% ; /redondea los bordes y direntes estilos de bordes border-X
+border-radius: 10px o 50% ; //redondea los bordes y direntes estilos de bordes border-X
 box-shadow: 2px 4px 15px 0 color // ejex  ejey desenfoque borde color
+text-shadow: 2px 4px 7px color // (ejex ejey difuminado color) repetir los mismo aumenta la itensidad;
+transform: rotate(45deg);
+outline tiene mismo parametro que borde, lo unico que diferencia que no cambia el tamaño de la
+	caja solo agrega los bordes por afuera y border ocupa los border del interio de la caja
+position:propiedades;
+			static
+			relative // lo que hace es mover la posicion de la caja desde del centro a diferentes posiciones
+				obteniendo prioridades de top right left bottom
 
+			absolute es posicionar el bloque contenedor, contenie las demas cajas para posicionar los subbloques-
+				opacity:1; va de 1.0 a 0.1
 
-
+			fixed es igual que absolute pero queda fijado, es com menus fijos como faceebok que vas bajando scroll
+			sticky
+z-index: n° //suporposicion //padres e hijos: el padre adquiere z-index y el hijo no,igual siempre va aparecer de frente el hijo.
+			Caso unico que puede superponer es z-index: -1 al hijo pero nose debe usar solo para tener encuenta
 
 
 
