@@ -75,23 +75,39 @@ transform: rotate(45deg);
 outline tiene mismo parametro que borde, lo unico que diferencia que no cambia el tamaño de la
 	caja solo agrega los bordes por afuera y border ocupa los border del interio de la caja
 position:propiedades;
-			static
-			relative // lo que hace es mover la posicion de la caja desde del centro a diferentes posiciones
+			--static
+			--relative // lo que hace es mover la posicion de la caja desde del centro a diferentes posiciones
 				obteniendo prioridades de top right left bottom
 
-			absolute es posicionar el bloque contenedor, contenie las demas cajas para posicionar los subbloques-
+			--absolute es posicionar el bloque contenedor, contenie las demas cajas para posicionar los subbloques-
 				opacity:1; va de 1.0 a 0.1
 
-			fixed es igual que absolute pero queda fijado, es com menus fijos como faceebok que vas bajando scroll
-			sticky
+			--fixed es igual que absolute pero queda fijado, es com menus fijos como faceebok que vas bajando scroll y no ocupa espacio en pantalla
+			--sticky mantiene su espacio y se comporta como fixed hasta un punto donde bajememso quede fixed.
+
 z-index: n° //suporposicion //padres e hijos: el padre adquiere z-index y el hijo no,igual siempre va aparecer de frente el hijo.
 			Caso unico que puede superponer es z-index: -1 al hijo pero nose debe usar solo para tener encuenta
 
+-------------CURSO INTERMEDIO---------------
+
+--Display es modificar los comportamientos de las cajas
+
+	propiedades
+		--block se acomoda en block continuos
+		--inline se acomoda en pilas
+
+		--inline-block mod ancho y alto
+		
+		--grid
+		--flex
+		--inline-flex
+		--inline-grid
+
+--Overflow es un otra pantalla con scroll que se puede ocultar  con hidden
+	-- (y , x) auto, hidden,scroll
+--float 
 
 
-background-color: ;
-width: 50vw / largo
-height: 100wv /anch
 
 
 
