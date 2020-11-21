@@ -1,5 +1,3 @@
-	num1 = 10;
-	num2 = 5;
-
-	result = num1**2;
-	alert(result)
+  v1 = "Diego"
+  v2=  `soy ${v1} y estoy volando`
+document.write(v2);

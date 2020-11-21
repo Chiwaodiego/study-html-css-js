@@ -41,4 +41,10 @@ prompt es un funcion para almacenar datos y luegos se puede pedir
 	ej exponecial result = num1**2;
 	negativo 	result = -num1;
 
-
+6) concatenacion
+ es apilar variables , cuando pones suma + text lo lee lineal
+  variable= number1.concat(number2) si o si tiene que tener UN string de text
+  otra forma de concat un string son bacticks
+  v1 = "Diego"
+  v2=  `soy ${v1} y estoy volando`
+document.write(v2);
