@@ -33,9 +33,9 @@ prompt es un funcion para almacenar datos y luegos se puede pedir
 	document.write(n)
 -Operadores Aritméticos(IMG)
 	toman valores numericos(ya sean literales o variables) como sus operandos y retornan un valor numerico unico.
-	num1 = 10;
-	num2 = 5;
-	num1 --;
+	let num1 = 10;
+	let num2 = 5;
+	let num1 --;
 	result = num1;
 	alert(result)
 	ej exponecial result = num1**2;
@@ -48,3 +48,32 @@ prompt es un funcion para almacenar datos y luegos se puede pedir
   v1 = "Diego"
   v2=  `soy ${v1} y estoy volando`
 document.write(v2);
+
+8) operadores (intermedio)
+	-operadores logicos(img) los operadores logicos nos devuelven un resultado a apartir de quese cumpla (o no)
+							una condicion, su resultado es vbooleano, ysus operandosson 
+							valores logicos o asimilables a ellos.
+	and &&
+	or ||
+	not ! loc contrario
+
+
+	-operadores de comparacion(img) comparan dos expresiones y devuelven 
+									un boolean que representa  la relacion de sus valores.
+	let n1 = 2;
+	let n2 = 3;
+		== iguala, y tambien = text and number
+		!= (desigualdad) 
+		=== indentidad igual strictamente
+		!== desigualdad strictamente te muestra verdadedor si son disntintos
+		< > <= => 
+9) camel case
+	- Definicion(img)
+	- usos
+	- Ejemplos
+	Camelcase es escrbir un codigo con minisculaLuegoCadaPalabraQueSigueEsConMayuscula.
+10) Condicionales ej
+					if(103<=15){ alert("hola")}
+	- if
+	- else if
+	-else
