@@ -25,5 +25,3 @@ if (din1 >= 0.6 && din3 < 1) { alert ("Cofla comprate helado de agua"), alert("S
 	else if (din3 >= 2.9 ){ alert ("Cofla comprate Potecito de helado on confites o el Pote de 1/4 KG "), alert("Su vuelto es "+ ( din3 - 2.9))  }
 	else { alert ("Lo siento Cofla, no le alcanza")}
 		
-
-

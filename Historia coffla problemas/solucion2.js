@@ -1,22 +1,14 @@
 
 
-boletos = prompt ("Ingrese su dinero para la compra	?");
+boletos = prompt ("Cuanto boletos quiere comprar ?");
 b1= parseInt(boletos)
-pb= 1
+dinero= 2.9
+pb= .9
 
-if (boletos <= 1 ) {alert( "le alcanza para 1 boleto y su vuelto es " + ( b1 += 1) ) }
+if (b1 <= 1 ) { alert( ("Compro 1 y su vuelto es ") + ( dinero -= pb ) ); }
 
-else if (dinero/boleto >= 1 && dinero/boleto < 2) {
-	vuelto = dinero - boleto;
-	alert("comprar 1 y el vuelto es: " + vuelto);
-}
 
-else if (dinero/boleto >= 2 && dinero/boleto < 3){
-	vuelto = dinero - boleto*2;
-    alert("comprar 2 y el vuelto es: " + vuelto);
-}
+else if ( b1 >1 && b1 <=2  ) { alert (("Compro 2 boletos y su vuelto es ") + (dinero -= (2**pb) ) ); }
 
-else {
-	vuelto = dinero - boleto*2;
-    alert("comprar dos y el vuelto es: " + vuelto + ", regalarlo")
+else if ( b1 >2 && b1 <=3  ) { alert ("Compro 3 boletos y dejo el vuelto " + (dinero-=(3**pb)) );
 }
