@@ -9,8 +9,8 @@ img=
 ; se para variables
 , cadena de variables
 las variables se puede escribir junto ejem: let n1 = 2, n2 = 4; para ahorrar codigo 
-var number = 15;
-let number = "se usa numero porque nos limite el alcanse del bloque";
+var number = 15; "ocupado todo el bloque( que puede se usado en cada lugar del espacio del bloque o afuera)"
+let number = "se usa numero pero nos limita el alcanse del bloque( solo se trabaja dentro del bloque en uso de operaciones";
 const = "es una variable que nunca cambia su valor";
 scope es una condicion o ambito que es valida por dentro de la variable a fuera no;
 hoisting ;
@@ -76,4 +76,28 @@ document.write(v2);
 					if(103<=15){ alert("hola")}
 	- if
 	- else if
-	-else
+	- else
+CAPITULO 2
+
+arrays = 
+	-definicion  y usos sirve para almacenar datos dentro []
+	-formas de crear un arrays
+let variables = ["banana,"mazana,"mangostino", "pera"];
+
+-llamar elementos:let var = variable[0]
+
+-arrays asociativos = 
+ es llamar el nombre del array y no por el numero para que sea mas didactico
+
+ 		asociativo
+ let pc = {
+ 		nombre: "DiegoPC",
+ 		procesador: "Intel core i5"
+ 		ram: "16 GB",
+ 		espacio: "1 TB"
+ }
+let nombre = pc1["DiegoPC"] 
+let procesador = pc1[""] 
+let ram = pc1[""] 
+let espacio = pc1[""] 
+
