@@ -41,7 +41,7 @@ prompt es un funcion para almacenar datos y luegos se puede pedir
 	ej exponecial result = num1**2;
 	negativo 	result = -num1;
 
-6) concatenacion
+6) --concatenacion
  es apilar variables , cuando pones suma + text lo lee lineal
   variable= number1.concat(number2) si o si tiene que tener UN string de text
   otra forma de concat un string son bacticks
@@ -49,7 +49,7 @@ prompt es un funcion para almacenar datos y luegos se puede pedir
   v2=  `soy ${v1} y estoy volando`
 document.write(v2);
 
-8) operadores (intermedio)
+8) -- operadores (intermedio)
 	-operadores logicos(img) los operadores logicos nos devuelven un resultado a apartir de quese cumpla (o no)
 							una condicion, su resultado es vbooleano, ysus operandosson 
 							valores logicos o asimilables a ellos.
@@ -67,12 +67,12 @@ document.write(v2);
 		=== indentidad igual strictamente
 		!== desigualdad strictamente te muestra verdadedor si son disntintos
 		< > <= => 
-9) camel case
+9) --camel case
 	- Definicion(img)
 	- usos
 	- Ejemplos
 	Camelcase es escrbir un codigo con minisculaLuegoCadaPalabraQueSigueEsConMayuscula.
-10) Condicionales ej
+10) --Condicionales ej
 					if(103<=15){ alert("hola")}
 	- if
 	- else if
@@ -84,20 +84,85 @@ arrays =
 	-formas de crear un arrays
 let variables = ["banana,"mazana,"mangostino", "pera"];
 
--llamar elementos:let var = variable[0]
+--llamar elementos:let var = variable[0]
 
--arrays asociativos = 
+--arrays asociativos = 
  es llamar el nombre del array y no por el numero para que sea mas didactico
 
  		asociativo
  let pc = {
- 		nombre: "DiegoPC",
- 		procesador: "Intel core i5"
- 		ram: "16 GB",
- 		espacio: "1 TB"
- }
-let nombre = pc1["DiegoPC"] 
-let procesador = pc1[""] 
-let ram = pc1[""] 
-let espacio = pc1[""] 
+ 		nombre:"Diego PC",
+ 		procesador:"i5",
+ 		ram:"16 GB",
+ 		espacio:"1 TB"
+ };
+let nombre = pc ["nombre"] ;
+let procesador = pc ["procesador"] ;
+let ram = pc ["ram"] ;
+let espacio = pc ["espacio"];
+
+frase = `el nombre de mi PC es: ${nombre} <br>
+		 el procesador es :  ${procesador} <br>
+		 la memoria ram es : ${ram} <br>
+		 el espacio en disco es de : ${espacio} `;
+
+document.write(frase);
+
+13) bucles e iteracion::
+
+--while
+let numero = 0;
+
+while (numeroParaSumar < 10){
+	numeroParaSumar++;
+	document.write(numero)
+}
+
+-do while primero pregunta do y luego pasa por condicionde while
+do{
+	document.write(numero + "<br>");
+	let numero++; }
+	while (numero <=6)
+
+--Break
+termina la sentencia while
+let numero = 0;
+
+while (numero < 15){
+	numero++;
+	document.write(numero);
+	if(numero == 10) {break;}	}
+
+--for
+declaramos/inicializamos / condicion /iteramos(aumento o decremento)
+let i = 20;
+for (let i = 0; i <6 ; i++){
+	document.write(i+ "<br>")
+}
+tambien se puede delarar por fuera
+let i = 6;
+for (i; i >=0 ; i--)
+
+--continue
+for (let i = 0; i<20;i++){
+	if (i==12){
+	continue;
+	} document.write(i+"<br>");
+}
+
+--for in / of (in muestra posicion / losnombre de la libreria)
+let animales = ["gato", "perro","tiranosaurio"];
+for (animal in animales){
+	document.write(animal+"<br>");
+}
+document.write("<br>");
+for (animal of animales){
+	document.write(animal+"<br>");
+	 }
+
+--label es una senticia para asociar a un bucle
+array1 = ["maria","josefa","roberta"];
+array2 = ["pedro","josefa","roberta"];
+
+for (array in array2)
 
