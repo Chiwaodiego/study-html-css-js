@@ -42,12 +42,12 @@ prompt es un funcion para almacenar datos y luegos se puede pedir
 	negativo 	result = -num1;
 
 6) --concatenacion
- es apilar variables , cuando pones suma + text lo lee lineal
-  variable= number1.concat(number2) si o si tiene que tener UN string de text
-  otra forma de concat un string son bacticks
-  v1 = "Diego"
-  v2=  `soy ${v1} y estoy volando`
-document.write(v2);
+	 es apilar variables , cuando pones suma + text lo lee lineal
+	  variable= number1.concat(number2) si o si tiene que tener UN string de text
+	  otra forma de concat un string son bacticks
+	  v1 = "Diego"
+	  v2=  `soy ${v1} y estoy volando`
+	document.write(v2);
 
 8) -- operadores (intermedio)
 	-operadores logicos(img) los operadores logicos nos devuelven un resultado a apartir de quese cumpla (o no)
@@ -80,89 +80,137 @@ document.write(v2);
 CAPITULO 2
 
 arrays = 
-	-definicion  y usos sirve para almacenar datos dentro []
-	-formas de crear un arrays
-let variables = ["banana,"mazana,"mangostino", "pera"];
+		-definicion  y usos sirve para almacenar datos dentro []
+		-formas de crear un arrays
+	let variables = ["banana,"mazana,"mangostino", "pera"];
 
 --llamar elementos:let var = variable[0]
 
 --arrays asociativos = 
- es llamar el nombre del array y no por el numero para que sea mas didactico
+	 es llamar el nombre del array y no por el numero para que sea mas didactico
 
- 		asociativo
- let pc = {
- 		nombre:"Diego PC",
- 		procesador:"i5",
- 		ram:"16 GB",
- 		espacio:"1 TB"
- };
-let nombre = pc ["nombre"] ;
-let procesador = pc ["procesador"] ;
-let ram = pc ["ram"] ;
-let espacio = pc ["espacio"];
+	 		asociativo
+	 let pc = {
+	 		nombre:"Diego PC",
+	 		procesador:"i5",
+	 		ram:"16 GB",
+	 		espacio:"1 TB"
+	 };
+	let nombre = pc ["nombre"] ;
+	let procesador = pc ["procesador"] ;
+	let ram = pc ["ram"] ;
+	let espacio = pc ["espacio"];
 
-frase = `el nombre de mi PC es: ${nombre} <br>
-		 el procesador es :  ${procesador} <br>
-		 la memoria ram es : ${ram} <br>
-		 el espacio en disco es de : ${espacio} `;
+	frase = `el nombre de mi PC es: ${nombre} <br>
+			 el procesador es :  ${procesador} <br>
+			 la memoria ram es : ${ram} <br>
+			 el espacio en disco es de : ${espacio} `;
 
-document.write(frase);
+	document.write(frase);
 
 13) bucles e iteracion::
 
 --while
-let numero = 0;
+	let numero = 0;
 
-while (numeroParaSumar < 10){
-	numeroParaSumar++;
-	document.write(numero)
-}
+	while (numeroParaSumar < 10){
+		numeroParaSumar++;
+		document.write(numero)
+	}
 
 -do while primero pregunta do y luego pasa por condicionde while
-do{
-	document.write(numero + "<br>");
-	let numero++; }
-	while (numero <=6)
+	do{
+		document.write(numero + "<br>");
+		let numero++; }
+		while (numero <=6)
 
 --Break
-termina la sentencia while
-let numero = 0;
+	termina la sentencia while
+	let numero = 0;
 
-while (numero < 15){
-	numero++;
-	document.write(numero);
-	if(numero == 10) {break;}	}
+	while (numero < 15){
+		numero++;
+		document.write(numero);
+		if(numero == 10) {break;}	}
 
 --for
-declaramos/inicializamos / condicion /iteramos(aumento o decremento)
-let i = 20;
-for (let i = 0; i <6 ; i++){
-	document.write(i+ "<br>")
-}
-tambien se puede delarar por fuera
-let i = 6;
-for (i; i >=0 ; i--)
+	declaramos/inicializamos / condicion /iteramos(aumento o decremento)
+	let i = 20;
+	for (let i = 0; i <6 ; i++){
+		document.write(i+ "<br>")
+	}
+	tambien se puede delarar por fuera
+	let i = 6;
+	for (i; i >=0 ; i--)
 
 --continue
-for (let i = 0; i<20;i++){
-	if (i==12){
-	continue;
-	} document.write(i+"<br>");
-}
+	for (let i = 0; i<20;i++){
+		if (i==12){
+		continue;
+		} document.write(i+"<br>");
+	}
 
 --for in / of (in muestra posicion / losnombre de la libreria)
-let animales = ["gato", "perro","tiranosaurio"];
-for (animal in animales){
-	document.write(animal+"<br>");
-}
-document.write("<br>");
-for (animal of animales){
-	document.write(animal+"<br>");
-	 }
+	let animales = ["gato", "perro","tiranosaurio"];
+	for (animal in animales){
+		document.write(animal+"<br>");
+	}
+	document.write("<br>");
+	for (animal of animales){
+		document.write(animal+"<br>");
+		 }
 
---label es una senticia para asociar a un bucle
-array1 = ["maria","josefa","roberta"];
-array2 = ["pedro","josefa","roberta"];
+--label es una senticia para asociar a un bucle forRancion:
 
-for (array in array2)
+	array1 = ["maria","josefa","roberta"];
+	array2 = ["pedro","josefa",array1 ,"josefina"];
+	forRancion:
+	for (let array in array2){
+		if (array == 2){
+			for(let array of array1){
+				document.write(array + "<br>");
+				break forRancion;
+			 }
+		} else{
+			document.write(array2[array] + "<br>");
+		}
+	}
 
+14) Funciones
+-defincion y usos
+-formas de crear funciones(y llamarlas)
+-ruturn en una funcion debe retornar un valor
+-parametros
+-scope
+-funciones flecha
+
+function saludar(){
+	respuesta= prompt("hola diego, como fue tu dia?");
+	if(respuesta=="bien") {
+	alert("me alegro")
+	} else{ 
+		alert("Una pena")}}
+	llamar la funcion	
+	saludar()
+
+--return
+	function saludar(){
+		alert("hola");
+		return "todo ok"}
+	let saludo = saludar()
+	document.write(saludo)
+-- parametros
+ 	function sumar(num1,num2){
+ 		let res = num1+num2
+ 		return res}
+ 	let resultado = suma(20,25);
+ 	document.write(resultado)
+--funciones flechas ( y si usamos 1 parametro no hace falta poner
+						parentesis al parametro y tambien return sin {} si es una sola lineade retorno)
+	const saludar = (nombre)=>{
+	let frase = `hola ${nombre} ¿como estas?`;
+	document.write(frase)
+	}
+	saludar("pedro")
+
+	
