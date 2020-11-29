@@ -77,7 +77,7 @@ prompt es un funcion para almacenar datos y luegos se puede pedir
 	- if
 	- else if
 	- else
-CAPITULO 2
+------- CAPITULO 2 ---------
 
 arrays = 
 		-definicion  y usos sirve para almacenar datos dentro []
@@ -178,6 +178,7 @@ arrays =
 
 14) Funciones
 -defincion y usos
+	una funcion es unconjunto de isntruciones o operacion que devuelve un valor antes de aber ingresado un dato de entrada primero. 
 -formas de crear funciones(y llamarlas)
 -ruturn en una funcion debe retornar un valor
 -parametros
@@ -213,4 +214,61 @@ function saludar(){
 	}
 	saludar("pedro")
 
+	------- CAPITULO 3 ---------
+	Orientados a obejtos
+
+15)
+	POO
+	-definicion y usos
+
+	nos sirve para programar ojbetos en la vida real
+
+	-ej
+	-instanciacion
+16) Conceptos basicos de POO
+	-clase es la creacion del objeto
+	-objeto son el resultadod de las clases (codigo this.var)
+	-atributo son las particularidades,caracteristicas y propiedades
+	-metodo son las cosas que puede a hacer nuestro objeto 
+	!! el metodo es un funcion pero cuando esta dentro de una clase se llama metedo y fuera de la clase es funcion.
+	aparte se usa metedo normal sin flecha y sin this.var !!
+	-constructor tiene una funcion obligatoria
+	-instanciacion es que la clase este isntanciada
+--Codigo
+	class animal{
+		constructor(especie,edad,color){
+		this.especie =especie;
+		this.edad = edad;
+		this.color = color;		
+		this.info = `Soy ${this.especie}, tengo ${this.edad} años 
+		y soy de color ${this.color}`;
+		}
+		verInfo(){
+			document.write(this.info + "<br>")
+		}
+
+	}
+let perro = new animal ("perro",5,"marron");
+let	gato = new animal ("gato",6,"naranja");
+let pajaro = new animal ("pajaro",7,"verde");
+
+perro.verInfo();
+gato.verInfo();
+pajaro.verInfo();
+
+https://youtu.be/z95mZVUcJ-E?t=15994
+
+17) Caracteristicas de la POO
+	-Absraccion
+	-modularidad
+	-polimorrfismo
+	-Encapsulamiento
+
+18) Otros conceptos de POO
+	-Herencia
+	-metodos estaticos
+	-metodos accesores(getters,setters)
 	
+
+19) Otros conceptos de POO
+	-Jerarquia
