@@ -218,24 +218,65 @@ function saludar(){
 	Orientados a obejtos
 
 15)
-	POO
-	-definicion y usos
+		POO
+		-definicion y usos
 
-	nos sirve para programar ojbetos en la vida real
+		nos sirve para programar ojbetos en la vida real
 
-	-ej
-	-instanciacion
+		-ej
+		-instanciacion
 16) Conceptos basicos de POO
-	-clase es la creacion del objeto
-	-objeto son el resultadod de las clases (codigo this.var)
-	-atributo son las particularidades,caracteristicas y propiedades
-	-metodo son las cosas que puede a hacer nuestro objeto 
-	!! el metodo es un funcion pero cuando esta dentro de una clase se llama metedo y fuera de la clase es funcion.
-	aparte se usa metedo normal sin flecha y sin this.var !!
-	-constructor tiene una funcion obligatoria
-	-instanciacion es que la clase este isntanciada
---Codigo
-	class animal{
+		-clase es la creacion del objeto y para instanciar la class se define con const
+		-objeto son el resultadod de las clases (codigo this.var)
+		-atributo son las particularidades,caracteristicas y propiedades
+		-metodo son las cosas que puede a hacer nuestro objeto 
+		!! el metodo es un funcion pero cuando esta dentro de una clase se llama metedo y fuera de la clase es funcion.
+		aparte se usa metedo normal sin flecha y sin this.var !!
+		-constructor tiene una funcion obligatoria
+		-instanciacion es que la clase este isntanciada
+	--Codigo
+		class animal{
+			constructor(especie,edad,color){
+			this.especie =especie;
+			this.edad = edad;
+			this.color = color;		
+			this.info = `Soy ${this.especie}, tengo ${this.edad} años 
+			y soy de color ${this.color}`;
+			}
+			verInfo(){
+				document.write(this.info + "<br>")
+			}
+					//polimorfismo
+			ladrar(){
+				if (this.especie == "perro"){
+					document.write(" Waw <br>" );
+				} else {
+					document.write("No puede ladrar, por que es un " + this.especie +"<br>")
+				}
+			}
+
+		}
+			const perro = new animal ("perro",5,"marron");
+			const gato = new animal ("gato",6,"naranja");
+			const pajaro = new animal ("pajaro",7,"verde");
+
+			perro.verInfo();
+			gato.verInfo();
+			pajaro.verInfo();
+
+
+17) Caracteristicas de la POO
+	-Absraccion intentar reducir todos los componentes basicos
+	-modularidad separar por partes 100/100
+	-Encapsulamiento se refiere que los datos sean privados y que no puedan accedar de manera sencillo
+	-polimorrfismo como se comporta un objeto de manera distinta al mismo metodo
+
+
+
+18) Otros conceptos de POO
+	-Herencia puede heredar otras clases(siempre llevar Mayus porque no puede ser igual la var y la llamanda de la clase)
+
+		class Animal{
 		constructor(especie,edad,color){
 		this.especie =especie;
 		this.edad = edad;
@@ -246,29 +287,71 @@ function saludar(){
 		verInfo(){
 			document.write(this.info + "<br>")
 		}
-
-	}
-let perro = new animal ("perro",5,"marron");
-let	gato = new animal ("gato",6,"naranja");
-let pajaro = new animal ("pajaro",7,"verde");
-
-perro.verInfo();
-gato.verInfo();
-pajaro.verInfo();
-
-https://youtu.be/z95mZVUcJ-E?t=15994
-
-17) Caracteristicas de la POO
-	-Absraccion
-	-modularidad
-	-polimorrfismo
-	-Encapsulamiento
-
-18) Otros conceptos de POO
-	-Herencia
-	-metodos estaticos
-	-metodos accesores(getters,setters)
+			}		
+			//herencia
 	
+		class Perro extends Animal{
+			constructor(especie,edad,color,raza){
+				super(especie,edad,color);
+				this.raza = raza;
+			}
+			ladrar(){ alert("waw");}
+		}
+
+	
+		const perro = new Perro("perro",5,"marron");
+		const gato = new Animal("gato",6,"naranja");
+		const pajaro = new Animal("pajaro",7,"verde");
+
+		perro.ladrar();
+		gato.ladrar();
+
+
+-metodos estaticos : sirven para instanciar una clase temporal
+		dentro de la class
+		static ladrar(){
+		alert("waw");
+		}
+		Perro.ladrar();
+
+-metodos accesores(getters,setters)
+
+	getters sirven para obetener un valor
+	setters sirven para modeficar un valor
+		class Animal{
+		constructor(especie,edad,color){
+		this.especie =especie;
+		this.edad = edad;
+		this.color = color;		
+		this.info = `Soy ${this.especie}, tengo ${this.edad} años 
+		y soy de color ${this.color}`;
+		}
+		verInfo(){
+			document.write(this.info + "<br>")
+		}
+			}		
+			//herencia
+	
+		class Perro extends Animal{
+			constructor(especie,edad,color,raza){
+				super(especie,edad,color);
+				this.raza = null;
+				 }  
+			set setRaza(newName){
+			this.raza = newName;
+			}
+			get getRaza(){
+			return this.raza = newName;
+			}
+		}
+	
+		const perro = new Perro("perro",5,"marron");
+		const gato = new Animal("gato",6,"naranja");
+		const pajaro = new Animal("pajaro",7,"verde");
+
+		perro.setRaza = "pedro";
+		document.write(perro.raza)
+
 
 19) Otros conceptos de POO
 	-Jerarquia
