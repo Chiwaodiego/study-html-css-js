@@ -355,3 +355,37 @@ function saludar(){
 
 19) Otros conceptos de POO
 	-Jerarquia
+
+
+	------- CAPITULO 4 ---------
+Conexion con la introduccion a los metodos de cadenas
+
+20) Metodos de Cadenas
+var3 = var1.metodo(var2) 
+
+	- concat() - junta dos o mas cadenas y retorna una nueva
+		let cadena = "cadena de prueba" ;
+		let cadena2 = " cadena 2";
+
+		resultado = cadena.concat(cadena2);
+
+		document.write(resultado);
+	- startsWith()si una cadena comienza con los caracteres de otra cadena, devuelve true, sino devuele false.
+	- endsWith() si una cadena termina con los caracteres de otra cadena, devuelve true, sino devuelve false.
+	- includes() si una cadena puede encontrase dentro de otra cadena, devuelve true, sino devuelve false.
+	-indexOf () devuelve el indicce del primer caracter de la cadena, si no exite, devuelve -1
+	-lastIndexOf() devuelve el ultimo indice del primer caracter de la cadena, si no existe, devuelve -1
+	
+	-padStart() estandard. rellenar cadena al principio con los caracteres deseados.
+	-endsWith() rellenar cadena al final con los caracteres deseados.
+	-repeat() deuvelve el ultiomo indice del primer caracter de la cadena, si no existe, devuelve -1
+
+	-split()  Divide la cadena como le pedamos
+	-substring() Nos retorna un pedezao de la cadena que seleccionamos
+	-toLowerCase() convierte una cadena a minuscula
+	-toUpperCase() convierte una cadena a mayuscula
+	-toString() metodo devuelve una cadena que representa al objeto especificado.
+	-trim() elimina los espacios en blanco al principio y al final de una cadena.
+	-trimEnd() elimina los espacios en blanco al final de una cadena.
+	-trimStart() elimina los espacios en blanco al comienzo de una cadena.
+	- valueOf() retorna el valor primitivo de un objeto string.
