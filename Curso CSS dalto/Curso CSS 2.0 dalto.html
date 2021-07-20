@@ -1,0 +1,105 @@
+Guia CSS
+
+formas de enlazar CSS
+va dentro del body abajo
+
+<style type="text/css">
+	
+</style>
+
+por import
+
+<style type="text/css">
+	@import
+</style>
+
+3° forma es por link mejor y optimizado
+
+dentro head
+<head>
+	<link rel="stylesheet" type="text/css" href="link donde estan los stylos de pagina">
+-----------------
+
+
+
+
+selector {
+	propiedad: valor;
+}
+
+- propiedad:valor; 
+	son las propiedades que se modifican al elemento
+
+- selector 
+	es un elemento o conjunto de elementos que queremos modificar
+	tipos de selectores:
+
+	universal " * " (selecciona todo)
+	de tipo "etiqueta" - seleccion por el nombre del elemento o etiqueta h inpunt buton p,etc.
+	class  " . " / .nameclass 
+	Id " # " / #elemento / se usa una ves para un elemento unico 
+	atributo  " [] " / [atributo="x"] se puede seleconar cualquier elemento dentro id,class
+	descendiente  " h2 p " / selecciona un elemento p dentro de otro elemento ( read rithg and left)
+	psudeo-clases  " elemento: hover {}" / se usa para darle un efecto a un elemento al pasar el maus sobre el text o elemento modificado
+
+- espesificidad es un estilo en cascada 
+	!important  / .elemento{c: red; !important } se posicion el inmportant para modeficar elemento puntual
+	style in line /<h1 class="color-red" id="color-blue" style="color:green" > /
+	indentificadores / id #elemento
+	nivel medio = class // psudo-class // atributo
+	nivel inferior = elemento // pseudo-elemento
+
+
+Metodologia BEEM
+	
+	- es evitar que se mesclen la clases, por eso se le ponen un orden para que se diferencien.
+	varias clases__1--active
+	varias clases__1
+	varias clases__1
+---------------------
+	por seccion
+
+	<div class="contact-form">
+		<p class="contact-form__p">
+			<h2 class="contact-form__p-h2"></h2>
+	</div>
+	<div class="suscriber-form">
+		<p class="suscriber-form__p">
+			<h2 class="suscriber-form__p-h2"></h2>
+	</div>
+
+----------------------
+	<body>
+		<div class="contact-form">
+		<input type="text" class="form__input">
+		<input type="password" class="form__input--active"> 
+		</div>
+	</body>
+
+	CSS
+	#Colr-blue{
+		color:blue}
+
+	.contact-form_input--active{ color: red}
+
+------------------------------------
+
+Unidades de medidas
+En cc hay 2 unidades 
+	fijas : son en pixels
+	relativas : depende de algo como variable
+
+10125
+
+
+
+
+
+
+
+
+</style>
+</head>
+
+
+
