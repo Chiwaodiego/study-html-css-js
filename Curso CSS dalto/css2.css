@@ -8,6 +8,12 @@
 
 
 
-.caja {
-	
+
+.caja{
+	margin: 25px;
+}
+
+.caja b:lang(en){
+	background: blue;
+	padding: 20px;
 }
