@@ -50,7 +50,7 @@ selector {
 	nivel inferior = elemento // pseudo-elemento
 
 
-Metodologia BEEM
+- Metodologia BEEM
 	
 	- es evitar que se mesclen la clases, por eso se le ponen un orden para que se diferencien.
 	varias clases__1--active
@@ -84,14 +84,159 @@ Metodologia BEEM
 
 ------------------------------------
 
-Unidades de medidas
+- Unidades de medidas
 En cc hay 2 unidades 
 	fijas : son en pixels
-	relativas : depende de algo como variable
+	relativas : depende de algo como variable  
+		"tipo:(medida)em"
+		viewpor (vw/vh) toma el % del total de la pantalla si es width o height
+			width: 50vw;
+			height: 50vh;
 
+Propiedades de textos
+
+font-size: 50px / tamaño de letra 5em=16px defaultnav
+font-family: Georgia, cursive; / Tipografia + estilo de letra
+se puede poner dos tipos de letras sino encuentra el estilo de letra.
+line-height: 2; /el interlineado, el tamaño 1/2 de letra para arriba y abajo
+font-weight:100 grosor de la letra;
+font-stretch: normal; inutil
+font-variant:small-caps;inutil
+
+- normalize
+
+dentro head
+<link rel="stylesheet" type="text/css" href="normalize.css">
+local o en href="poner direccion http"
+(se iso un cambio en normalizae en img 100%)
+
+- Teoria de cajas
+	h ocupan una cajas
+	b ocupan su espacio
+	h2 {display:inline;} se puede cambiar el block h2 como b con inline
+
+- Propiedades de cajas
+
+	background-color: red;
+	pading: 1px(top); 1px(right); px(bottom); px (left); separa el text de la caja
+	height: 100px; alto de la caja
+	width: 100px; ancho de la caja
+	box-sizing: content-box;
+	box-sizing: border-box;
+	text-align: center;
+	margin: separa la distancia de las demas cajas
+	border-radius: 2em;  bordea el espacio de la caja hacia adentro
+	border: 10px (variable)	
+	 // variable contiene mas estilo de border:	grove,dashed, double, grove, inset, outset, ridge
+	line-height: modifica la linea del texto
+	box-shadow:  sombra a la caja
+	text-shadow: sombra al texto
+	transform: rotate(-45deg);
+
+- Outline // Es un border sin afectar las demas cajas y su 		espacio original.
+
+- z-index // mantiene orden de capas que 
+		superponen
+		se usa z-index: -1 cuando el segundo elemento se ponen por detra del 1` elemento
+
+- Position:
+	-static
+	- relative // concerva su espacio original en el bloque, modificando su estructa en cualquiera posicion.
+	- absolute // no conose su espacio original si no que toma de referencia la posicion de la caja contenedora.
+	opacity: 1 a 0.1;
+
+	- fixed // Es un bloque fijo que se mantiene en la ventana Ej: Nav
+	- stiky // es un bloque fijo y a la ves movible en funcion de la scroll.
+
+
+
+
+-------------CURSO INTERMEDIO---------------
+
+
+
+
+- Display: modificar el comportamiento de las casas
+	- Block  ocupa todo el ancho del espacio de la pag.
+	- inline son los que ocupacion su tamano y nose puede cambiar el tamano que lo contienen
+
+
+	- inline-block converva su espacio y tamano
+	- table son tablas
+	- inline-table se comporta como inline 
+
+	- Grid 
+	- Flex
+
+	- inline-flex
+	- inline-grid
+
+
+	//
+	Entraron en desuso
+	- table-cell se comporta como una celda
+	- table-row selecciona todas las celdas horizontales
+	- table-colum selecciona todas las celdas verticales
+	//
+
+
+- Overflow:
+	
+	- (Y,X) Auto se activa el scroll si detecta que hay mas texto.
+	- Hidden oculta el scroll
+	- Scroll habilita el scroll
+
+- Float : right or left; se puede usar para apilar cajas o mejor envolver 
+	texto con img
+
+- Pseudo::Elementos
+	no es un elemento que forman parte del doom, pero si cambios visuales.
+	elemento inline anula el efecto de los demas pseudo elementos.
+	
+	- x::first-line | block  //  modifican la 1st del bloque
+	- x::first-letter | block // modifica la 1st letra del bloque
+	- x::placeholder es elemento que permite poner un text dentro del input. Ej:
+	html <input type="text" placeholder="Isnserte su asdads">
+	css  input::placeholder {color:red;}
+
+	- x::selection
+		Se puede modificar el color de  fondo del selector
+
+	- x::after | hijos - conten (necesario)- inline
+		No forman parte del dom, si no esta en content.
+		Es un contenido no seleccionable solo visual.
+	- x::before | hijos - conten (necesario)- inline
+		No forman parte del dom, si no esta en content.
+		Es un contenido no seleccionable solo visual
+- Pseudo-Clases:
+	
+	- :hover
+
+	- :link
+
+	- :visited
+	
+	- :active
+	
+	- :focus
+	
+	- :lang
 	
 
-10125
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
