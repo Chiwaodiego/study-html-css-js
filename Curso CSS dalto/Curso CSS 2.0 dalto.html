@@ -207,25 +207,116 @@ local o en href="poner direccion http"
 		Es un contenido no seleccionable solo visual.
 	- x::before | hijos - conten (necesario)- inline
 		No forman parte del dom, si no esta en content.
-		Es un contenido no seleccionable solo visual
+		Es un contenido no seleccionable solo visual.
 - Pseudo-Clases:
 		x:Pseudo-class
 	- :hover // Modifica la caja al pasar el curso ensima.
 
-	- :link  // El link se modifica si ya visite el link referido
+	- :link  // El link se modifica si ya visite el link referido.
 
-	- :visited // Se comporta si el link ya fue visitado
+	- :visited // Se comporta si el link ya fue visitado.
 
-	- :active // Modifica la caja si se mantiene presionado el left-click
+	- :active // Modifica la caja si se mantiene presionado el
+			 left-click
 
 	- :focus // Modifica al selecionar a la caja objetiva.
 
-	- :lang(en) // Es una seleccion por atributo tienen que tener Ej html -> lang="en" y se va modificar la caja 
+	- :lang(en) // Es una seleccion por atributo tienen que
+			 tener Ej html -> lang="en" y se va modificar la caja .
 
 	- quotes no explicado
 
+- Object-fit:		
+			Se aplica mucho en IMG
+	- Fil // Expande la resolucion al contenedor.
+
+	- Contain // Hace que la resolucion de la img se ajuste al 	
+			valor del contenido.
+	- Cover // Se ajusta al contenedor y sin importa la resolucion.
+	- None // toma la resolucion de la img original.
+	- Scale-down // Toma la resolucion menor (entre none y contain)
+
+	- Objet-Position: 
+			lef - right - top - button
+			Se puede modificar la direccion donde se centra
+			Px - em - % - ETC
+- Cursor: 
+	Cambia la propieda del cursor
+
+	https://www.w3schools.com/cssref/tryit.asp?filename=trycss_cursor
+
+- Colores :
+	https://www.mclibre.org/consultar/amaya/css/css-color.html
+	- Color name
+	- HEXADECIMAL hast para iniciar el color#
+		Parametros:
+			#fff 3 valores es rgb 
+			#FFFF 4  = rgba
+			#FFFFFF 6 = rrggbb
+			#FFFFFFFF 8 = rrggbbaa 
+	- RGB / background:rgb(0,0,0)
+	- RGBA / inlcuye opacity / background:rgba(0,0,0,1.0)
+	- HSL no se usa
+	- HSLA no se usa
+
+- Responsive Design - mobile first
+		Es adaptar la resolucion del contenido mobile a tablet y escritorio.
+		aplicar 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+- Flex box
+	Teoria:
+		Flex requiere de flex container y flex item
+		La caja se comporta como un bloque si no que el contenido cambia de altura.
+		Tiene elementos que direccionan.
+			- main axi eje horizotal  //left to right: main start --|--main-end--> main axies
+			- cross axis eje vertical //top to button: cross start --|--cross-end--> cross axies
+
+	- PROPIEDADES
+
+		 
+	- Flex-direction: Cambia la direccion del contenedor
+
+		- Column // cambia el sentido el main axis a cross axis
+			- tambien column-reverse
+		- row se mantiene normal los axis
+			- row-reverse cambia el sentido de los axis
+	-Flex-wrap: wrap ; // Al reducir la resolucion las cajas se van apilando hacia abajo.
+		- No-wrap
+		- Wrap
+		- Wrap-reverse
+		
+	- Flex-flow: column wrap;  Se puede abreviar flex-direction y flex-wrap.
+	
+	- justify-content: Es para centar el contenido 
+
+		- Center; centra todo el contenido
+		- Space-arround ; es lo mismo que el margin auto pero no hay que usarlo porque no podriamos modificar las cajas por separado.
+		- Space-between ; Deja el mayor espacio entre cajas.
+		- space evenly ;(main axis) // Le da un margin espesifico a cada caja tenga exactamente lo mismo.
 
 
+	- Aling-items: Se usa para una linea de item , si no te lo separa la mitad del vieweport cross axis
+		- Center centra los items
+		- Flex-start ; Separa el cotenido y no se ajusta 
+		- Flex-end lo pone al final cross axis
+		- stretch Hace que se estire las cajas sin tener heigth
+		- baselin
+
+	- align-content: Se usa para mas de una linea de items, te los ordenada separado de cada caja.
+
+		- Center centra los items
+		- Flex-start ; Separa el cotenido y no se ajusta 
+		- Flex-end  con flex end no funciona
+		- stretch 
+		- baseline Solo tira los items  abajo. 
+		https://youtu.be/OWKXEJN67FE?t=18968
+
+
+
+
+
+
+	
 
 
 
