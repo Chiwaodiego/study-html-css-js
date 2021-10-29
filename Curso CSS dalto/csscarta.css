@@ -10,6 +10,8 @@ body {
 }
 
 .flex-container{
+
+	order: 5;
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
@@ -17,7 +19,8 @@ body {
 	background: #444;
 	margin: 50px 50px;
 	z-index: 50 ;
-	border: 4px solid #b714b8;
+	border: 25px solid #000;
+	outline: 5px solid #b714b8
 
 }
 
@@ -28,6 +31,7 @@ body {
 	flex: 1;
 	text-align: center;
 	padding: 30px;
+	order: 5;
 }
 
 .form__input{
@@ -55,9 +59,11 @@ body {
 ----------------
 
 .form-img {
-	flex: 2 ;
+	flex: 1 ;
 	padding: 50px;
 	display: flex;
+
+
 
 }
 .form-img div {
@@ -77,15 +83,27 @@ body {
 	text-align: center;
 	padding: 5px;
 
+
 }
 
 .form-img img {
 
 	width: 300px ;
 	margin: auto;
-
-
 }
 
+.form__submit { 
 
+	width: 100%;
+	padding: 6px;
+	margin: 6px 0;
+	background: #2dc;
+	color: #fff;
+}
+
+.form__submit:active{
+	background: linear-gradient(to bottom, transparent, #2df);
+	outline: none;
+	color: #fff;
+}
 
