@@ -158,10 +158,10 @@ local o en href="poner direccion http"
 
 - Display: modificar el comportamiento de las casas
 	- Block  ocupa todo el ancho del espacio de la pag.
-	- inline son los que ocupacion su tamano y nose puede cambiar el tamano que lo contienen
+	- inline son los que ocupacion su tamao y nose puede cambiar el tamaño que lo contienen
 
 
-	- inline-block converva su espacio y tamano
+	- inline-block converva su espacio y tamaño
 	- table son tablas
 	- inline-table se comporta como inline 
 
@@ -325,39 +325,73 @@ local o en href="poner direccion http"
 			- flex-grow:  asigna el espacion libre al contenedor asignado
 				- flex-grow: (parametro)
 				paramentro= 1 2 3... en prioidad se agrega la cantidad de espacio que va obetener el item
-			- flex-shrink:(valor 0 nada y + va ceder) Es una propiedad que cede espacio a la casa designada, hasta que lleguen todos a su respectivo tamano.
+			- flex-shrink:(valor 0 nada y + va ceder) Es una propiedad que cede espacio a la casa designada, hasta que lleguen todos a su respectivo tamaño.
 			- flex-basis: es lo mismo que el width pero con mayor especificidad
 			- flex: flex-grow,flex-shrink,flex-basis(Tiene que tener al menos 1 parametro)
 			- order: (Es como el z index, pero en el eje en el que apunta el main axis)
 
 - Grid: Es un display que trabaja como grilla
 	- Conceptos basicos
-		- grid
+		- grid  por defecto display:grid; crea elemento de blocke
 		- grid container
-		- item son hijos de grid pero si estan dentro del item ya no forman parte
-		- cell 
-		- tracks (column y row) filas y columnas para un track se suma los column + row = tracks
+		- grid item son hijos de grid pero si estan dentro del item ya no forman parte
+		- grid cell 
+		- grid tracks (column y row) filas y columnas para un track se suma los column + row = tracks
 		- grid area // Hay que definir las areas, siendo vertical y horizontal
 		- grid line (column line y row line) Se enumera apartir de las linea laterales horz y vert
 		
 	- Propiedades
 
-		- grid-tempre-rows (grid-container)
-		- grid-template-columns (grid-container)
+		- grid-temprate-rows: 1px 1px;  2 filas (grid-container) Crea filas
+		- grid-template-columns (grid-container) Crea columns
 
-		- grid-row0gap (grid-container)
+		unidades:
+		- auto ; 
+		- fr ; es similar a flex grow
+		- repeat; es repetirar la cantidad  de columnas o filar al crear tambien duplicar lo de adentro
+		- simpliple(cantidad,tamño/s)
+		- x(1fr o px) cantidad  repeat(cantidad, x x);
+		
+		La propiedad gap separa las demas caja de la grilla
+		- grid-row-gap (grid-container)
 		- grid-column-gap (grid-container)
 		- grid-gap: row column(grid-container)
-		- grid-
-		- grid-
-		- grid-
+
+		En esta propiedad se seleccion por item 
+
+	- Como seleccionar cajas:
+		- .grid-item:first-child ; para seleccionar el 1st elemento
+		- .grid-item:nth-child(la caja al seleccionar)
+
+		Ejem
+		Estas propidades son mas largas pero se puede simplicar con los de abajo :
+		- grid-row-start :(gridd-item)	
+		- grid-row-end: (gridd-item)
+		- grid-column-star: (gridd-item)
+		- grid-column-end: (gridd-item)
+
+		Grid simplificado
+		- grid-row: (grid-item) 1/3 ; va tomar de la fila y va terminar en la columna 3 
+		- grid-column :(gridd-item) va tomar la columna y va terminar  en la fila
+		- unidad "span" es un valor que indica cuantas filas o columnas debe ocupar
 
 	
+	- GRID IMPLICITO Y EXPLICITO
+
+		- 3 nuevas propiedades del grid implicito
+			- grid-auto-rows: (igual que el template)
+			- grid-auto-columns: (igual que el template)
+			- grid-auto-flow : row(default), column y dense
+				- dense ; rellena espacios vacios con otras celdas mas sercanas
+		- grid implicito son los espacios vacios sin ocupar
+		
+
+	- GRID DINAMICO
 
 
 
 
-
+https://youtu.be/OWKXEJN67FE?t=23338
 
 
 
