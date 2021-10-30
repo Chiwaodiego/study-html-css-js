@@ -292,7 +292,7 @@ local o en href="poner direccion http"
 		- Center; centra todo el contenido
 		- Space-arround ; es lo mismo que el margin auto pero no hay que usarlo porque no podriamos modificar las cajas por separado.
 		- Space-between ; Deja el mayor espacio entre cajas.
-		- space evenly ;(main axis) // Le da un margin espesifico a cada caja tenga exactamente lo mismo.
+		- space-evenly ;(main axis) // Le da un margin espesifico a cada caja tenga exactamente lo mismo.
 
 
 	- Aling-items: Se usa para una linea de item , si no te lo separa la mitad del vieweport cross axis
@@ -387,15 +387,58 @@ local o en href="poner direccion http"
 		
 
 	- GRID DINAMICO
+			Son columnas y estructuras autojustables, y otras propiedades que cambian conjuntamente.
+			ejem css
+			grid: repeat(3,(Dinamico) )
+		- mimax (minimo,max) // Indica cuanto es el minimo y max que se va ajustar el contenido cuando llegue a cierta resolucion.
+		- mincontent // Se ajusta al contenido minimo.
+		- max-content //El texto ocupa todo el width del item.
+
+		 cantidad: ejem grid: repeat(autox,minmax());
+
+		- auto-fill // rellena nuevas celdas acorde a los paramentros dados y mas la resolucion dada.
+		- auto-fit // Se comporta lo mismo que fill pero escala las celdas acorde al parametro.
 
 
 
+	----- ALINEACION Y CONTROL DE FLUJO --------------
+			- Diferencia con flex
+					!! - La alineacion es dentro de cada celda y no alneacion total del flex container 
+					!! - cada celda seria un "flex container"
 
-https://youtu.be/OWKXEJN67FE?t=23338
+			- (propiedad del grid-container)
+
+				- justify-items:atributos;  (horizontalmente)
+				- align-items:atributos; (verticalmente)
+					-atributos:
+						- stretch (default) - start - center - end
+						Explicacion  de atributos  linea 298
+						- place-items: align-items justify-items
+
+		- alineacio de filas y columnas -
+
+			- justify-content: ; (horizontalmente)
+			- align-content: ; (verticalmente)
+
+				- :atributos;
+					- space-arround
+					- space-between
+					- space-evenly
+
+				Explicacion de atributos line 290
+
+		- APLICADO al grid ITEM
+
+			- align-self: atrib;
+			- justify-self: atrib;
+			- place-self: atrib;
+				- stretch (default) - start - center - end
+						Explicacion  de atributos  linea 298
+				- order (igual que en flex)
 
 
 
-
+crear otra pestaña para la galeria y ordernar los archivos en css
 
 
 
