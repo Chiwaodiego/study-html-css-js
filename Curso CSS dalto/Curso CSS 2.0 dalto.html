@@ -342,7 +342,7 @@ local o en href="poner direccion http"
 		
 	- Propiedades
 
-		- grid-temprate-rows: 1px 1px;  2 filas (grid-container) Crea filas
+		- grid-template-rows: 1px 1px;  2 filas (grid-container) Crea filas
 		- grid-template-columns (grid-container) Crea columns
 
 		unidades:
@@ -357,7 +357,7 @@ local o en href="poner direccion http"
 		- grid-column-gap (grid-container)
 		- grid-gap: row column(grid-container)
 
-		En esta propiedad se seleccion por item 
+		En esta propiedad se selecciona por item 
 
 	- Como seleccionar cajas:
 		- .grid-item:first-child ; para seleccionar el 1st elemento
@@ -442,8 +442,104 @@ local o en href="poner direccion http"
 					Posiciona las celdas adelante.
 
 
-crear otra pestaña para la galeria y ordernar los archivos en css
+	-------------- AREAS EN GRID -----------
+			-
+		- Al grid container
+			- grid-template-areas: "nombre/s de area/s"
+					-Lo que hace es designar los espacio del area en que posicion.
+					ej:
 
+						"header header header"
+						"aside main main"
+						"aside main main"
+						"aside main main"
+						"aside main main"
+						"footer footer footer "
+
+		- Al grid item // seleccionar el item para posicionar
+			- grid-area: "nombre del area"
+
+	- Nombres a las lineas
+			Es lo mismo que aplicar grid-row/columns con 1/3
+			pero con nombres entre corchetes
+			- [line-name]
+
+				-Se puede reemplazar en:
+					- grid-row:
+					- grid-column:
+						ej:
+							- grid-template-row:
+								[f-line]
+								150px
+								[s-line]
+								150px;
+							- .grid-item:first-child {
+									grid-row: f-line/t-line;
+									grid-column: 1/4;
+
+						}
+
+
+
+
+
+
+	---------- SHORTHAND --------------
+
+
+		- grid-template: row / columns (grid-container)
+				Simplifica mas teniendo 3 variables
+										(row/column)
+					grid-template: repeat(1fr/1fr);
+
+		- grid-template: area unidad
+
+		- grid: una abreviacion mas compleja.
+
+
+
+
+- Responsive desing (completo)
+		Es una adaptacion a escritorio y dispositivos moviles a diferentes resoluciones.
+	
+	- Estructuras flexibles (contenedores flexibles, imagenes y video flexibles)
+	- Media Queries :Son reglas que se aplican a diferente estilos para distintas resoluciones.
+		ej:
+			@media screen and (min-width:400px) and (max-width:600px){ estilos}
+
+
+			- ancho y alto de la ventana grafica
+			- ancho y alto del dispositivo
+			- orientacion ( la tableta/ telefeno esta en modo horizontal o vertical)
+			- resolucion
+
+				Lo que se usa siempre es screen los demas no se utilizan.
+
+				- Screen Destinado principalmente a las pantallas.
+
+				- all apto para todos los dispositivos.
+				- print Destinados a material impreso y visualizacion de documentos en una pantalla en el modo de vista previa de impresion.
+				- speech destinado a sintetizadores de voz.
+
+			- Operadores AND | OR
+			- Orientacion: 
+				- landscape para escritorio
+				- portrit para moviles
+
+	metodologias aplicables en diferentes resoluciones:
+		- Mobile firts Se adapta a resoluciones menores a mayores.
+		- desk to firts Se adapta a resoluciones de escritorio a tablet y celular.
+		- content first // es una metodologia que se centra en el contenido sin importar a que resolucion se adapta mas para estrategia de marketing.
+
+
+
+
+
+
+
+volver a ver responsig desing de pruba y pasarlo al borrador
+
+esta bueno primero hacer todo los ques css y luego por media solo modifcar las cajas sin tocar los colores.
 
 
 

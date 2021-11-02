@@ -7,34 +7,8 @@
 
 
 
-body {
-	background: radial-gradient(circle,#fff,#bbb);
-	padding: 15px;
-}
-
-.grid-container {
-	display: grid;
-	grid-template-columns: repeat(3,minmax(150px, 1fr) ) ;
-	grid-template-rows: repeat(3,200px);
-	grid-auto-flow: dense ;
-	place-items: end,end;		
 
 
-
-	border: 3px solid #000;
-	background-color: #555; 
-
-}
-
-.grid-item {
-
-	border: 2px solid #f00;
-	background-color: #888;
-}
-
-.grid-item:first-child {
-
-}
-
-.grid-item:nth-child(3){
+.responsive {
+	background: #c95
 }
