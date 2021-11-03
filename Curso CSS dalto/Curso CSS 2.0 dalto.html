@@ -533,13 +533,96 @@ local o en href="poner direccion http"
 
 
 
+-------- CSS CURSO AVANZANDO ------------------
+
+- Trasition :	Permite realizar transiciones dentro de los elementos.
+	
+		- Transition-propoerty: property/ies - all - none
+			- Si usamos all consume mucho recurso el navegador y eso hace que el usuario abandone la pagina o tenga retraso en cargar la web
+			- Lo eficiente es usar otra propiedad background o otro.
+
+		- transition-duration: durantion/s
+			- Los segundos que dura la transicion.
+
+		- transition-delay : delay/s
+			- Retrasa el incio
+
+		- transition-timing-function: 
+			- linear
+				transiciona a una velocidad uniforme
+			- ease 
+				aumenta la velocidad hacia la mitada de la transicion, disminuyendo la velocidad al final
+			- ease-in
+				comienza lentamente, con velocidad de t ransicion aumentando hasta completarse
+			- ease-out
+				 comienza la transición rápidamente, la transición continúa ralentizándose.
+			- ease-in-out
+				comienza la transición lentamente, acelera y luego vuelve a disminuir.
+			- step-star
+				comienza con un salto directo
+			- step-end
+				va empezar cuando halla terminado la secuencia del segundo
+			- step(x,star|end)
+				dependiendo de x cantidad de saltos y + la propiedad star or end  
+			- initial
+			- inherit
+				Es heredar la propiedad a las demas cajas.
+
+		- transition:	Transiciona en segundo el objeto dado.
+
+- animaciones:
+	las animaciones trabajan con que son reglas
+	 @keyframes "name" {
+		from {	}
+
+		to{  }
+
+		o tambien con %
+
+		0% {}
+		50% {}
+		100% {}
+
+	}
+	- Propiedades a la caja
+		- animation-name: name; 
+			Indica que @keyframe va usar idicando el name del keyframe creado.
+		- animation-duration: duration; igual que transition
+		- animation-delay: delay;
+		- animation-timing-function: (transition values)
+		- animation-iteration-count: x or inifinite;
+			x es la cantida de repiticion
+			infinite
+		- animation-fill-mode: 
+			- none
+			- forwards
+				Es una funcion que finaliza y queda blockueado en su ultima orden.
+			- backwards
+				el elemento obtendra los valores de estilo establecido por el primer fotograma clave (depeden de la direccion de la animacion) y lo conservara durante el periodo de retraso de la animcion.
+			- both
+				empieza con la 1st orden dada
+			- initial
+			- inherit;
+		- animation-direction: 
+			- normal por default
+			- reverse sentido contrario
+			- alternate termina una accion y regresa  a la misma.
+			- alternate-reverse
+
+	- cubic-bezier: cubic-bezier(.94,1.48,.18,-0.27)
+		- https://cubic-bezier.com/#.17,.67,.83,.67
+
+
+
+- Transform:
+
+https://youtu.be/OWKXEJN67FE?t=31349
 
 
 
 
-volver a ver responsig desing de pruba y pasarlo al borrador
 
-esta bueno primero hacer todo los ques css y luego por media solo modifcar las cajas sin tocar los colores.
+	
 
 
 
