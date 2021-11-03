@@ -7,49 +7,25 @@
 
 
 
+:root{
+	--red: #f40;
+}
+
+
+div {
+	padding: 30px;
+	height: 150px;
+	width: 150px;
+}
 
 .container {
 
-
-	padding: 20px 5px;
-	background: #86f;
+	background: var(--red);
 }
 
-.caja {	
-	background: #025;
-	height: 80px;
-	width: 80px;
-	margin: 20px;
-	position: relative;
-	animation-name: desp;
-	animation-duration: 2s;
-	animation-iteration-count: infinite;
-	animation-direction:both ;
-	animation-timing-function: cubic-bezier();
-
+.container-2 {
+	background: blue;
 }
-
-@keyframes desp {
-	0% {
-		left:0;
-		background: red;
-
-	}
-	50% {
-		background: #fff;
-	
-	}
-
-	100%{
-	left: 80%;
-		background: #000;
-	}
-
-
-
-
-}
-
 
 
 

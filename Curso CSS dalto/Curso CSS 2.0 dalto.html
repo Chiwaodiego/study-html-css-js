@@ -615,12 +615,67 @@ local o en href="poner direccion http"
 
 
 - Transform:
+	- transform: translate
+			si usamos %, son % relativos al elemento - recomendado para animar. ocpa menos recursos
+			Mueve el objeto al x , y
+		- translate(x);
+		- translatey ();
+		- translate (x,y) ;
 
-https://youtu.be/OWKXEJN67FE?t=31349
+	- transform: scale
+		- scale (xy - x,y)
+		- scaleX(x)
+		- scaleY(y)
+
+	- transform: rotate
+		- rotate (angleUnit)
+		- rotateX(angleUnit)
+		- rotateZ(angleUnit)
+		||
+		- rotate3D(angleunit)
+		- algeUnit : deg - grad - rad - turn
+
+	- transform: skew (angleUnit)
+
+	-clip-path
+		Es un generador de objetos que se puede dar forma.
+		  Ej: triagulo, cualquier figura.
+		  https://bennettfeely.com/clippy/
+
+- Background:
+	- background-color
+	- background-image: url()
+	- background-size: x, y , auto ,cover ,contain
+	- background-position: 
+
+		left - top - bottom - right - center ++ left - top - bottom - right - center
+
+	- background-attachment: 
+		- scroll toma de referencia al contenedor
+		- fixed  queda fijada de fondo de pantalla
+		- inherit
+
+	- background-clip:
+		recorta la img apartir de los bordes
+		- border-box
+		- padding-box
+		- content-box
+
+	- background-oring : 
+		crea apartir de los bordes
+		orign de la foto
+		- border-box
+		- padding-box
+		- content-box
 
 
+- variable en css
+	- se crea la variabel dentro  de un cotenedor para llamar --varName
+	:root{
+	--color-rojo: #f40;
+}
 
-
+	background: var(--nombre creado)
 
 	
 
