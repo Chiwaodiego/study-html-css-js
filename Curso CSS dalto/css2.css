@@ -6,26 +6,9 @@
 }
 
 
-
-:root{
-	--red: #f40;
-}
-
-
-div {
-	padding: 30px;
-	height: 150px;
-	width: 150px;
-}
-
 .container {
-
-	background: var(--red);
+	padding: 20px;
+	background: #f0a;
+	 font-size: 20px;
+	letter-spacing: 20px;
 }
-
-.container-2 {
-	background: blue;
-}
-
-
-
