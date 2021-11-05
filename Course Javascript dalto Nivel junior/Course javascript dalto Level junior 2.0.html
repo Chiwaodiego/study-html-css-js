@@ -11,6 +11,8 @@
 </body>
 </html>
 
+--CAP1
+
 - Variable
 		Una variable es el valor que tiene el contenedor.
 	- Concepto (img)
@@ -21,7 +23,7 @@
 		- boolean = " 0 or 1 / true or false "
 
 			- x es un ejemplo de variable cualquiera.
-	-Scope y tipos de variables: 
+	-tipos de variables: 
 		- Scope : Es el alcanze de las variables.
 
 		- Var (nombre de la variable) = x es el valor de la variable.
@@ -31,6 +33,11 @@
 
 		- const variable = x
 			Const + variable es una unica y que no se puede cambiar su valor.
+	- Scope
+		- VAR: Es una variable que SI puede cambiar su valor y su scope es local.
+
+		- LET: Es una variable que también podra cambiar su valor, pero solo vivirá(Funcionara) en el bloque donde fue declarada.
+		- CONST: Es una constante la cual NO cambiara su valor en ningún momento en el futuro.
 
 	- Casos especiales de datos:
 
@@ -50,4 +57,84 @@
 
 
 - Operadores en javaScript
-	
+
+	- Operadores de asignacion
+		- Un op.asig asigna un valor al operando de la izquierda basado en el valor del operando de la derecha.
+		 + - % * /
+		  Abreviacion y completo
+		  Igual para lo demas operadores
+		 x+=y  es igual a  x = x+y
+
+		 And , or , xor
+
+	- Operadores Aritmeticos
+		- Los op.a toman  valores numericos (ya sean literales o variables) como sus operandos y retornan un valor numericos "unico".
+			Ej:
+					n1= 10; or
+					n1++ ; 
+					r = n1; or r= n1++ ; or r = n1+n2 ;
+					alert(r) = 11
+
+- Concatenacion
+	- Definicion
+			Unir varios string
+	- Con el signo +
+	- Para numeros forzamos string ( "" + 9 + 4)
+	- Con concat
+		- Para utilizar concat tiene que haver un string
+			n1; "53" ; n2 = 5 ; frase= n1.concat (n2); document.write (frase)
+
+	- Con backtiks `` y variables entre ${}
+
+		n = "diego";
+		f = `soy ${n} y estoy caminando` ; document.write (f) ; 
+
+
+	- Batickticks y escape
+		- Se usa `` para cierre y al = que comillas dobles, se debe aplicar 1 solo para cada cierre pero sepuede usar dentro de cada uno.
+
+- Operadores (intermedios)
+
+	- Operadores de comparacion
+		- Los "o.c" comparan dos expresiones y devuelven un valor "boolean" que representa la "relacion" de sus valores
+			- ingualdad		a==b
+			- ingualdad 	a != b
+			- igualdad stricto si los 2 valores son el mismo texto		 a === b ;true / 23 === "23" ; false
+			- non-identify si los 2 valores son el mismo pero en dato "no" es true		a !== b; false / b !== "b" ; true
+			- mayor o menor o igual 
+					Se aplica de esta manera
+					mayor o igual >=
+					menor o igual <= 
+
+
+	- Operadores logicos
+		- Los op.l nos devuelve un resultado a partir de que se cumpla (o no) una "condicion", su resultado es "booleano", sus opreandos son valores logicos o asimilables a ellos.
+				and = &&
+				or = ||
+				not =  !var
+						- Not invierte el resultado true a false o f a v.
+
+
+- Camel case
+	- Defenicion
+			- Cuando una variable contiene varias palabras, se le agrega mayus a todas las palabras que sigan despues de la primera que es "minuscula".
+					variableSiguienteDeEsto= x
+	- usos
+			parseInt() convierte a entero
+	Ej
+
+- Condicionales
+	- Definicio y usos 
+
+	- If
+		- If se activa si el resultado es verdadero
+				if (true){
+				funcion }
+	- Else if
+		 Es otra condicion si no se cumple con if
+		 		else if (true){
+				funcion }
+	- Else
+		- Else es el cierre si no se cumplio con las demas condiciones.
+				else { function o aviso}
+
