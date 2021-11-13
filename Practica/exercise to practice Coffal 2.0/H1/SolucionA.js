@@ -23,5 +23,7 @@ else if (p1 >= 100 ) {
 
 
 else { 
+	
 	document.write (` No le alacanza para ningun de los helados`)
+
 }

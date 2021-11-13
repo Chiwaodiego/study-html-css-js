@@ -95,13 +95,13 @@ En cc hay 2 unidades
 
 Propiedades de textos
 
-font-size: 50px / tamaño de letra 5em=16px defaultnav
-font-family: Georgia, cursive; / Tipografia + estilo de letra
-se puede poner dos tipos de letras sino encuentra el estilo de letra.
-line-height: 2; /el interlineado, el tamaño 1/2 de letra para arriba y abajo
-font-weight:100 grosor de la letra;
-font-stretch: normal; inutil
-font-variant:small-caps;inutil
+	- font-size: 50px / tamaño de letra 5em=16px defaultnav
+	- font-family: Georgia, cursive; / Tipografia + estilo de letra
+		se puede poner dos tipos de letras sino encuentra el estilo de letra.
+	- line-height: 2; /el interlineado, el tamaño 1/2 de letra para arriba y abajo
+	- font-weight:100 grosor de la letra;
+	- font-stretch: normal; inutil
+	- font-variant:small-caps;inutil
 
 - normalize
 
@@ -128,12 +128,14 @@ local o en href="poner direccion http"
 	border-radius: 2em;  bordea el espacio de la caja hacia adentro
 	border: 10px (variable)	
 	 // variable contiene mas estilo de border:	grove,dashed, double, grove, inset, outset, ridge
-	line-height: modifica la linea del texto
+	line-height: modifica la altura del texto
 	box-shadow:  sombra a la caja
 	text-shadow: sombra al texto
 	transform: rotate(-45deg);
 
-- Outline // Es un border sin afectar las demas cajas y su 		espacio original.
+- Outline 
+	// Es un border sin afectar las demas cajas y su espacio original.
+		- outline: 10px solid blue;
 
 - z-index // mantiene orden de capas que 
 		superponen
@@ -146,7 +148,7 @@ local o en href="poner direccion http"
 	opacity: 1 a 0.1;
 
 	- fixed // Es un bloque fijo que se mantiene en la ventana Ej: Nav
-	- stiky // es un bloque fijo y a la ves movible en funcion de la scroll.
+	- sticky // es un bloque fijo y a la ves movible en funcion de la scroll.
 
 
 
@@ -527,6 +529,7 @@ local o en href="poner direccion http"
 				- portrit para moviles
 
 	metodologias aplicables en diferentes resoluciones:
+	
 		- Mobile firts Se adapta a resoluciones menores a mayores.
 		- desk to firts Se adapta a resoluciones de escritorio a tablet y celular.
 		- content first // es una metodologia que se centra en el contenido sin importar a que resolucion se adapta mas para estrategia de marketing.
@@ -670,7 +673,8 @@ local o en href="poner direccion http"
 
 
 - variable en css
-	- se crea la variabel dentro  de un cotenedor para llamar --varName
+	- se crea la variabel dentro  de un cotenedor para llamar 
+	background: var(name);
 	:root{
 	--color-rojo: #f40;
 }
@@ -705,10 +709,38 @@ local o en href="poner direccion http"
 
 Selectores: https://www.w3schools.com/cssref/css_selectors.asp
 
+----------------------------------
+- Curso independiente
+
+- Menus desplegables
+	- 
 
 
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAF9JREFUSEvtk8sJACAMQ9PR3NzN9CxIS7BBKnqO5vPQID4mfh/fIFz4ykQjjOULltC7BnKDwwLr9SsM5A1YBu4KGZBpA/lE9Q08yA1AZyqykFMMmICh9s2fHNZmBPUnmrebCBlsxQ0oAAAAAElFTkSuQmCC"/>
 </style>
 </head>
 
 
 
+
+
+@import url(//db.onlinewebfonts.com/c/3f4943f4e662577a8113309f864540a4?family=ITC+Benguiat);
+
+@font-face {font-family: "ITC Benguiat"; 
+	src: url("//db.onlinewebfonts.com/t/3f4943f4e662577a8113309f864540a4.eot"); 
+	src: url("//db.onlinewebfonts.com/t/3f4943f4e662577a8113309f864540a4.eot?#iefix") format("embedded-opentype"), 
+	url("//db.onlinewebfonts.com/t/3f4943f4e662577a8113309f864540a4.woff2") format("woff2"),
+	url("//db.onlinewebfonts.com/t/3f4943f4e662577a8113309f864540a4.woff") format("woff"),
+	url("//db.onlinewebfonts.com/t/3f4943f4e662577a8113309f864540a4.ttf") format("truetype"),
+	url("//db.onlinewebfonts.com/t/3f4943f4e662577a8113309f864540a4.svg#ITC Benguiat") format("svg"); 
+
+}
+
+@font-face {
+	font-family: "ITC Benguiat"; 
+	src: url("@font-face/3f4943f4e662577a8113309f864540a4.ttf") ;
+	font-weight: normal;
+	font-style: normal;
+
+}
+	<link href="//db.onlinewebfonts.com/c/3f4943f4e662577a8113309f864540a4?family=ITC+Benguiat" rel="stylesheet" type="text/css"/>
