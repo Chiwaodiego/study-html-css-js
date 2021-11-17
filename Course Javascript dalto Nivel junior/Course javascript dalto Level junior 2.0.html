@@ -24,11 +24,10 @@
 
 			- x es un ejemplo de variable cualquiera.
 	-tipos de variables: 
-		- Scope : Es el alcanze de las variables.
 
 		- Var (nombre de la variable) = x es el valor de la variable.
-		- let numero = x
 
+		- let numero = x
 			- Var y let se pueden modificar y declarar por su parte.
 
 		- const variable = x
@@ -37,6 +36,9 @@
 		- VAR: Es una variable que SI puede cambiar su valor y su scope es local.
 
 		- LET: Es una variable que también podra cambiar su valor, pero solo vivirá(Funcionara) en el bloque donde fue declarada.
+				ejem
+				si declaro a fuera de una funcion valor x
+				pero a dentrode un funcion va valer otro valor dentro de la funcion.
 		- CONST: Es una constante la cual NO cambiara su valor en ningún momento en el futuro.
 
 	- Casos especiales de datos:
@@ -82,12 +84,12 @@
 	- Para numeros forzamos string ( "" + 9 + 4)
 	- Con concat
 		- Para utilizar concat tiene que haver un string
-			n1; "53" ; n2 = 5 ; frase= n1.concat (n2); document.write (frase)
+			n1; "53" ; n2 = 5 ; frase= n1.concat (n2); document.write (535)
 
 	- Con backtiks `` y variables entre ${}
 
 		n = "diego";
-		f = `soy ${n} y estoy caminando` ; document.write (f) ; 
+		f = `soy ${n} y estoy caminando` ; document.write (f) ; resultado  f(n)
 
 
 	- Batickticks y escape
@@ -120,7 +122,7 @@
 			- Cuando una variable contiene varias palabras, se le agrega mayus a todas las palabras que sigan despues de la primera que es "minuscula".
 					variableSiguienteDeEsto= x
 	- usos
-			parseInt() convierte a entero
+		var1 = parseInt(var1); convierte el texto a entero
 	Ej
 
 - Condicionales
@@ -138,3 +140,106 @@
 		- Else es el cierre si no se cumplio con las demas condiciones.
 				else { function o aviso}
 
+- Capitulo 2
+
+- Arrays
+	- Definicion
+		Los arrays son objetos o variables que se usan para almancenar datos y aplicar un metodo de operacion de recorrido y/o mutacion.
+	- Forma de crear un arrays;
+		var = ["pera", "tomate", "etc"];
+		- para mostra elemento se seleccciona en la posicion que esta [1]
+			- documente.write (var[1])
+- Arrays asociativos
+	- Definicion
+		Es perecido ala array pero en ves de llamar por numero es por nombre de la variable guardada en el array.
+		Y se usa {}
+	- array asociativos. Se puede guardar un array dentro de otro array
+			let arrays1 = [ "cat", "dog", "bird"];
+			let arrays2 = [ "camion", "moto", arrays1 , "trailer"];
+		
+- Sintaxis y usos
+		let pc1 = {
+		nombre: "DiegoPc",
+		procesador: "intel core 9"}
+		let nombre = pc1 ["nombre"]
+		frase = `nombre de mi pc ${nombre}`
+
+- Bucles e Iteracion
+	- Definicion y usos
+
+		-   
+	- Sentencia while
+			- Es parecido  un if pero con bucle
+	- Sentencia do while
+			La funcion do while
+				Do {Primero ejecuta el codigo}
+						Y luego pregunta si la funcion es true
+				while { verifica el do}
+				Primero ejecuta y luego pregunta.
+	- Sentencia for
+		- For se compone por 3 partes
+			- declaramos
+			- inicializamos
+				-Condicion
+				- aumento y decremento
+			- iteramos (repetir)
+			for (let i = 0 ; i >= 6 ; i++){ document.write (i + "<br>")}
+
+
+	- Sentencia break
+			- Break sirve para finalizar la funcion
+
+	- Sentencia continue
+			- Sirve para conitinuar el bucle de la funcion.
+					for (let i = 0 ; i <= 6 ; i++){
+						if (i == 3) {
+							continue;
+						}
+							document.write (i + "<br>")
+						
+					}						
+			Para usar este atributo se debe aplicar otra funcion dentro de la misma.
+
+	- Sentencia for in
+			Muestra el indice de los elementos en un arrays
+
+	- Sentencia for of
+			muestra el valor de los elementos
+
+---------------------------------------
+
+	- Sentencia label
+
+		-Se usa para saltearse todo la itreacion de un bucle.
+			Se usa continue or brak + variable cualquiera y otra misma variable vacia a fuera de la funcion para realizar este procedimento.
+			variable:
+					funcion
+					contiunue or break + variable.
+
+- Funciones
+	- Definicion y usos
+		- Son funciones con paremetros que se puede volver utilizar mientras llamemos la misma funcion agregando los valores que se va usar.
+	- Formas de crear funciones o declarar funciones y ( llamarlas)
+			Tambien se puede crear funciones de 2 formas
+			- function variable (){}
+			or
+			- variable = function(){}
+		- llamar la funcion seria
+			- variable()
+	- Return
+	  - Es un valor quen retorna despues de finalizar la funcion.
+	  	El x puede ser un valor cualquiera pero lo va devoler a al variable que ejectuo la funcion.
+	  		Ej
+	  			- function variable (){
+	  			( la funcion)
+	  			return x}
+	- Parametros
+		- function (parametros){}
+	- Scope
+	- Funciones flechas
+
+- For each
+	- Syntaxis y uso
+	- Ventajas respecto a for
+	- Desventajas (Break, Continue)
+	https://youtu.be/z95mZVUcJ-E?t=12142
