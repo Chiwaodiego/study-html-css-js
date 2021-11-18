@@ -197,7 +197,7 @@
 						}
 							document.write (i + "<br>")
 						
-					}						
+					};						
 			Para usar este atributo se debe aplicar otra funcion dentro de la misma.
 
 	- Sentencia for in
@@ -221,9 +221,9 @@
 		- Son funciones con paremetros que se puede volver utilizar mientras llamemos la misma funcion agregando los valores que se va usar.
 	- Formas de crear funciones o declarar funciones y ( llamarlas)
 			Tambien se puede crear funciones de 2 formas
-			- function variable (){}
+			- function variable (){};
 			or
-			- variable = function(){}
+			- const variable = function(){};
 		- llamar la funcion seria
 			- variable()
 	- Return
@@ -231,12 +231,19 @@
 	  	El x puede ser un valor cualquiera pero lo va devoler a al variable que ejectuo la funcion.
 	  		Ej
 	  			- function variable (){
-	  			( la funcion)
-	  			return x}
+	  			( la funcion x)
+	  			return x};
 	- Parametros
-		- function (parametros){}
+		- function (parametros){ funcion};
 	- Scope
+		Scope dentro de las funciones siempre poner let con alcance regional a la funcion, si no pase  a ser var global y afecteria las demas funciones.
 	- Funciones flechas
+		La funciones flechas son los mimsmo que function solo a modo de abreviacion
+			Tiene varios modos de abreviacion
+				const variable = (paremetro)=>{funcion;
+			Se puede usar sin parentesis si es una funcion y tambien no usar llaves si la funcion es solo 1.
+				const variable = parametro => funcion;
+
 
 - For each
 	- Syntaxis y uso
