@@ -1,6 +1,6 @@
 let cantidad = prompt("Cuanto alumno son?");
 let alumnosTotales = [];
-
+var dias = 30
 
 
  for (i = 0; i < cantidad; i++) {
@@ -9,26 +9,39 @@ let alumnosTotales = [];
 }
 
 const asistencia = (nombre,p)=>{
-	let posicion = p
+	let posicion = p;
 	let presencia = prompt(`Esta ${nombre}?`);
 	if ( presencia == "p"){
-	alumnosTotales[posicion][1]++
+	alumnosTotales[posicion][1]++;
 	}
 }
- for (i = 0 ; i < 3 ; i++) {
-	for ( alumno in alumnosTotales) {
-		asistencia(alumnosTotales[alumno][0],alumno)
+ for (i = 0 ; i < dias ; i++) {
+	for ( let alumno in alumnosTotales) {
+		asistencia(alumnosTotales[alumno][0],alumno);
 	}
 }
 
-for ( alumno in alumnosTotales )
-	for ( let alumno of alumnosTotales)
+
+for ( let alumno in alumnosTotales){
+		document.write(`
+		Nombre del alumno: ${alumnosTotales[alumno][0]} <br>
+		Asistencia: ${alumnosTotales[alumno][1]} <br>
+		Ausentes: ${dias - alumnosTotales[alumno][1]} <br>
+		<br>`);
+	if (alumnosTotales[alumno][1]  >= 18){
+		document.write(`
+		<b>Aprobaste, seguis regularizado</b><br>
+		<br>
+		`);
+	}
+	else {
+		document.write(`
+		<b>Desaprobaste Por inasistencia</b><br>
+		<br>
+		`);
+	
+		}
+	}
 
 
 
-
-
-
-document.write(`${alumnosTotales[0]} <br>`);
-
-document.write(`${alumnosTotales[1]} <br>`);
