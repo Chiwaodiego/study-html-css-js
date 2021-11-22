@@ -17,6 +17,7 @@ const edad = (time)=> {
 	}
 }
 
-		
+
+
 edad(3);
 edad(3);

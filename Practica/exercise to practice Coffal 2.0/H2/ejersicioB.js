@@ -28,7 +28,7 @@ for ( let alumno in alumnosTotales){
 		Asistencia: ${alumnosTotales[alumno][1]} <br>
 		Ausentes: ${dias - alumnosTotales[alumno][1]} <br>
 		<br>`);
-	if (alumnosTotales[alumno][1]  >= 18){
+	if (alumnosTotales[alumno][1]  >= 27){
 		document.write(`
 		<b>Aprobaste, seguis regularizado</b><br>
 		<br>

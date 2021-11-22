@@ -52,7 +52,7 @@
 
 	- Crear multiples variables(separando con " , ")
 		Se puede crear varias variables una tras de otra.
-		 let var1= 2,var2= 5;
+		 let var1= 2,var2= dias;
 
 	- Pruebas con Prompt:
 		Operador que contiene la variable introducida.
@@ -84,7 +84,7 @@
 	- Para numeros forzamos string ( "" + 9 + 4)
 	- Con concat
 		- Para utilizar concat tiene que haver un string
-			n1; "53" ; n2 = 5 ; frase= n1.concat (n2); document.write (535)
+			n1; "dias3" ; n2 = dias ; frase= n1.concat (n2); document.write (dias3dias)
 
 	- Con backtiks `` y variables entre ${}
 
@@ -122,7 +122,7 @@
 			- Cuando una variable contiene varias palabras, se le agrega mayus a todas las palabras que sigan despues de la primera que es "minuscula".
 					variableSiguienteDeEsto= x
 	- usos
-		var1 = parseInt(var1); convierte el texto a entero
+		var1 =  (var1); convierte el texto a entero
 	Ej
 
 - Condicionales
@@ -250,4 +250,78 @@
 	- Syntaxis y uso
 	- Ventajas respecto a for
 	- Desventajas (Break, Continue)
-	https://youtu.be/z95mZVUcJ-E?t=12142
+
+- 
+
+- POO Programacion orientados a objetos
+	- Definicio  y usos
+	 La poo sirve para solucionar problemas y de una mejor forma de optimizarlo.
+
+	- Ejemplos
+
+
+- Conceptos basicos de Poo
+	- Clase 
+		Es es la creacion de los objetos y eso hace que se defina una clase
+	- Objeto
+		Es lo que define una clase.
+		Cuando se trabaja con objetos siempre usar const en ves de let
+	- Atributo
+		Son las caracteristicas que tiene el objeto
+	- Metodo
+		Son las acciones que puede hacer el objeto
+	- Constructor
+		Es una particularidada que tienen la clases que es una funcion obligatoria.
+		Que permite contruir propiedades del objeto
+	-  Instanciacion
+		La clase estara instanciado cuando tenga todos los elementos aplicados.
+		Forma de corroborar si la clase si se instancio usar consolo.log(clase instanciada del const)
+	- Errores comunes:
+		No aplicar this.var =  afuera del un contructor
+		No aplicar const y tampoco usar funciones flechas para crear metodos en las clases.
+	- Ejemplo
+
+<!-- 			class animal {
+					constructor(especie,edad,color){
+						this.especie = especie ; 
+						this.edad = edad ; 
+						this.color = color;
+						this.info = `Soy ${this.especie}, tengo ${this.edad}
+						años y soy de color ${this.color}`;
+					}
+					verInfo() {
+						document.write(this.info + "<br>")
+					}
+					}
+
+				const perro = new animal("perro", 5 ,"rojo");
+				const gato = new animal ("gato", 2 , "negro");
+				const bird = new animal ("bird", 5 , "brown");
+				perro.verInfo();
+				gato.verInfo();
+				bird.verInfo();
+ -->
+
+- Caracteristicas de la POO
+	-Abstraccion
+		Es tratar de reducir las caracteristicas de la funcion a algo optimo y funcional
+	-Modularidad
+		Seria organizar las tareas por partes en ves de hacerlo todo en uno.
+	-Encapsulamiento
+		Se trata de encriptar los datos, para que no se puede acceder de otra forma.
+	-Polimorfismo
+		Cosiste en ver como un objeto se comporta de manera distinto ante al mismo objeto.
+- Otros conceptos de POO
+	-Herencia
+		-Errores
+		la variable que va llamar la clase no puede tener el mismo nombre que la clase.A menos que sea con mayuscula la letra principal.
+	-metodos estaticos
+		M.e seria darle el atributo 
+		static metodo(){}
+		Con eso podes llamar al metodo de la clase sin cargar los parametros.
+	-metodos accesores (getters , setters )
+		- Get
+		- Setters
+
+		https://youtu.be/z95mZVUcJ-E?t=16714
+
