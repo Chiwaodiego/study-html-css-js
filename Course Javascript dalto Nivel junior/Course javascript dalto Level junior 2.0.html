@@ -207,7 +207,7 @@
 	- Sentencia for of
 			muestra el valor de los elementos
 
----------------------------------------
+----------------CAP3-----------------------
 
 	- Sentencia label
 
@@ -277,7 +277,8 @@
 		La clase estara instanciado cuando tenga todos los elementos aplicados.
 		Forma de corroborar si la clase si se instancio usar consolo.log(clase instanciada del const)
 	- Errores comunes:
-		No aplicar this.var =  afuera del un contructor
+		No crear funcion this.var =  afuera del un contructor
+		
 		No aplicar const y tampoco usar funciones flechas para crear metodos en las clases.
 	- Ejemplo
 
@@ -303,25 +304,124 @@
  -->
 
 - Caracteristicas de la POO
-	-Abstraccion
+	- Abstraccion
 		Es tratar de reducir las caracteristicas de la funcion a algo optimo y funcional
-	-Modularidad
+	- Modularidad
 		Seria organizar las tareas por partes en ves de hacerlo todo en uno.
-	-Encapsulamiento
+	- Encapsulamiento
 		Se trata de encriptar los datos, para que no se puede acceder de otra forma.
-	-Polimorfismo
+	- Polimorfismo
 		Cosiste en ver como un objeto se comporta de manera distinto ante al mismo objeto.
 - Otros conceptos de POO
-	-Herencia
-		-Errores
+	- Herencia
+		- Errores
 		la variable que va llamar la clase no puede tener el mismo nombre que la clase.A menos que sea con mayuscula la letra principal.
-	-metodos estaticos
+	- metodos estaticos
 		M.e seria darle el atributo 
 		static metodo(){}
 		Con eso podes llamar al metodo de la clase sin cargar los parametros.
-	-metodos accesores (getters , setters )
+	- metodos accesores (getters , setters )
 		- Get
+			Se utilizan para obtener un dato
 		- Setters
+			Se utilizan para modificar el dato
+		- Uso: En la moyoria de los lenguajes, los getters y setters se utilizan para acceder a propiedades privadas o en caso de javascript a datos ebcaosulados.
+		- Ej 	<!-- class Perro extends animal {
+				constructor(especie,edad,color,raza){
+					super(especie,edad,color); 
+					this.raza = null;
+				}
+				set setRaza(newName){
+					this.raza =  newName;
+				}
+				get getRaza(){
+					return this.raza;
+				}
+			}
+			const perro = new Perro ("perro", 5 ,"rojo" , "caniche");
+			perro.setRaza = "carlo" ;
+			document.write(perro.getRaza) -->
+--------------CAP4-------------------------
 
-		https://youtu.be/z95mZVUcJ-E?t=16714
+
+- Metodos de cadenas
+	- concat () -
+		- junta dos o mas cadenas y retorna una nueva.
+			let cadena = "cadena de ";
+			let cadena2 = "prueba"
+			resultado = cadena.concat(cadena2);
+
+	- startsWith() 
+		- si una cadena comienza con los caracteres de otra cadena, devuelve true, sino devuelve false.
+			let cadena = "cadena de ";
+			let cadena2 = "cadena "
+			resultado = cadena.starWith(cadena2);
+			es true
+	- endsWith()
+		- si una cadena termina con los caracteres de otra cadena, devuelve true, no sino devuelve false.
+	- includes() 
+		- si una cadena puede encontrase dentro de otra cadena, devuelve true, sino devuelve false.
+			let cadena1 = "cadena de ";
+			let cadena2 = "prueba"
+			resultado = cadena.concat(x); x puede incluir un string o agregar una variable.
+
+	- indexOf() 
+		- Devuelve el indice del primer caracter de la cadena de la cadena, si no existe, devuelve -1 .
+			let cadena1 = "cadena de ";
+			resultado = cadena.indexOf("de") => 7 
+	- lastIndexOf()
+		- Devuelve el ultimo indice del primer caracter de la cadena, si no existe, devuelve -1 .
+
+
+	- padStar() [prpuesta estandard]
+		- rellena la cadena al principio con los caracteres deseados 
+			let cadena = "a"
+			result = cadena.padStar(a,b)
+			a  es el total de cuantos caracteres va tener la cadena.
+			b va ser el valor que va llenar es espacio.
+	- padEnd() [propuesta ECMA]
+		- rellena la cadena al alfinal con los caracteres deseados 
+	- repeat()
+		- Sirve para repetir la cadena
+			let cadena = "123 "
+			result = cadena.repeat(2)
+			"123 123 "
+
+	- split()
+		- modifica la cadena diviendo los string en arrays.
+			let cadena1 = "Hola como estas ";
+			let resultado = cadena1.split(" ");
+			result = "Hola,como,estas,"
+			- split("x") el valor x va ser removido de la cadena y para separar a los demas string convirtiendolos en arrays.
+			document.write(resultado);
+	- substring()
+		- indica donde comienza y termina el string cortandolos.
+			let cadena1 = "ABCDFG";
+			let resultado = cadena1.substring(0,2);
+			document.write(resultado); => AB
+			- el primer parametro incluye el valor el segundo no.
+	- toLowerCase()
+		- Convierte la cadena todo en minuscula
+			let cadena1 = "ABCDFG";
+			let resultado = toLowerCase();
+	- upUpperCase()
+		- Convierte la cadena todo en mayuscula
+	- toString()
+	 - convierta la cadena en string, pero no es sencible ejemplo si multiplicas lo toma pero si los sumas lo concatena.
+	 sirve tambien para pasar un array a string
+	- trim()
+		- Quita los espacio de un string
+	- trimStart()
+		- Quita los espacios del principio
+	- trimEnd()
+		- quita los espacios del final
+	- lenght
+		document.write (cadena.length); muestra la cantidad espacio y caracteres del string
+	- valueOf() Retorna el mismo string
+
+- Metodos de arrays
+	- 
+	- 
+	- 
+
 
