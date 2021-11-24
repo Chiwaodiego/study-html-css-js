@@ -1,2 +1,9 @@
-let text = ["x" , "z" , "pedro", " jaun"];
-text.filter(numero => document.write(numero + "<br>"));
+
+
+let variable = Math.random()*100;
+variable = Math.round(variable);
+
+
+document.write(variable)
+
+

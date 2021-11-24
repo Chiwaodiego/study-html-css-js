@@ -70,8 +70,8 @@ class phoneHighEnd extends phone {
 	}
 	infoAltaGama(){
 		return this.mobileinfo() + `
-		Resolucion de  camara extra: ${this.rCamaraExtra} <br>` 
-
+		Resolucion de  camara extra: ${this.rCamaraExtra} <br>` a
+			
 	}
 	
 }
