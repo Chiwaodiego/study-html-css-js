@@ -1,0 +1,606 @@
+- estructura de pagina html
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+--CAP1
+
+- Variable
+	- Caracteristicas de una variable.
+		- inicializar un variable con un valor;
+		- se puede reasignar y inicializar sin valor y asignarlo despues.
+		var variable;
+		- Tambien se puede usar multiples variables.
+			var a = b,
+				c = c,;
+		- Las var no pueden iniciar con numeros pero si con guin bajo y numero
+			_01
+		
+	- Tipos de datos:
+		- String = "cadena de texto"  // Cadena de texto
+		- number = "solo numero"
+		- boolean = " 0 or 1 / true or false "
+
+			- x es un ejemplo de variable cualquiera.
+	-tipos de variables: 
+
+		- Var (nombre de la variable) = x es el valor de la variable.
+
+		- let numero = x
+			- Var y let se pueden modificar y declarar por su parte.
+
+		- const variable = x
+			Const + variable es una unica y que no se puede cambiar su valor.
+	- Scope
+		- VAR: Es una variable que SI puede cambiar su valor y su scope es local.
+
+		- LET: Es una variable que también podra cambiar su valor, pero solo vivirá(Funcionara) en el bloque donde fue declarada.
+				ejem
+				si declaro a fuera de una funcion valor x
+				pero a dentrode un funcion va valer otro valor dentro de la funcion.
+		- CONST: Es una constante la cual NO cambiara su valor en ningún momento en el futuro.
+
+	- Casos especiales de datos:
+
+		- undifined : variable indefinida
+		- Null : tiene valor pero esta nulo  (vacio intencionalmente)
+		- Nan (Not a number) : Error de operacion con numero.
+
+	- Hoisting
+		Se trata de la ejecucion y creacion de variables.
+
+	- Crear multiples variables(separando con " , ")
+		Se puede crear varias variables una tras de otra.
+		 let var1= 2,var2= dias;
+
+	- Pruebas con Prompt:
+		Operador que contiene la variable introducida.
+
+
+- Operadores en javaScript
+
+	- Operadores de asignacion
+		- Un op.asig asigna un valor al operando de la izquierda basado en el valor del operando de la derecha.
+		 + - % * /
+		  Abreviacion y completo
+		  Igual para lo demas operadores
+		 x+=y  es igual a  x = x+y
+
+		 And , or , xor
+
+	- Operadores Aritmeticos
+		- Los op.a toman  valores numericos (ya sean literales o variables) como sus operandos y retornan un valor numericos "unico".
+			Ej: incrementar o decrementar
+					n1= 10; or
+					n1++ ; 
+					r = n1; or r= n1++ ; or r = n1+n2 ;
+					alert(r) = 11
+
+- Concatenacion
+	- Definicion
+			Unir varios string
+	- Con el signo +
+	- Para numeros forzamos string ( "" + 9 + 4)
+	- Con concat
+		- Para utilizar concat tiene que haver un string
+			n1; "dias3" ; n2 = dias ; frase= n1.concat (n2); document.write (dias3dias)
+
+	- Con backtiks `` y variables entre ${}
+
+		n = "diego";
+		f = `soy ${n} y estoy caminando` ; document.write (f) ; resultado  f(n)
+
+
+	- Batickticks y escape
+		- Se usa `` para cierre y al = que comillas dobles, se debe aplicar 1 solo para cada cierre pero sepuede usar dentro de cada uno.
+
+- Operadores (intermedios)
+
+	- Operadores de comparacion
+		- Los "o.c" comparan dos expresiones y devuelven un valor "boolean" que representa la "relacion" de sus valores
+			- ingualdad		a==b
+			- ingualdad 	a != b
+			- igualdad stricto si los 2 valores son el mismo texto		 a === b ;true / 23 === "23" ; false
+			- non-identify si los 2 valores son el mismo pero en dato "no" es true		a !== b; false / b !== "b" ; true
+			- mayor o menor o igual 
+					Se aplica de esta manera
+					mayor o igual >=
+					menor o igual <= 
+
+
+	- Operadores logicos
+		- Los op.l nos devuelve un resultado a partir de que se cumpla (o no) una "condicion", su resultado es "booleano", sus opreandos son valores logicos o asimilables a ellos.
+				and = &&
+				or = ||
+				not =  !var
+						- Not invierte el resultado true a false o f a v.
+
+
+- Camel case
+	- Defenicion
+			- Cuando una variable contiene varias palabras, se le agrega mayus a todas las palabras que sigan despues de la primera que es "minuscula".
+					variableSiguienteDeEsto= x
+	- usos
+		var1 =  (var1); convierte el texto a entero
+	Ej
+
+- Condicionales
+	- Definicio y usos 
+
+	- If
+		- If se activa si el resultado es verdadero
+				if (true){
+				funcion }
+	- Else if
+		 Es otra condicion si no se cumple con if
+		 		else if (true){
+				funcion }
+	- Else
+		- Else es el cierre si no se cumplio con las demas condiciones.
+				else { function o aviso}
+
+- Capitulo 2
+
+- Arrays
+	- Definicion
+		Los arrays son objetos o variables que se usan para almancenar datos y aplicar un metodo de operacion de recorrido y/o mutacion.
+	- Forma de crear un arrays;
+		var = ["pera", "tomate", "etc"];
+		- para mostra elemento se seleccciona en la posicion que esta [1]
+			- documente.write (var[1])
+- Arrays asociativos
+	- Definicion
+		Es perecido ala array pero en ves de llamar por numero es por nombre de la variable guardada en el array.
+		Y se usa {}
+	- array asociativos. Se puede guardar un array dentro de otro array
+			let arrays1 = [ "cat", "dog", "bird"];
+			let arrays2 = [ "camion", "moto", arrays1 , "trailer"];
+		
+- Sintaxis y usos
+		let pc1 = {
+		nombre: "DiegoPc",
+		procesador: "intel core 9"}
+		let nombre = pc1 ["nombre"]
+		frase = `nombre de mi pc ${nombre}`
+
+- Bucles e Iteracion
+	- Definicion y usos
+
+		-   
+	- Sentencia while
+			- Es parecido  un if pero con bucle
+	- Sentencia do while
+			La funcion do while
+				Do {Primero ejecuta el codigo}
+						Y luego pregunta si la funcion es true
+				while { verifica el do}
+				Primero ejecuta y luego pregunta.
+	- Sentencia for
+		- For se compone por 3 partes
+			- declaramos
+			- inicializamos
+				-Condicion
+				- aumento y decremento
+			- iteramos (repetir)+
+				for( valorde la variable ; vueltas a recorer; i aumentara+1 )
+			for (let i = 0 ; i >= 6 ; i++){ document.write (i + "<br>")}
+
+
+	- Sentencia break
+			- Break sirve para finalizar la funcion
+
+	- Sentencia continue
+			- Sirve para conitinuar el bucle de la funcion.
+					for (let i = 0 ; i <= 6 ; i++){
+						if (i == 3) {
+							continue;
+						}
+							document.write (i + "<br>")
+						
+					};						
+			Para usar este atributo se debe aplicar otra funcion dentro de la misma.
+
+	- Sentencia for in
+			Muestra el indice de los elementos en un arrays
+
+	- Sentencia for of
+			muestra el valor de los elementos
+
+----------------CAP3-----------------------
+
+	- Sentencia label
+
+		-Se usa para saltearse todo la itreacion de un bucle.
+			Se usa continue or brak + variable cualquiera y otra misma variable vacia a fuera de la funcion para realizar este procedimento.
+			variable:
+					funcion
+					contiunue or break + variable.
+
+- Funciones
+	- Definicion y usos
+		- Son funciones con paremetros que se puede volver utilizar mientras llamemos la misma funcion agregando los valores que se va usar.
+	- Formas de crear funciones o declarar funciones y ( llamarlas)
+			Tambien se puede crear funciones de 2 formas
+			- function variable (){};
+			or
+			- const variable = function(){};
+		- llamar la funcion seria
+			- variable()
+	- Return
+	  - Es un valor quen retorna despues de finalizar la funcion.
+	  	El x puede ser un valor cualquiera pero lo va devoler a al variable que ejectuo la funcion.
+	  		Ej
+	  			- function variable (){
+	  			( la funcion x)
+	  			return x};
+	- Parametros
+		- function (parametros){ funcion};
+	- Scope
+		Scope dentro de las funciones siempre poner let con alcance regional a la funcion, si no pase  a ser var global y afecteria las demas funciones.
+	- Funciones flechas
+		La funciones flechas son los mimsmo que function solo a modo de abreviacion
+			Tiene varios modos de abreviacion
+				const variable = (paremetro)=>{funcion;
+			Se puede usar sin parentesis si es una funcion y tambien no usar llaves si la funcion es solo 1.
+				const variable = parametro => funcion;
+
+- Objeto literal / Como crear un objeto, modificar, acceder y manipular.
+	const objeto  = {
+		a: "abc",
+		p: 300,
+		s: 20,
+	}
+	- Para acceder a las variable de un objeto existen 2 formas.
+		- console.log(objeto.a);
+		- console.log(objeto[`a`]);
+	- agregar variable o eliminar variable dentro de un objeto
+		- agregar
+			- producto.img = "imagen.jpg";
+		- Eleminar 
+			- delete objeto.s;
+	- Destructuring de Objetos
+		- extraer la variable dentro del Objeto
+		- const { a } = objeto;
+		- const { p } = objeto;
+		or
+		- const { a , p } = objeto;
+	- Problemas con los objetos
+		- La funcion "use strict";
+			Hace que las variables declaradas sin var let o const no se inicion por malas practicas.
+	- Object.freeze(objeto);
+		- Congelar un Objeto similar a const para que nose puede modificar el objeto por dentro.
+		- Para identificar sin un objeto es ta congelo es con.
+			- Objecto,isFronzen(objeto) ;  resultado true o fasle.
+	- Object.seal(objeto);
+		- Lo que hace es que no se pueden agregar ni eliminar propiedades. Pero si modificar las existentens.
+		- Corroborar objeto isSeal(objeto); true or false;
+	- const variable1 = Object.assign(objeto1,objeto2);
+		- Une 2 objetos
+	- const variable1 = { ...objeto, ...objeto2 } 
+		- lo que hace ... es copiar un objeto y pasarlo a una variable.
+	- this.variable
+		- this es una palabra reservada de javascript que permite acceder solo a los datos que estan dentro del objeto
+	-Interadores de objetos.
+		- Object.keys(objeto);
+			- Retorna las llaves de un array
+			- Se usa si si la base de datos tiene o no informacion.
+		- objectco.values(ojbeto);
+			- retorna los valores del array
+		- objectco.entries(objeto);
+			- retorna la llave y valor
+	
+
+- POO Programacion orientados a objetos
+	- Definicio  y usos
+	 La poo sirve para solucionar problemas y de una mejor forma de optimizarlo.
+
+	- Ejemplos
+
+
+- Conceptos basicos de Poo
+	- Clase 
+		Es es la creacion de los objetos y eso hace que se defina una clase
+	- Objeto
+		Es lo que define una clase.
+		Cuando se trabaja con objetos siempre usar const en ves de let
+		- Llamado consol.log(x);
+	- Atributo
+		Son las caracteristicas que tiene el objeto
+	- Metodo
+		Son las acciones que puede hacer el objeto
+	- Constructor
+		Es una particularidada que tienen la clases que es una funcion obligatoria.
+		Que permite contruir propiedades del objeto
+	-  Instanciacion
+		La clase estara instanciado cuando tenga todos los elementos aplicados.
+		Forma de corroborar si la clase si se instancio usar consolo.log(clase instanciada del const)
+	- Errores comunes:
+		No crear funcion this.var =  afuera del un contructor
+		
+		No aplicar const y tampoco usar funciones flechas para crear metodos en las clases.
+	- Ejemplo
+
+<!-- 			class animal {
+					constructor(especie,edad,color){
+						this.especie = especie ; 
+						this.edad = edad ; 
+						this.color = color;
+						this.info = `Soy ${this.especie}, tengo ${this.edad}
+						años y soy de color ${this.color}`;
+					}
+					verInfo() {
+						document.write(this.info + "<br>")
+					}
+					}
+
+				const perro = new animal("perro", 5 ,"rojo");
+				const gato = new animal ("gato", 2 , "negro");
+				const bird = new animal ("bird", 5 , "brown");
+				perro.verInfo();
+				gato.verInfo();
+				bird.verInfo();
+ -->
+
+- Caracteristicas de la POO
+	- Abstraccion
+		Es tratar de reducir las caracteristicas de la funcion a algo optimo y funcional
+	- Modularidad
+		Seria organizar las tareas por partes en ves de hacerlo todo en uno.
+	- Encapsulamiento
+		Se trata de encriptar los datos, para que no se puede acceder de otra forma.
+	- Polimorfismo
+		Cosiste en ver como un objeto se comporta de manera distinto ante al mismo objeto.
+- Otros conceptos de POO
+	- Herencia
+		- Errores
+		la variable que va llamar la clase no puede tener el mismo nombre que la clase.A menos que sea con mayuscula la letra principal.
+	- metodos estaticos
+		M.e seria darle el atributo 
+		static metodo(){}
+		Con eso podes llamar al metodo de la clase sin cargar los parametros.
+	- metodos accesores (getters , setters )
+		- Get
+			Se utilizan para obtener un dato
+		- Setters
+			Se utilizan para modificar el dato
+		- Uso: En la moyoria de los lenguajes, los getters y setters se utilizan para acceder a propiedades privadas o en caso de javascript a datos ebcaosulados.
+		- Ej 	<!-- class Perro extends animal {
+				constructor(especie,edad,color,raza){
+					super(especie,edad,color); 
+					this.raza = null;
+				}
+				set setRaza(newName){
+					this.raza =  newName;
+				}
+				get getRaza(){
+					return this.raza;
+				}
+			}
+			const perro = new Perro ("perro", 5 ,"rojo" , "caniche");
+			perro.setRaza = "carlo" ;
+			document.write(perro.getRaza) -->
+--------------CAP4-------------------------
+
+
+- Metodos de cadenas
+	- concat () -
+		- junta dos o mas cadenas y retorna una nueva.
+			let cadena = "cadena de ";
+			let cadena2 = "prueba"
+			resultado = cadena.concat(cadena2);
+	- parseInt()
+		- Convierte el string en numero
+	- parseFloat()
+		- Convierte un string de decimales a una fracciones.
+		x = 20.2
+		parseFloat(x);  r = 20.2 en fraccion
+	- isInteger()
+		- Revisa la cadena si hay un numero entero devuelve true sino false.
+
+	- startsWith() 
+		- si una cadena comienza con los caracteres de otra cadena, devuelve true, sino devuelve false.
+			let cadena = "cadena de ";
+			let cadena2 = "cadena "
+			resultado = cadena.starWith(cadena2);
+			es true
+	- endsWith()
+		- si una cadena termina con los caracteres de otra cadena, devuelve true, no sino devuelve false.
+	- includes() 
+		- si una cadena puede encontrase dentro de otra cadena, devuelve true, sino devuelve false.
+			let cadena1 = "cadena de ";
+			let cadena2 = "prueba"
+			resultado = cadena.concat(x); x puede incluir un string o agregar una variable.
+
+	- indexOf() 
+		- Devuelve el indice del primer caracter de la cadena de la cadena, si no existe, devuelve -1 .
+			let cadena1 = "cadena de ";
+			resultado = cadena.indexOf("de") => 7 
+	- lastIndexOf()
+		- Devuelve el ultimo indice del primer caracter de la cadena, si no existe, devuelve -1 .
+		Tiene que ser el caracter entero del elemento no palabras.
+
+
+	- padStar() [prpuesta estandard]
+		- rellena la cadena al principio con los caracteres deseados 
+			let cadena = "a"
+			result = cadena.padStar(a,b)
+			a  es el total de cuantos caracteres va tener la cadena.
+			b va ser el valor que va llenar es espacio.
+	- padEnd() [propuesta ECMA]
+		- rellena la cadena al alfinal con los caracteres deseados 
+	- repeat()
+		- Sirve para repetir la cadena
+			let cadena = "123 "
+			result = cadena.repeat(2)
+			"123 123 "
+
+	- split()
+		- modifica la cadena diviendo los string en arrays.
+			let cadena1 = "Hola como estas ";
+			let resultado = cadena1.split(" ");
+			result = "Hola,como,estas,"
+			- split("x") el valor x va ser removido de la cadena y para separar a los demas string convirtiendolos en arrays.
+			document.write(resultado);
+	- substring()
+		- indica donde comienza y termina el string cortandolos.
+			let cadena1 = "ABCDFG";
+			let resultado = cadena1.substring(0,2);
+			document.write(resultado); => AB
+			- el primer parametro incluye el valor el segundo no.
+	- toLowerCase()
+		- Convierte la cadena todo en minuscula
+			let cadena1 = "ABCDFG";
+			let resultado = toLowerCase();
+	- upUpperCase()
+		- Convierte la cadena todo en mayuscula
+	- toString()
+	 - convierta la cadena en string, pero no es sencible ejemplo si multiplicas lo toma pero si los sumas lo concatena.
+	 sirve tambien para pasar un array a string
+	- trim()
+		- Quita los espacio de un string
+	- trimStart()
+		- Quita los espacios del principio
+	- trimEnd()
+		- quita los espacios del final
+	- lenght
+		document.write (cadena.length); muestra la cantidad espacio y caracteres del string
+	- valueOf() Retorna el mismo string
+
+- Metodos de arrays
+	--- Transformadores ---
+	- pop()
+		- Elimina el ultimo elemento de un array y lo devuelve.
+		let a =  b.pop() 
+	- Shift()
+		- Elimina el primer elemento de un array y los devuelve.
+	- push() 
+		- agrega un elemento al array al final de la lista.
+		let a = ["x" , "z"]
+		let b = a.push("y")
+		si mostras el eresultado de b, devuelve la cantidad de elementos en el arrays.
+	- unshift () 
+		- agrega uno o mas elementos al inicio del arrays y devuelve la nueva longitud del array.
+	- reverse() 
+		- invierte  los elementos de un arrays
+	- sort() 
+		- Ordena los elementos de unarreglo(array) localmente y devuelve el arreglo ordenado.
+		ordena numericamente y alfabeticamente.
+	- splice(a,b,c)parametros 
+		- cambia el contenido de un array eleminando elementos existentes y/o agregando nuevos elementos.
+		x = z.splice(a,b,c,c,c)
+		a inicio
+		b final
+		c elemento a gregar o no
+		se puede agregar en cualquier posicion como unshift o push x.splice(-1,0,c,c)
+
+	--- ACCESORES ---
+
+	- join(parametro) 
+		- une todos los elementos de una matriz (u objeto similar) en una cadena de texto y la devuelve.
+		- El valor de parametro va reemplazar las , del arrays separando los elementos.
+		Se puede agregar br pero sigue siendo una cadena de texto.
+	- slice()
+		- Devuelve una parte del array dentro de un nuevo array empezando por inicio hasta fin(fin no luido).+
+		slice(a,b) parametro
+		o agregar del (0,-1) es hasta el final o -2.
+
+	- includes() 
+		- Sirve para buscar un valor dentro de un array
+			const numeros = [10,20,30,40,50];
+			numeros.includes(valor a buscar  string o numero);
+
+	- some()
+		- En un array de objetos se utiliza .some
+			const deTodo = [ 
+			{ nombre: 'pedro', trabajo: 'ingeniero'}
+			{ nombre: 'Juan', trabajo: 'Programador'}];
+			cosnt variable = deTodo.some((procutor o cualquiera valor)) =>{
+				return producto.nombre === `juan`
+			} Retorna true
+		- En un array tradicional con .some
+			const deTodo = ["Hola", 10, true, "si", null, { nombre: 'Juan', trabajo: 'Programador'}, [1,2,3,4]];
+			const existe = deTodo.some( a => a === "Hola");
+			return true si lo encuentra.
+
+	- metodos ya vistos en cadenas: toString, indexOf, lastIndexOf, 
+	----De REPETICION---
+
+	- Filter() 
+		- Crea un nuevo array con todos los elementos que cumplan la condicion.
+		Es una funcion
+		let text = ["x" , "z" , "pedro", " jaun"];
+		text.filter(numero => document.write(numero + "<br>"))
+		- tambien otro uso seria decir que en la cadena del array solo mueste los elemento con mas de 4 letras.
+		r = text.filter(numero => numero.length > 4)
+		mostrara pedro , juan.
+
+
+	- forEach()
+			
+		array.forEach( (mes))
+		- Ejecuta la funcion indicada una ves por cada elemento del array.
+
+
+		
+- Objetos math - basico
+	- Se aplica
+		var = Math.metodo();
+	---METODOS--
+	- abs() Devuelve el valor absoluto en positivo.
+	- pow() potencia
+	- 
+	- sqrt() Devuelve la raiz cuadrada positiva de un numero.
+	- cbrt() 
+		- Devuelve la raiz cubica de un numero.
+	- max() 
+		- Devuelve el mayor de cero o mas numeros.
+		- Solo trabaja con numeros
+	- min()
+		- Devuelve el mas pequeño de cero o mas  numeros
+	- random() 
+		- Devuelve un numero pseudo-aleatorio entre 0 y 1
+		- Ejemplo
+	- ceil()
+		- Redondea el valor entero con decimales a hacie arriba. Ej 2.1 = 3
+	- round() 
+		- Devuelve el valor de un numero dedondeado al numero entero mas cercano
+	- fround() 
+		- Devuelve la representacion flotante de precision simple mas cercana de un numero.b
+	- floor()
+		- Devuelve el mayor entero menor que o igual a un numero.
+	- trunc() 
+		- Devuelve la parte entera del numero x,  la elimaninacion de los digitos fracionarios.
+
+	---PROPIEDADES---
+
+	- Pi 
+		- Ratio de la circuferencia de un circulo respecton a su diametro, aproximadamente 3.41159
+	- SQRT1_2 
+		- raiz cuadrada de 1/2; equivalentemente , 1 sobre la raiz.
+		- raiz cuadrada de 2. aprox 0.707
+	- SQRT2 
+		- Raiz cuadrada de 2, aproximadamente 1.414
+	- E 
+		- cosntante de Euler, la base de los logaritmos narturales, aproxmadamente.
+	- LN2 
+		- logaritmo natural de 2 , aproximadamente 0.693 
+	- LN10 
+		- logaritmo natural de 10, aproximadamente 2.303
+	- LOG2E 
+		- Logaritmo de E con base 2, aprox 1.443
+	- LOG103 
+		- Logaritmo de E con base 10, aprox 0.434
+
+	
+https://youtu.be/z95mZVUcJ-E?t=22074
+
+
+2+5+4+2
