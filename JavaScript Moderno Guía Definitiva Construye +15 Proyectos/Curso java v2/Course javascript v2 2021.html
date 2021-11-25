@@ -147,29 +147,9 @@
 		- Else es el cierre si no se cumplio con las demas condiciones.
 				else { function o aviso}
 
-- Capitulo 2
 
-- Arrays
-	- Definicion
-		Los arrays son objetos o variables que se usan para almancenar datos y aplicar un metodo de operacion de recorrido y/o mutacion.
-	- Forma de crear un arrays;
-		var = ["pera", "tomate", "etc"];
-		- para mostra elemento se seleccciona en la posicion que esta [1]
-			- documente.write (var[1])
-- Arrays asociativos
-	- Definicion
-		Es perecido ala array pero en ves de llamar por numero es por nombre de la variable guardada en el array.
-		Y se usa {}
-	- array asociativos. Se puede guardar un array dentro de otro array
-			let arrays1 = [ "cat", "dog", "bird"];
-			let arrays2 = [ "camion", "moto", arrays1 , "trailer"];
 		
-- Sintaxis y usos
-		let pc1 = {
-		nombre: "DiegoPc",
-		procesador: "intel core 9"}
-		let nombre = pc1 ["nombre"]
-		frase = `nombre de mi pc ${nombre}`
+
 
 - Bucles e Iteracion
 	- Definicion y usos
@@ -214,8 +194,6 @@
 	- Sentencia for of
 			muestra el valor de los elementos
 
-----------------CAP3-----------------------
-
 	- Sentencia label
 
 		-Se usa para saltearse todo la itreacion de un bucle.
@@ -223,171 +201,8 @@
 			variable:
 					funcion
 					contiunue or break + variable.
+---------------------------------------
 
-- Funciones
-	- Definicion y usos
-		- Son funciones con paremetros que se puede volver utilizar mientras llamemos la misma funcion agregando los valores que se va usar.
-	- Formas de crear funciones o declarar funciones y ( llamarlas)
-			Tambien se puede crear funciones de 2 formas
-			- function variable (){};
-			or
-			- const variable = function(){};
-		- llamar la funcion seria
-			- variable()
-	- Return
-	  - Es un valor quen retorna despues de finalizar la funcion.
-	  	El x puede ser un valor cualquiera pero lo va devoler a al variable que ejectuo la funcion.
-	  		Ej
-	  			- function variable (){
-	  			( la funcion x)
-	  			return x};
-	- Parametros
-		- function (parametros){ funcion};
-	- Scope
-		Scope dentro de las funciones siempre poner let con alcance regional a la funcion, si no pase  a ser var global y afecteria las demas funciones.
-	- Funciones flechas
-		La funciones flechas son los mimsmo que function solo a modo de abreviacion
-			Tiene varios modos de abreviacion
-				const variable = (paremetro)=>{funcion;
-			Se puede usar sin parentesis si es una funcion y tambien no usar llaves si la funcion es solo 1.
-				const variable = parametro => funcion;
-
-- Objeto literal / Como crear un objeto, modificar, acceder y manipular.
-	const objeto  = {
-		a: "abc",
-		p: 300,
-		s: 20,
-	}
-	- Para acceder a las variable de un objeto existen 2 formas.
-		- console.log(objeto.a);
-		- console.log(objeto[`a`]);
-	- agregar variable o eliminar variable dentro de un objeto
-		- agregar
-			- producto.img = "imagen.jpg";
-		- Eleminar 
-			- delete objeto.s;
-	- Destructuring de Objetos
-		- extraer la variable dentro del Objeto
-		- const { a } = objeto;
-		- const { p } = objeto;
-		or
-		- const { a , p } = objeto;
-	- Problemas con los objetos
-		- La funcion "use strict";
-			Hace que las variables declaradas sin var let o const no se inicion por malas practicas.
-	- Object.freeze(objeto);
-		- Congelar un Objeto similar a const para que nose puede modificar el objeto por dentro.
-		- Para identificar sin un objeto es ta congelo es con.
-			- Objecto,isFronzen(objeto) ;  resultado true o fasle.
-	- Object.seal(objeto);
-		- Lo que hace es que no se pueden agregar ni eliminar propiedades. Pero si modificar las existentens.
-		- Corroborar objeto isSeal(objeto); true or false;
-	- const variable1 = Object.assign(objeto1,objeto2);
-		- Une 2 objetos
-	- const variable1 = { ...objeto, ...objeto2 } 
-		- lo que hace ... es copiar un objeto y pasarlo a una variable.
-	- this.variable
-		- this es una palabra reservada de javascript que permite acceder solo a los datos que estan dentro del objeto
-	-Interadores de objetos.
-		- Object.keys(objeto);
-			- Retorna las llaves de un array
-			- Se usa si si la base de datos tiene o no informacion.
-		- objectco.values(ojbeto);
-			- retorna los valores del array
-		- objectco.entries(objeto);
-			- retorna la llave y valor
-	
-
-- POO Programacion orientados a objetos
-	- Definicio  y usos
-	 La poo sirve para solucionar problemas y de una mejor forma de optimizarlo.
-
-	- Ejemplos
-
-
-- Conceptos basicos de Poo
-	- Clase 
-		Es es la creacion de los objetos y eso hace que se defina una clase
-	- Objeto
-		Es lo que define una clase.
-		Cuando se trabaja con objetos siempre usar const en ves de let
-		- Llamado consol.log(x);
-	- Atributo
-		Son las caracteristicas que tiene el objeto
-	- Metodo
-		Son las acciones que puede hacer el objeto
-	- Constructor
-		Es una particularidada que tienen la clases que es una funcion obligatoria.
-		Que permite contruir propiedades del objeto
-	-  Instanciacion
-		La clase estara instanciado cuando tenga todos los elementos aplicados.
-		Forma de corroborar si la clase si se instancio usar consolo.log(clase instanciada del const)
-	- Errores comunes:
-		No crear funcion this.var =  afuera del un contructor
-		
-		No aplicar const y tampoco usar funciones flechas para crear metodos en las clases.
-	- Ejemplo
-
-<!-- 			class animal {
-					constructor(especie,edad,color){
-						this.especie = especie ; 
-						this.edad = edad ; 
-						this.color = color;
-						this.info = `Soy ${this.especie}, tengo ${this.edad}
-						años y soy de color ${this.color}`;
-					}
-					verInfo() {
-						document.write(this.info + "<br>")
-					}
-					}
-
-				const perro = new animal("perro", 5 ,"rojo");
-				const gato = new animal ("gato", 2 , "negro");
-				const bird = new animal ("bird", 5 , "brown");
-				perro.verInfo();
-				gato.verInfo();
-				bird.verInfo();
- -->
-
-- Caracteristicas de la POO
-	- Abstraccion
-		Es tratar de reducir las caracteristicas de la funcion a algo optimo y funcional
-	- Modularidad
-		Seria organizar las tareas por partes en ves de hacerlo todo en uno.
-	- Encapsulamiento
-		Se trata de encriptar los datos, para que no se puede acceder de otra forma.
-	- Polimorfismo
-		Cosiste en ver como un objeto se comporta de manera distinto ante al mismo objeto.
-- Otros conceptos de POO
-	- Herencia
-		- Errores
-		la variable que va llamar la clase no puede tener el mismo nombre que la clase.A menos que sea con mayuscula la letra principal.
-	- metodos estaticos
-		M.e seria darle el atributo 
-		static metodo(){}
-		Con eso podes llamar al metodo de la clase sin cargar los parametros.
-	- metodos accesores (getters , setters )
-		- Get
-			Se utilizan para obtener un dato
-		- Setters
-			Se utilizan para modificar el dato
-		- Uso: En la moyoria de los lenguajes, los getters y setters se utilizan para acceder a propiedades privadas o en caso de javascript a datos ebcaosulados.
-		- Ej 	<!-- class Perro extends animal {
-				constructor(especie,edad,color,raza){
-					super(especie,edad,color); 
-					this.raza = null;
-				}
-				set setRaza(newName){
-					this.raza =  newName;
-				}
-				get getRaza(){
-					return this.raza;
-				}
-			}
-			const perro = new Perro ("perro", 5 ,"rojo" , "caniche");
-			perro.setRaza = "carlo" ;
-			document.write(perro.getRaza) -->
---------------CAP4-------------------------
 
 
 - Metodos de cadenas
@@ -473,8 +288,178 @@
 	- lenght
 		document.write (cadena.length); muestra la cantidad espacio y caracteres del string
 	- valueOf() Retorna el mismo string
+	
+-----------------------------------------
 
+- Objeto literal / Como crear un objeto, modificar, acceder y manipular.
+
+	const objeto  = {
+		a: "abc",
+		p: 300,
+		s: 20,
+	}
+	
+	- Para acceder a las variable de un objeto existen 2 formas.
+		- console.log(objeto.a);
+		- console.log(objeto[`a`]);
+	- agregar variable o eliminar variable dentro de un objeto
+		- agregar
+			- producto.img = "imagen.jpg";
+		- Eleminar 
+			- delete objeto.s;
+	- Destructuring de Objetos
+		- extraer la variable dentro del Objeto
+		- const { a } = objeto;
+		- const { p } = objeto;
+		or
+		- const { a , p } = objeto;
+	- Problemas con los objetos
+		- La funcion "use strict";
+			Hace que las variables declaradas sin var let o const no se inicion por malas practicas.
+	- Object.freeze(objeto);
+		- Congelar un Objeto similar a const para que nose puede modificar el objeto por dentro.
+		- Para identificar sin un objeto es ta congelo es con.
+			- Objecto,isFronzen(objeto) ;  resultado true o fasle.
+	- Object.seal(objeto);
+		- Lo que hace es que no se pueden agregar ni eliminar propiedades. Pero si modificar las existentens.
+		- Corroborar objeto isSeal(objeto); true or false;
+	- const variable1 = Object.assign(objeto1,objeto2);
+		- Une 2 objetos
+	- const variable1 = { ...objeto, ...objeto2 } 
+		- lo que hace ... es copiar un objeto y pasarlo a una variable.
+	- this.variable
+		- this es una palabra reservada de javascript que permite acceder solo a los datos que estan dentro del objeto
+	-Interadores de objetos.
+		- Object.keys(objeto);
+			- Retorna las llaves de un array
+			- Se usa si si la base de datos tiene o no informacion.
+		- objectco.values(ojbeto);
+			- retorna los valores del array
+		- objectco.entries(objeto);
+			- retorna la llave y valor
+
+---------------------------------
+
+- Arrays
+	- Definicion
+		Los arrays son objetos o variables que se usan para almancenar datos y aplicar un metodo de operacion de recorrido y/o mutacion, y modificar sus datos
+		si se crean con const.
+	- Forma de crear un arrays;
+		var = ["pera", "tomate", "etc"];
+		- para mostra elemento se seleccciona en la posicion que esta [1]
+			- documente.write (var[1])
+- Arrays asociativos
+	- Definicion
+		En ves de usar inde de la posicion para ubicar el objeto se usa el nombre del objeto.
+
+	- array asociativos. Se puede guardar un array dentro de otro array
+			let arrays1 = [ "cat", "dog", "bird"];
+			let arrays2 = [ "camion", "moto", arrays1 , "trailer"];
+
+	- Sintaxis y usos
+			let pc1 = {
+				nombre: "DiegoPc",
+				procesador: "intel core 9"}
+			let nombre = pc1 ["nombre"]
+			frase = `nombre de mi pc ${nombre}`
+
+- Formas de declarar los arrays
+	- Forma imperativa
+		- Se usa los metodos tradicionales.
+	- Forma declarativa  no modifica el arrays si que lo copia y lo apila. Pero no estan claro pero se usa.
+
+		const carrito = [];
+		const producto = {
+			nombre: 'Monitor 20 Pulgadas', 
+			precio: 500}
+		const producto2 = {
+			nombre: 'Celular', 
+			precio: 500	}
+		const producto3 =  { 
+			nombre: 'Teclado', 
+			precio: 50}
+		let resultado = [...carrito, producto];
+		resultado = [...resultado, producto2];
+		// Para añadir al inicio...
+		resultado = [producto3, ...resultado];
+		console.log(resultado);
+	- Destructuring , extraer elementos de un array
+		
+		const num =   [10,20,30,40,50];
+		// para extraer valores de una posicion de un elemeneto se debe empezar con comas ","
+		
+		const [ primero ,segundo,tecero] = num ;
+		or si aplicaas ...tercero mostrara todo el array empezando por el la posicion dada.
+		console.log(tercero);
+
+
+	- forEach forma de recorrer un arrays comparadon con un for de forma tradicional.
+			const carrito = [
+				{ nombre: 'Monitor 20 Pulgadas', precio: 500},
+				{ nombre: 'Televisión 50 Pulgadas', precio: 700},]
+		// Recorrer un arreglo de la forma tradicional y mostrar su contenido...
+				for(let i = 0; i < carrito.length; i++ ){
+				console.log( `Articulo: ${ carrito[i].nombre } Precio: $ ${carrito[i].precio} ` )}
+					
+		// ForEach
+			la variable producto puede ser  cualquier nombre
+			carrito.forEach( function(producto) {
+				console.log( `Articulo: ${ producto.nombre } Precio: $ producto.precio} ` )
+			})
+	- Diferencias forEach y map 
+		- La diferencia es que map te crea un array nuevo y forEach no. Aparte si retronas el valor con forEach sera indefinido.
+			const nuevoArray = carrito.map( function(producto) {
+				return  `Articulo: ${ producto.nombre } Precio: $ producto.precio} `;})
+			const nuevoArray2 = carrito.forEach( function(producto) {
+				return  `Articulo: ${ producto.nombre } Precio: $ producto.precio} `;})
+			console.log(nuevoArray);
+			console.log(nuevoArray2);
+- Funciones
+	- Definicion y usos
+		- Son funciones con paremetros que se puede volver utilizar mientras llamemos la misma funcion agregando los valores que se va usar.
+	- Formas de crear funciones y declarar funciones 
+		- Existe 2 formas de crear funciones  y otra mas pero es un metodo.
+			- Declaraacion de funcion
+				- function variable (){ metodo };
+			- Expresion de funcion
+				- const variable = function(){ metodo};
+	- Errores comunes en llamar una funcion
+		- En las 2 formas de crear funciones. Cuando iteramos una funcion y luego creamos una funcion en funcion declarativa va ejecutarse pero en funcion expresiva va dar error porque por el hosting
+		hosting : hace 2 recorridos en una pagina primero escanea todos l
+- Inicializar la funcion seria
+			- variable()
+	- Return
+		- Es un valor quen retorna despues de finalizar la funcion.
+			El x puede ser un valor cualquiera pero lo va devoler a al variable que ejectuo la funcion.
+				Ej
+					- function variable (){
+					( la funcion x)
+					return x};
+	- Parametros
+		- function (parametros){ funcion};
+	- Scope
+		Scope dentro de las funciones siempre poner let con alcance regional a la funcion, si no pase  a ser var global y afecteria las demas funciones.
+	- Funciones flechas
+		La funciones flechas son los mimsmo que function solo a modo de abreviacion
+			Tiene varios modos de abreviacion
+				const variable = (paremetro)=>{funcion;
+			Se puede usar sin parentesis si es una funcion y tambien no usar llaves si la funcion es solo 1.
+				const variable = parametro => funcion;
+
+		
+			
+
+
+
+
+
+
+
+
+
+			
 - Metodos de arrays
+	-
 	--- Transformadores ---
 	- pop()
 		- Elimina el ultimo elemento de un array y lo devuelve.
@@ -495,6 +480,7 @@
 		ordena numericamente y alfabeticamente.
 	- splice(a,b,c)parametros 
 		- cambia el contenido de un array eleminando elementos existentes y/o agregando nuevos elementos.
+		let x = [["x" , "z"] ,["p" , "d"]]
 		x = z.splice(a,b,c,c,c)
 		a inicio
 		b final
@@ -599,8 +585,97 @@
 	- LOG103 
 		- Logaritmo de E con base 10, aprox 0.434
 
+---------------------------------------------------
+
+
 	
-https://youtu.be/z95mZVUcJ-E?t=22074
+
+- POO Programacion orientados a objetos
+	- Definicio  y usos
+	 La poo sirve para solucionar problemas y de una mejor forma de optimizarlo.
+
+	- Ejemplos
 
 
-2+5+4+2
+- Conceptos basicos de Poo
+	- Clase 
+		Es es la creacion de los objetos y eso hace que se defina una clase
+	- Objeto
+		Es lo que define una clase.
+		Cuando se trabaja con objetos siempre usar const en ves de let
+		- Llamado consol.log(x);
+	- Atributo
+		Son las caracteristicas que tiene el objeto
+	- Metodo
+		Son las acciones que puede hacer el objeto
+	- Constructor
+		Es una particularidada que tienen la clases que es una funcion obligatoria.
+		Que permite contruir propiedades del objeto
+	-  Instanciacion
+		La clase estara instanciado cuando tenga todos los elementos aplicados.
+		Forma de corroborar si la clase si se instancio usar consolo.log(clase instanciada del const)
+	- Errores comunes:
+		No crear funcion this.var =  afuera del un contructor
+		
+		No aplicar const y tampoco usar funciones flechas para crear metodos en las clases.
+	- Ejemplo
+
+<!-- 			class animal {
+					constructor(especie,edad,color){
+						this.especie = especie ; 
+						this.edad = edad ; 
+						this.color = color;
+						this.info = `Soy ${this.especie}, tengo ${this.edad}
+						años y soy de color ${this.color}`;
+					}
+					verInfo() {
+						document.write(this.info + "<br>")
+					}
+					}
+
+				const perro = new animal("perro", 5 ,"rojo");
+				const gato = new animal ("gato", 2 , "negro");
+				const bird = new animal ("bird", 5 , "brown");
+				perro.verInfo();
+				gato.verInfo();
+				bird.verInfo();
+ -->
+
+- Caracteristicas de la POO
+	- Abstraccion
+		Es tratar de reducir las caracteristicas de la funcion a algo optimo y funcional
+	- Modularidad
+		Seria organizar las tareas por partes en ves de hacerlo todo en uno.
+	- Encapsulamiento
+		Se trata de encriptar los datos, para que no se puede acceder de otra forma.
+	- Polimorfismo
+		Cosiste en ver como un objeto se comporta de manera distinto ante al mismo objeto.
+- Otros conceptos de POO
+	- Herencia
+		- Errores
+		la variable que va llamar la clase no puede tener el mismo nombre que la clase.A menos que sea con mayuscula la letra principal.
+	- metodos estaticos
+		M.e seria darle el atributo 
+		static metodo(){}
+		Con eso podes llamar al metodo de la clase sin cargar los parametros.
+	- metodos accesores (getters , setters )
+		- Get
+			Se utilizan para obtener un dato
+		- Setters
+			Se utilizan para modificar el dato
+		- Uso: En la moyoria de los lenguajes, los getters y setters se utilizan para acceder a propiedades privadas o en caso de javascript a datos ebcaosulados.
+		- Ej 	<!-- class Perro extends animal {
+				constructor(especie,edad,color,raza){
+					super(especie,edad,color); 
+					this.raza = null;
+				}
+				set setRaza(newName){
+					this.raza =  newName;
+				}
+				get getRaza(){
+					return this.raza;
+				}
+			}
+			const perro = new Perro ("perro", 5 ,"rojo" , "caniche");
+			perro.setRaza = "carlo" ;
+			document.write(perro.getRaza) -->
