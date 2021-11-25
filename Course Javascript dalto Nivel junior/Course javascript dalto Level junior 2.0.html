@@ -14,9 +14,16 @@
 --CAP1
 
 - Variable
-		Una variable es el valor que tiene el contenedor.
-	- Concepto (img)
-	- Ejemplo
+	- Caracteristicas de una variable.
+		- inicializar un variable con un valor;
+		- se puede reasignar y inicializar sin valor y asignarlo despues.
+		var variable;
+		- Tambien se puede usar multiples variables.
+			var a = b,
+				c = c,;
+		- Las var no pueden iniciar con numeros pero si con guin bajo y numero
+			_01
+		
 	- Tipos de datos:
 		- String = "cadena de texto"  // Cadena de texto
 		- number = "solo numero"
@@ -71,7 +78,7 @@
 
 	- Operadores Aritmeticos
 		- Los op.a toman  valores numericos (ya sean literales o variables) como sus operandos y retornan un valor numericos "unico".
-			Ej:
+			Ej: incrementar o decrementar
 					n1= 10; or
 					n1++ ; 
 					r = n1; or r= n1++ ; or r = n1+n2 ;
@@ -245,6 +252,52 @@
 			Se puede usar sin parentesis si es una funcion y tambien no usar llaves si la funcion es solo 1.
 				const variable = parametro => funcion;
 
+- Objeto literal / Como crear un objeto, modificar, acceder y manipular.
+	const objeto  = {
+		a: "abc",
+		p: 300,
+		s: 20,
+	}
+	- Para acceder a las variable de un objeto existen 2 formas.
+		- console.log(objeto.a);
+		- console.log(objeto[`a`]);
+	- agregar variable o eliminar variable dentro de un objeto
+		- agregar
+			- producto.img = "imagen.jpg";
+		- Eleminar 
+			- delete objeto.s;
+	- Destructuring de Objetos
+		- extraer la variable dentro del Objeto
+		- const { a } = objeto;
+		- const { p } = objeto;
+		or
+		- const { a , p } = objeto;
+	- Problemas con los objetos
+		- La funcion "use strict";
+			Hace que las variables declaradas sin var let o const no se inicion por malas practicas.
+	- Object.freeze(objeto);
+		- Congelar un Objeto similar a const para que nose puede modificar el objeto por dentro.
+		- Para identificar sin un objeto es ta congelo es con.
+			- Objecto,isFronzen(objeto) ;  resultado true o fasle.
+	- Object.seal(objeto);
+		- Lo que hace es que no se pueden agregar ni eliminar propiedades. Pero si modificar las existentens.
+		- Corroborar objeto isSeal(objeto); true or false;
+	- const variable1 = Object.assign(objeto1,objeto2);
+		- Une 2 objetos
+	- const variable1 = { ...objeto, ...objeto2 } 
+		- lo que hace ... es copiar un objeto y pasarlo a una variable.
+	- this.variable
+		- this es una palabra reservada de javascript que permite acceder solo a los datos que estan dentro del objeto
+	-Interadores de objetos.
+		- Object.keys(objeto);
+			- Retorna las llaves de un array
+			- Se usa si si la base de datos tiene o no informacion.
+		- objectco.values(ojbeto);
+			- retorna los valores del array
+		- objectco.entries(objeto);
+			- retorna la llave y valor
+	
+
 - POO Programacion orientados a objetos
 	- Definicio  y usos
 	 La poo sirve para solucionar problemas y de una mejor forma de optimizarlo.
@@ -258,6 +311,7 @@
 	- Objeto
 		Es lo que define una clase.
 		Cuando se trabaja con objetos siempre usar const en ves de let
+		- Llamado consol.log(x);
 	- Atributo
 		Son las caracteristicas que tiene el objeto
 	- Metodo
@@ -342,6 +396,14 @@
 			let cadena = "cadena de ";
 			let cadena2 = "prueba"
 			resultado = cadena.concat(cadena2);
+	- parseInt()
+		- Convierte el string en numero
+	- parseFloat()
+		- Convierte un string de decimales a una fracciones.
+		x = 20.2
+		parseFloat(x);  r = 20.2 en fraccion
+	- isInteger()
+		- Revisa la cadena si hay un numero entero devuelve true sino false.
 
 	- startsWith() 
 		- si una cadena comienza con los caracteres de otra cadena, devuelve true, sino devuelve false.
@@ -449,9 +511,27 @@
 		- Devuelve una parte del array dentro de un nuevo array empezando por inicio hasta fin(fin no luido).+
 		slice(a,b) parametro
 		o agregar del (0,-1) es hasta el final o -2.
-	- metodos ya vistos en cadenas: toString(, indexOf, lastIndexOf, includes
 
-	----De REPEICION---
+	- includes() 
+		- Sirve para buscar un valor dentro de un array
+			const numeros = [10,20,30,40,50];
+			numeros.includes(valor a buscar  string o numero);
+
+	- some()
+		- En un array de objetos se utiliza .some
+			const deTodo = [ 
+			{ nombre: 'pedro', trabajo: 'ingeniero'}
+			{ nombre: 'Juan', trabajo: 'Programador'}];
+			cosnt variable = deTodo.some((procutor o cualquiera valor)) =>{
+				return producto.nombre === `juan`
+			} Retorna true
+		- En un array tradicional con .some
+			const deTodo = ["Hola", 10, true, "si", null, { nombre: 'Juan', trabajo: 'Programador'}, [1,2,3,4]];
+			const existe = deTodo.some( a => a === "Hola");
+			return true si lo encuentra.
+
+	- metodos ya vistos en cadenas: toString, indexOf, lastIndexOf, 
+	----De REPETICION---
 
 	- Filter() 
 		- Crea un nuevo array con todos los elementos que cumplan la condicion.
@@ -464,12 +544,19 @@
 
 
 	- forEach()
+			
+		array.forEach( (mes))
 		- Ejecuta la funcion indicada una ves por cada elemento del array.
+
+
+		
 - Objetos math - basico
 	- Se aplica
 		var = Math.metodo();
 	---METODOS--
-
+	- abs() Devuelve el valor absoluto en positivo.
+	- pow() potencia
+	- 
 	- sqrt() Devuelve la raiz cuadrada positiva de un numero.
 	- cbrt() 
 		- Devuelve la raiz cubica de un numero.
@@ -481,7 +568,8 @@
 	- random() 
 		- Devuelve un numero pseudo-aleatorio entre 0 y 1
 		- Ejemplo
-
+	- ceil()
+		- Redondea el valor entero con decimales a hacie arriba. Ej 2.1 = 3
 	- round() 
 		- Devuelve el valor de un numero dedondeado al numero entero mas cercano
 	- fround() 
