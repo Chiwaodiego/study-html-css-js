@@ -65,24 +65,6 @@
 		Operador que contiene la variable introducida.
 
 
-- Operadores en javaScript
-
-	- Operadores de asignacion
-		- Un op.asig asigna un valor al operando de la izquierda basado en el valor del operando de la derecha.
-		 + - % * /
-		  Abreviacion y completo
-		  Igual para lo demas operadores
-		 x+=y  es igual a  x = x+y
-
-		 And , or , xor
-
-	- Operadores Aritmeticos
-		- Los op.a toman  valores numericos (ya sean literales o variables) como sus operandos y retornan un valor numericos "unico".
-			Ej: incrementar o decrementar
-					n1= 10; or
-					n1++ ; 
-					r = n1; or r= n1++ ; or r = n1+n2 ;
-					alert(r) = 11
 
 - Concatenacion
 	- Definicion
@@ -91,7 +73,10 @@
 	- Para numeros forzamos string ( "" + 9 + 4)
 	- Con concat
 		- Para utilizar concat tiene que haver un string
-			n1; "dias3" ; n2 = dias ; frase= n1.concat (n2); document.write (dias3dias)
+			n1; "dias3" ; 
+			n2 = dias ; 
+			frase= n1.concat (n2); 
+			document.write (dias3dias)
 
 	- Con backtiks `` y variables entre ${}
 
@@ -102,27 +87,6 @@
 	- Batickticks y escape
 		- Se usa `` para cierre y al = que comillas dobles, se debe aplicar 1 solo para cada cierre pero sepuede usar dentro de cada uno.
 
-- Operadores (intermedios)
-
-	- Operadores de comparacion
-		- Los "o.c" comparan dos expresiones y devuelven un valor "boolean" que representa la "relacion" de sus valores
-			- ingualdad		a==b
-			- ingualdad 	a != b
-			- igualdad stricto si los 2 valores son el mismo texto		 a === b ;true / 23 === "23" ; false
-			- non-identify si los 2 valores son el mismo pero en dato "no" es true		a !== b; false / b !== "b" ; true
-			- mayor o menor o igual 
-					Se aplica de esta manera
-					mayor o igual >=
-					menor o igual <= 
-
-
-	- Operadores logicos
-		- Los op.l nos devuelve un resultado a partir de que se cumpla (o no) una "condicion", su resultado es "booleano", sus opreandos son valores logicos o asimilables a ellos.
-				and = &&
-				or = ||
-				not =  !var
-						- Not invierte el resultado true a false o f a v.
-
 
 - Camel case
 	- Defenicion
@@ -132,85 +96,24 @@
 		var1 =  (var1); convierte el texto a entero
 	Ej
 
-- Condicionales
-	- Definicio y usos 
-
-	- If
-		- If se activa si el resultado es verdadero
-				if (true){
-				funcion }
-	- Else if
-		 Es otra condicion si no se cumple con if
-		 		else if (true){
-				funcion }
-	- Else
-		- Else es el cierre si no se cumplio con las demas condiciones.
-				else { function o aviso}
-
-
-		
-
-
-- Bucles e Iteracion
-	- Definicion y usos
-
-		-   
-	- Sentencia while
-			- Es parecido  un if pero con bucle
-	- Sentencia do while
-			La funcion do while
-				Do {Primero ejecuta el codigo}
-						Y luego pregunta si la funcion es true
-				while { verifica el do}
-				Primero ejecuta y luego pregunta.
-	- Sentencia for
-		- For se compone por 3 partes
-			- declaramos
-			- inicializamos
-				-Condicion
-				- aumento y decremento
-			- iteramos (repetir)+
-				for( valorde la variable ; vueltas a recorer; i aumentara+1 )
-			for (let i = 0 ; i >= 6 ; i++){ document.write (i + "<br>")}
-
-
-	- Sentencia break
-			- Break sirve para finalizar la funcion
-
-	- Sentencia continue
-			- Sirve para conitinuar el bucle de la funcion.
-					for (let i = 0 ; i <= 6 ; i++){
-						if (i == 3) {
-							continue;
-						}
-							document.write (i + "<br>")
-						
-					};						
-			Para usar este atributo se debe aplicar otra funcion dentro de la misma.
-
-	- Sentencia for in
-			Muestra el indice de los elementos en un arrays
-
-	- Sentencia for of
-			muestra el valor de los elementos
-
-	- Sentencia label
-
-		-Se usa para saltearse todo la itreacion de un bucle.
-			Se usa continue or brak + variable cualquiera y otra misma variable vacia a fuera de la funcion para realizar este procedimento.
-			variable:
-					funcion
-					contiunue or break + variable.
----------------------------------------
-
-
-
 - Metodos de cadenas
 	- concat () -
-		- junta dos o mas cadenas y retorna una nueva.
-			let cadena = "cadena de ";
-			let cadena2 = "prueba"
-			resultado = cadena.concat(cadena2);
+		- Une 2 o mas arrays y retorna una nueva.
+
+		const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'];
+		const meses2 = ['Julio', 'Agosto', 'Septiembre'];
+		const meses3 = ['Octubre', 'Noviembre', 'Diciembre'];
+		
+		const meses4 = meses.concat(meses2,meses3);
+		console.log(meses4);
+
+		// Existe otra forma... que es con rest operator o spread operator..
+		
+
+	- Spread operator
+		Crea un nuevo array y agrega otros arrays que son copias sin modificar el arrays originales.
+			const meses4 = [...meses,...meses2 ]; // Tienes que asegurarte de que sean arrays cuando usas ...  'Otro mes'
+			console.log(meses4)
 	- parseInt()
 		- Convierte el string en numero
 	- parseFloat()
@@ -367,7 +270,7 @@
 	- Forma imperativa
 		- Se usa los metodos tradicionales.
 	- Forma declarativa  no modifica el arrays si que lo copia y lo apila. Pero no estan claro pero se usa.
-
+<!-- 
 		const carrito = [];
 		const producto = {
 			nombre: 'Monitor 20 Pulgadas', 
@@ -382,7 +285,7 @@
 		resultado = [...resultado, producto2];
 		// Para añadir al inicio...
 		resultado = [producto3, ...resultado];
-		console.log(resultado);
+		console.log(resultado); -->
 	- Destructuring , extraer elementos de un array
 		
 		const num =   [10,20,30,40,50];
@@ -394,26 +297,27 @@
 
 
 	- forEach forma de recorrer un arrays comparadon con un for de forma tradicional.
-			const carrito = [
+			<!-- const carrito = [
 				{ nombre: 'Monitor 20 Pulgadas', precio: 500},
-				{ nombre: 'Televisión 50 Pulgadas', precio: 700},]
+				{ nombre: 'Televisión 50 Pulgadas', precio: 700},] -->
 		// Recorrer un arreglo de la forma tradicional y mostrar su contenido...
-				for(let i = 0; i < carrito.length; i++ ){
-				console.log( `Articulo: ${ carrito[i].nombre } Precio: $ ${carrito[i].precio} ` )}
+				<!-- for(let i = 0; i < carrito.length; i++ ){
+				console.log( `Articulo: ${ carrito[i].nombre } Precio: $ ${carrito[i].precio} ` )} -->
 					
 		// ForEach
-			la variable producto puede ser  cualquier nombre
+			<!-- la variable producto puede ser  cualquier nombre
 			carrito.forEach( function(producto) {
 				console.log( `Articulo: ${ producto.nombre } Precio: $ producto.precio} ` )
-			})
+			}) -->
 	- Diferencias forEach y map 
 		- La diferencia es que map te crea un array nuevo y forEach no. Aparte si retronas el valor con forEach sera indefinido.
-			const nuevoArray = carrito.map( function(producto) {
+			<!-- const nuevoArray = carrito.map( function(producto) {
 				return  `Articulo: ${ producto.nombre } Precio: $ producto.precio} `;})
+
 			const nuevoArray2 = carrito.forEach( function(producto) {
 				return  `Articulo: ${ producto.nombre } Precio: $ producto.precio} `;})
 			console.log(nuevoArray);
-			console.log(nuevoArray2);
+			console.log(nuevoArray2); -->
 - Funciones
 	- Definicion y usos
 		- Son funciones con paremetros que se puede volver utilizar mientras llamemos la misma funcion agregando los valores que se va usar.
@@ -423,42 +327,252 @@
 				- function variable (){ metodo };
 			- Expresion de funcion
 				- const variable = function(){ metodo};
-	- Errores comunes en llamar una funcion
-		- En las 2 formas de crear funciones. Cuando iteramos una funcion y luego creamos una funcion en funcion declarativa va ejecutarse pero en funcion expresiva va dar error porque por el hosting
-		hosting : hace 2 recorridos en una pagina primero escanea todos l
-- Inicializar la funcion seria
-			- variable()
+	
+	- Inicializar la funcion seria
+				- variable()
+
+	- Funciones nativas de javascript
+		- Existen mas de 4000 funciones.
+	- Diferencias entre funciones y Metodos
+			<!-- const numero1 = 20;
+			const numero2 = "20"; -->
+		// Aunque en realidad terminan siendo practicamente lo mismo, la forma en que se utilizan tiene que ver más que nada en el contexto que son utilizadas..
+			<!-- console.log( parseInt(numero2) ); // Esto es una función
+			console.log( numero1.toString()); // Esto es un método -->
+		// Puedes ver que mientras la función toma el valor en el parentesis, el método añade un punto seguido del nombre, esa seria la diferencia
+		
+	- #IMPORTANTE#
+		- Errores comunes en llamar una funcion (asnwer work)
+			- En las 2 formas de crear funciones. Cuando iteramos una funcion y luego creamos una funcion en funcion declarativa va ejecutarse pero en funcion expresiva va dar error porque por el hosting
+			- hosting : hace 2 recorridos en una pagina primero escanea todos los llamados y luegos ejecuta las fuciones y metodos.
+
+	
+	- Parametros y argumentos de una funcion
+		Ej:
+<!-- 
+			function variable (parametros){ funcion};
+			variable(); llamado
+
+			function saludar(nombre, apellido) {funcion }
+			console.log( `Hola ${nombre}  ${apellido} ` );
+			saludar("juan", "chi") -->
+		- Los parametros se pueden poner cualquiera nombre, en funcion al proposito de la funcion.
+
+	- Parametros por default
+		- Cuando se llama una funcion y no se pasa los parametros, se le puede agregar valores por default.
+		En los parametros agregar otro valor = poner otro valor que quieres que aparesca. 
+		<!-- (parametro = "var x default")
+
+		function saludar(nombre = 'Desconocido', apellido = '') {
+			console.log( `Hola ${nombre}  ${apellido} ` );
+		} -->
+	- Como se comunican las funciones entre si...
+
+		Tus funciones se van a comunicar, en lugar de tener una gran función con 800 lineas es recomendable dividirla en pequeñas partes, realizan una operación y se van hacia la otra función...
+<!-- 		
+		iniciarApp();
+		function iniciarApp() {
+			console.log('Iniciando App...');
+			segundaFuncion();}
+		function segundaFuncion() {
+			console.log('Desde la segunda función...')
+			usuarioAutenticado('Pablo');}
+		function usuarioAutenticado(usuario) {
+			console.log('Autenticando usuario...');
+			console.log(`Usuario autenticado con éxito ${usuario} `) -->
 	- Return
-		- Es un valor quen retorna despues de finalizar la funcion.
-			El x puede ser un valor cualquiera pero lo va devoler a al variable que ejectuo la funcion.
-				Ej
-					- function variable (){
-					( la funcion x)
-					return x};
-	- Parametros
-		- function (parametros){ funcion};
+		- Es un valor que retorna despues de finalizar la funcion.
+			- Ej avanzado
+				<!-- let total = 0;
+				function agregarCarrito(precio) {return total += precio;}
+				function calcularImpuesto(total) {return 1.15 * total;}
+				total = agregarCarrito(200);
+				total = agregarCarrito(300);
+				total = agregarCarrito(400);
+				console.log(total);
+				const totalPagar = calcularImpuesto(total);
+				console.log(`El total a pagar es de ${totalPagar}`); -->
+	- métodos de propiedad
+		- son funciones con una sintaxis similar a las de un método..
+		<!-- const reproductor = {
+			reproducir: function(id) {
+				console.log(`Reproduciendo canción id ${id}`);},
+			pausar: function() {
+				console.log('pausando...');},}
+			reproductor.reproducir(30);
+			reproductor.pausar();
+
+			// Tambien los métodos pueden quedarse por fuera
+			reproductor.borrar = function(id) {// }
+			reproductor.borrar(20); -->
+	- Funciones flechas
+				<!-- const aprendiendo = function() {
+					console.log('Aprendiendo JavaScript');}
+				const aprendiendo = () =>  {
+					console.log('Aprendiendo JavaScript');}
+
+				// una linea no requiere llaves
+				const aprendiendo = () => console.log('Aprendiendo JavaScript');	
+
+				// retornar un valor
+				const aprendiendo = () => 'Aprendiendo JavaScript';
+
+				// si es solo 1 parametro se puede quitar los parentesis
+				const aprendiendo = parametro => 'Aprendiendo JavaScript';
+
+				console.log(aprendiendo()); -->
+
+- Condicionales
+	- Definicio y usos 
+
+	- If
+		- If se activa si el resultado es verdadero
+				if (true){funcion }
+		- Detener una funcion if con return, aplicando 2 if en una funcion y poniendo return al final de los if par aque no sigan ejecutando el 2segundo if.
+				function var (){ 
+					if(condicion1){ resultado; return;}
+					if(condicion2){ resultado; return;}}
+			
+	- Else if
+		Es otra condicion si no se cumple con if
+				else if (true){funcion }
+	- Else
+		- Else es el cierre si no se cumplio con las demas condiciones.
+				else { function o aviso}
+	- Switch 
+		- Es una condidcion que sirve para revisar multiples condiciones, pero en diferencias con if no podria comparar si el valor estrictamente exacto.
+		Ej.
+		<!-- const metodoPago = 'efectivo';
+
+			switch(metodoPago) {
+				case 'efectivo':
+					console.log(`Pagaste con ${metodoPago}`);
+					break;
+				case 'cheque':
+					console.log(`Pagaste con ${metodoPago} revisaremos que tenga fondos primero`);
+					break;
+				default:
+					console.log('Aún no has pagado');
+					break; }  -->
+	- Ternario anidado...
+		console.log( autenticado  ?  puedePagar ? 'Si puede pagar' : 'esta autenticado pero no puede pgar' : 'No esta autenticado');
+
+- Operadores en javaScript
+
+	- Operadores de asignacion
+		- Un op.asig asigna un valor al operando de la izquierda basado en el valor del operando de la derecha.
+		 + - 
+		 % modulo o multiplo
+		  * /
+		  Abreviacion y completo
+		  Igual para lo demas operadores
+		 x+=y  es igual a  x = x+y
+
+		 And , or , xor
+
+	- Operadores Aritmeticos
+		- Los op.a toman  valores numericos (ya sean literales o variables) como sus operandos y retornan un valor numericos "unico".
+			Ej: incrementar o decrementar
+					n1= 10; or
+					n1++ ; 
+					r = n1; or r= n1++ ; or r = n1+n2 ;
+					alert(r) = 11
+
+	- Operadores de comparacion
+		- Los "o.c" comparan dos expresiones y devuelven un valor "boolean" que representa la "relacion" de sus valores
+			- ingualdad		a==b
+			- ingualdad 	a != b
+			- igualdad stricto si los 2 valores son el mismo texto		 a === b ;true / 23 === "23" ; false
+			- non-identify si los 2 valores son el mismo pero en dato "no" es true		a !== b; false / b !== "b" ; true
+			- mayor o menor o igual 
+					Se aplica de esta manera
+					mayor o igual >=
+					menor o igual <= 
+
+	- Operadores logicos
+		- Los op.l nos devuelve un resultado a partir de que se cumpla (o no) una "condicion", su resultado es "booleano", sus opreandos son valores logicos o asimilables a ellos.
+				and = &&
+				or = ||
+				not =  !var
+						- Not invierte el resultado true a false o f a v.
+
+- Iteradores
+	- Definicion y usos
+		- Sentencia while
+			- Es parecido  un if pero con bucle
+			let i = 100; // inicia el while
+			while(i < 10){ //condicion
+			console.log (`numero ${i}`)
+			i++; // incremento
+		}
+		- Sentencia do while
+				La funcion do while
+					let i = 100; // inicio
+					do {Ejecuta el codigo
+						i++; // incrementa
+					}
+					while(i < 10){ //condicion
+					console.log (`numero ${i}`)
+					i++; // incremento
+					Primero ejecuta y luego la condicion.
+		- Sentencia for
+			- For se compone por 3 partes
+				- declaramos
+				- inicializamos
+					-Condicion
+					- aumento y decremento
+				- iteramos (repetir)+
+					for( valorde la variable ; vueltas a recorer; i aumentara+1 )
+				for (let i = 0 ; i >= 6 ; i++){ document.write (i + "<br>")}
+
+
+		- Sentencia break
+				- Break sirve para finalizar la funcion
+
+		- Sentencia continue
+				- Sirve para conitinuar el bucle de la funcion.
+						for (let i = 0 ; i <= 6 ; i++){
+							if (i == 3) {
+								continue;
+							}
+								document.write (i + "<br>")
+							
+						};						
+				Para usar este atributo se debe aplicar otra funcion dentro de la misma.
+		- forEach
+			// Recorrer arreglo de objetos
+			const carrito = [
+				{id: 1, producto: 'Libro' },
+				{id: 2, producto: 'Camisa'},
+				{id: 3, producto: 'Disco'}
+			];
+			
+			carrito.forEach( producto =>  {
+				console.log(`Agregaste ${producto}`);
+			});
+			
+			// Lo mismo aplica para los maps, la sintaxis es la misma, solo recuerda, el map te crea un nuevo arreglo, si solo deseas recorrer los elementos utiliza el Foreach, si requieres crear un nuevo arreglo, sin duda el map sera mejor...
+
+		- Sentencia for in
+				Muestra el indice de los elementos en un arrays
+
+		- Sentencia for of
+				muestra el valor de los elementos
+
+		- Sentencia label
+
+			-Se usa para saltearse todo la itreacion de un bucle.
+				Se usa continue or brak + variable cualquiera y otra misma variable vacia a fuera de la funcion para realizar este procedimento.
+				variable:
+						funcion
+						contiunue or break + variable.
+---------------------------------------
 	- Scope
 		Scope dentro de las funciones siempre poner let con alcance regional a la funcion, si no pase  a ser var global y afecteria las demas funciones.
-	- Funciones flechas
-		La funciones flechas son los mimsmo que function solo a modo de abreviacion
-			Tiene varios modos de abreviacion
-				const variable = (paremetro)=>{funcion;
-			Se puede usar sin parentesis si es una funcion y tambien no usar llaves si la funcion es solo 1.
-				const variable = parametro => funcion;
-
-		
-			
-
-
-
-
-
-
-
-
 
 			
 - Metodos de arrays
+
 	-
 	--- Transformadores ---
 	- pop()
@@ -497,6 +611,18 @@
 		- Devuelve una parte del array dentro de un nuevo array empezando por inicio hasta fin(fin no luido).+
 		slice(a,b) parametro
 		o agregar del (0,-1) es hasta el final o -2.
+	
+	- findIndex()
+			- Busca la ubicacion del objeto y retorna el indice.
+			const indice =  array.findIndex ( ubicacionArray => ubicacionArray === `valor que se encuentre en el array` )
+	- find()
+		- fiND te creará un arreglo nuevo en base al primer resultado que sea true...
+			Busca un elemeneto dentro del arrays y devuelve true si encuentra el elemento.
+
+			const resultado2 = carrito.find( producto => producto.nombre === 'Bocinas');
+			console.log(resultado2); true
+	- every()
+		- 
 
 	- includes() 
 		- Sirve para buscar un valor dentro de un array
@@ -505,10 +631,11 @@
 
 	- some()
 		- En un array de objetos se utiliza .some
+		Es una funcion OR
 			const deTodo = [ 
-			{ nombre: 'pedro', trabajo: 'ingeniero'}
+			{ nombre: 'pedro', trabajo: 'ingeniero'},
 			{ nombre: 'Juan', trabajo: 'Programador'}];
-			cosnt variable = deTodo.some((procutor o cualquiera valor)) =>{
+			cosnt variable = deTodo.some((producto o cualquier valor)) =>{
 				return producto.nombre === `juan`
 			} Retorna true
 		- En un array tradicional con .some
@@ -518,10 +645,30 @@
 
 	- metodos ya vistos en cadenas: toString, indexOf, lastIndexOf, 
 	----De REPETICION---
+	- Reduce()
+		- Suma una cantidad de variables y los unes ,retorna el resultado.
+		Ej
+		let resultado = carrito.reduce( (total,producto) => total + producto.precio, 0)
+		- total es un variable creada con valor 0, producto es otra variable que va tomar los datos de los objetos. Es parecido un forEach. Y valor 0 es el valor inicial en que numero iniciciar.
 
-	- Filter() 
-		- Crea un nuevo array con todos los elementos que cumplan la condicion.
-		Es una funcion
+
+	- Filter()
+		- Crea un nuevo array basado en el parametro que es evaluado.
+		Ej
+			const carrito = [
+				{ nombre: 'Monitor 20 Pulgadas', precio: 500},
+				{ nombre: 'Televisión 50 Pulgadas', precio: 700},
+				{ nombre: 'Audifonos', precio: 200},
+				{ nombre: 'celular', precio: 50},
+				{ nombre: 'Laptop', precio: 800},];
+		
+			let resultado = carrito.filter( producto => producto.precio > 400 ); // Todos los mayores a 400 - añadir  && producto.precio < 600
+			let resultado2 = carrito.filter( producto => producto.nombre === 'Celular'  ); // Traerte el celular
+			let resultado3 = carrito.filter(producto => producto.nombre !== 'Laptop'); // Todos menos la laptop
+			
+			console.log(resultado);
+			console.log(resultado2);
+			console.log(resultado3);
 		let text = ["x" , "z" , "pedro", " jaun"];
 		text.filter(numero => document.write(numero + "<br>"))
 		- tambien otro uso seria decir que en la cadena del array solo mueste los elemento con mas de 4 letras.
@@ -587,8 +734,334 @@
 
 ---------------------------------------------------
 
+- JavaScript DOM (Document Object Model)
+	- Definicion El dom son todos los elementos que componen una pagina web. Y la caracteristicas  especial que tiene el dom es poder acceder a elementos, atributos ,etiquetas ,y poder modificarlos, eliminarlos y agregar.
+	- Dom es esta compuesto por un document que es el objeto principal del DOM tambien le sigue lo que es el root(html) de ahi se divide en 2 partes de elementos head y body. 
+		- head son los scripts, css, meta. 
+			- Se compone por una etiqueta elemento tittle
+				- Despues sigue el texto "mi pagina web"
+		- body colocamos el codigo html
+			- El body puede tener 2 elementos 
+				- elemento nav
+					- contiene un a enlace
+						- un texto
+							- y atributos
+				- elemento h1
+					- texto bienvenido
+						- atributo id
+							- atributo class
+	- Como acceder a los elementos del document html
+		- const variable = document; //  seleccina el document
+		- const variable = document.all; seleciona todos los elementos elementos.
+		- const variable = document.head;
+		- const variable = document.body;
+		- const variable = document.forms;
+		- const variable = document.form[0]; por indice de los objetos.
+		- const variable = document.Id;
+		- const variable = document.links;
+		- const variable = documentlinks[4]; por indice de los links
+		- const variable = document.classList ; retorna los elementos por indice
+		- const variable = document.className; retorna string
+		- const variable = document.images; cantidad de fotos que hay.
 
+	- acceder  a class
+			Accede  a elementos clases y si hay 2 class del mismo nombre lo trae.
+			Y si no encuentra el dato te devuelve con un arrray vacio.
+		- const header = document.getElementByClassName('header');
+
+	- acceder a ID
+		- const formulario = document.getElementById('formulario');
+			Si no encuentra el elemento retorna null.
+			Y si tienes 2 id va retornar el primero.
+
+	- querySelector
+		- va seleccionar un solo elemento class
+			const card = document.querySelector('.card');
+		- Puedes tener selectores especificos como en css por class
+			const info = document.querySelecto('.premiun .info');
+			console.log(infos);
+		- Tambien por Id
+			const info = document.querySelecto('#formulario');
+		- Seleccionar elemento HTML
+			const nevegacion = document.querySelector('nav');
+
+	- querySelectorAll
+		- Retorna todos los elementos indicados por class, no usar id porque es malas
+		 practicas.
+		 	const card = document.querySelectorAll('.card');
+	- modificar elementos
+		- formas  de acceder a un texto despues de haber seleccionado elemento h1 
+			const encabezado = document.querySelector('.contenido-hero h1');
+
+			console.log(encabezado.innerText); retorna el texto
+			console.log(encabezado.textContent); retorna el texto y especios flotantes 
+			console.log(encabezado.innerHTML); retorna el text + las etiquetas que contenga el text, por ejemplo etiqueta <span></span>	
+			- lo metodos tambien se pueden aplicar en la misma variable.
+				const encabezado = document.querySelector('.contenido-hero h1') ;
+
+		- Reemplazar los string por otros o elementos
+			let nuevoHeading = 'Nuevo Heading'
+			const encabezado = document.querySelector('.contenido-hero h1').textContent = nuevoHeading ;
+
+		- Vamos a seleccionar el primer card, puedes ver que tiene un parrafo con una categoria llamada concierto, eso le cambia el color: 
+			const card = document.querySelector('.card');
+			console.log(card);
+			console.log(card.classList); // Classlist nos permitirá listar las classes
+			card.classList.add('nueva-clase'); // te permitirá añadir una clase.. // si deseas añadir múltiples classes debes agregar una coma en cada una
+
+		- ahora si deseas eliminar una clase utilizas.remove
+			card.classList.remove('card'); // de la misma forma si deseas remover múltiples classes tendrías que hacerlo agregando una coma
+
+	- Traversing
+		- En js los enlaces se los indentifica como nodos
+			const navegacion =document.querySelector('.navegacion');
+
+			console.log(navegacion);
+			console.log(navegacion.childNodes); // retorna los elementos y saltos de lineas de espacio. Los espacios en blanco son cosiderados elementos.
+			console.log(navegacion.children); // Te enlista los elementos sin los saltos de linea
+
+			- tambien se puede acceder a los nodos como un arrray
+				console.log(navegacion.children[0].nodeType) // Tipo de Node = 1 es un eleemnto
+				console.log(navegacion.children[0].nodeName) // Que etiqueta es...
+
+		- Esto seria traversing de DOM
+			// en javascript puedes seleccionar un elemento y navegar en sus diferentes elementos... por ejemplo el card...
+			console.log(card.children);
+			// Si quieres acceder a ese div con la clase de info puedes colocar...
+			console.log(card.children[1]);
+			// Si quieres accedera  los elementos hijos de ese info... recuerda puedes anidar las propiedades.
+			console.log(card.children[1].children[1]);
+			// Acceder al titulo
+			console.log(card.children[1].children[1].textContent);
+			// Modificar ese titulo con un traversing
+			card.children[1].children[1].textContent = 'Cambiando el Texto con traversing...'
+			// Intenta cambiar el texto que dice concierto por algo más siguiendo esta sintaxis de ir navegando por el DOM...
+			
+			- retornar una img
+				const card = document.querySelector('.card');
+				card.children[1].children[1].textContent = 'nuevo heading desde traversing the doom';
+
+				card.children[0].src =  '/img/imagen.jpg'
+				console.log(card.children[0]);
+			
+		- traversing the hijo al padre
+			- se usa parentElement
+				const card = document.querySelector('.card').parentElement.parentElement;
+		- tambien poder ir al siguiente elemento mismo si tengo varias class card, como ir desde el primer elemento al segundo.
+			const card = document.querySelector('.card').nextElementSibling;
+		- Retrocedor el elemento
+		const card = document.querySelector('.card').previousElementSibling;
+
+	- remove Eliminar elementos del dom
+		- Eleminar a elemento hijos
+			const primerEnlace = document.querySelecto('a');
+			primerEnlace.remove();
+		- Elminar elementos desde el padre
+			const navagecion = document.querySelecto('.navegacion');
+			navegacion.removeChild(navegacion.children[2]);
+
+		// Como resumen, uno es por el elemento por si mismo y el otro requiere el padre y la referencia del hijo..
 	
+	- Generar html con javascript y insetar nuevo codigo en un nodo.
+		- Para generar un codigo con js
+				cosnt enlace = document.createElement('a');
+			// agregando atributos al enlace
+				enlace.textContent = 'Nuevo enlace Texto'
+				enlace.href = 'link de href';
+				enlace.target = "_blank";
+				enlace.onclick = agregas un fucnion que diga alert;
+			// agregar multiples atributos
+				enlace.setAttribute('data-enlace','nuevo enlace')
+			// agregar una class
+				enlace.classList.add('otra clase')
+			
+
+		- Insertar  el codigo js en html
+			// seleccionar un elemento, siempre poner 2 rutas safe para no mesclar elementos con la misma clase elegida
+				const navegacion = document.querySelector('.navegacion');
+			// para insertar al ultimo se usa
+				navegacion.appendChild(enlace);
+			// insertar antes de un elemento hijo, se usa 2 paremetros, enlace. y los hijos.
+				navegacion.insertBefore(enlace. navegacion.children[1]);
+
+		- Ver ejemplo avanzado 13 dom - cap10
+			// En una funcion tambien se puede acortar la indicacion del de const dirigido por this.
+			const btnFlotante = document.querySelector('.btn-flotante');
+
+				const footer = document.querySelector('.footer');
+				btnFlotante.addEventListener('click', mostrarOcultarFooter);
+				function mostrarOcultarFooter() {
+					if( footer.classList.contains('activo') ) {
+						footer.classList.remove('activo');
+
+						// en  esta parte en ves de poner btnFlotante.classList.revomve se puede abreviar por this. que es exactamente lo mismo //
+
+						this.classList.remove('activo');
+						this.textContent = 'Idioma y Moneda';
+					} else {
+						footer.classList.add('activo');
+						this.classList.add('activo');
+						this.textContent = 'X Cerrar';
+					}
+				}
+- Eventos en js
+	- Hay una funcion que hace esperar las funciones antes que se cargue los datos de la pagina html y css2
+		console.log(1)
+		document.addEventListener('DOMContentLoaded', () => {
+			console.log(2);
+		}) // Nota todos los eventos que hay disponibles
+		console.log(3);
+	// Haca vemos que primero la pagina carga el 1,3 y despues la funcion 2
+			
+	- Eventos con mouse como un hover
+		nav.addEventListener('mouseenter', () => {
+			console.log('entrando a navegacion')
+			nav.style.backgroundColor = 'white';
+		});
+		nav.addEventListener('mouseout', () => {
+			console.log('saliendo de la navegacion');
+			nav.style.backgroundColor = 'transparent';
+		})
+		- Otros eventos
+			// mousedown - // cuando presionamos
+			// click - similar, de hecho es probablemente el más utilizado..
+			// dbclick - doble click como cuando quieres abrir un archivo
+			// mouseup - al soltar
+	
+	- Eventos sobre los inputs
+		- Ejemplos comunes con imputs validar texto, contador de letras.
+
+			const busqueda = document.querySelector('.busqueda');
+			
+			 busqueda.addEventListener('input', () => {
+			     console.log('escribiendo...');})
+
+			// keydown  - cuando presionas una tecla 
+			// keyup - Cuando sueltas la tecla...
+			// blur - cuando sales del input - ideal para validación...
+			// También hay eventos para cortar copiar y pegar
+			// cut
+			// copy
+			// paste
+			// input - cuando se ejecutan todas las que aquí se muestran... incluyendo cortar, pegar y copiar
+			
+			
+			// Ahora, no tiene mucha utilidad enviar a la consola un mensaje no? lo ideal seria saber el texto que se escribe o poderlo leer...
+			
+			 busqueda.addEventListener('input', e => {
+			     console.log(e); // Mucha información...
+			     console.log( e.type ); // Te dira sobre que elemento estamos trabajando...
+			     console.log(e.target); // el input completo...
+			console.log(e.target.value) // lo que el usuario escribe...})
+			
+			// También puede ser como función...
+			busqueda.addEventListener('input',  leerInput);
+			
+			function leerInput(e) {
+				console.log(e); // Mucha información...
+				console.log( e.type ); // Te dira sobre que elemento estamos trabajando...
+				console.log(e.target); // el input completo...
+				console.log(e.target.value) // lo que el usuario escribe...}
+	- Eventos submit a un formulario
+		// Cuando enviamos  un formulario usualmente loq ue este en ele action, abre una pagina nueva.
+			const formulario = document.querySelector('.formulario');
+
+			formulario.addEventListener('submit', e =>{
+				e.preventDefault(); // preventDefault es evitar que realice un accion por default. Usualmente se utiliza para validar el formulario antes de enviar al servidor.
+
+				console.log('enviando...');
+				cosole.log(e.target.method); // muestra el metodo que utiliza si es POST o gets a una api
+				cosole.log(e.target.action); // action muestra la dirrecion donde va dirigido 
+
+			})
+		// otra forma pasar la fucntion aparte en ves de una funcion anonima
+			formulario.addEventListener('submit',validarFormulario);
+			function validarFormulario(e) {
+				e.preventDefault();
+				console.log('Buscando...');
+				cosole.log(e.target.action); }
+
+	- 	Eventos con scroll con el mouse
+		
+			// En este video estaremos viendo eventos que suceden con el scroll del sitio web...
+			// Es muy común que muchos sitios agreguen funcionalidad de que al dar scroll y llegar a ver un elemento este tenga alguna animación, eso se hace con eventos en el mouse..
+				window.addEventListener('scroll', () => {
+				 console.log('scrolling...');
+			
+				 Detectar el Scrolling vertical...
+			
+				 const pxScroll = window.scrollY;
+				 console.log(pxScroll);
+
+			// Detectar un elemento al dar scroll...
+			
+				const premium = document.querySelector('.premium');
+				const ubicacion = premium.getBoundingClientRect(); // Este método te da el tamaño de un elemento y su ubicación respecto a la ubicación actual..
+					// console.log(ubicacion);
+				if(ubicacion.top < 100) {
+					console.log('Ya esta visible');
+				} else {
+					console.log('Aún no esta visible..')
+				}})	
+	- Event bubbling
+		- Es una funcion que programa a los de mas eventos cuando damos click a una img pero esa imagen esta dentro de un div que contiene la img, titulo y texto.
+	
+			const cardDiv = document.querySelector('.card');
+			const infoDiv = document.querySelector('.info');
+			const titulo = document.querySelector('.titulo');
+		// al seleccionar un elemeento con e.stopPropagation evita que se disparen los de eventos.
+			cardDiv.addEventListener('click', e => {
+				e.stopPropagation();
+				console.log('click card');})
+			infoDiv.addEventListener('click', e => {
+				e.stopPropagation();
+				console.log('click info');})
+			titulo.addEventListener('click', e => {
+				e.stopPropagation();
+				console.log('click titulo');})
+	- Prevenir event bubbling  con delegation
+		- formas de indenticar los elementos
+			const cardDiv = document.querySelector('.card');
+			cardDidv.addEventListener('click', e =>{ console.log(e.target)});
+		- Hay otro metodo para prevenir el event bubbling, seleccionando un elemento.
+			const cardDiv = document.querySelector('.card');
+			cardDidv.addEventListener('click', e =>{
+			if (e.target.classList.contains('titulo'))
+				console.log('le diste click en titulo')
+				});
+			if (e.target.classList.contains('precio'))
+				console.log('le diste click en precio')
+				});
+
+	- Prevenir event bubbling con un metodo 
+			const parrafo3 = document.createElement('p');
+			parrafo3.textContent = '$800 por persona';
+			parrafo3.classList.add('precio');
+
+			// de estan forma seria con un metedo.
+			parrafo3.onclick = nuevaFuncion(1);
+
+			function nuevaFuncion(id) {
+				console.log('click..', id)}
+
+			
+	
+				
+				
+		
+
+			
+
+
+
+
+
+
+
+
+
+
+	TTERMINAR DE VER EL DOM
 
 - POO Programacion orientados a objetos
 	- Definicio  y usos
