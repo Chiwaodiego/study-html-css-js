@@ -211,11 +211,23 @@
 		- Eleminar 
 			- delete objeto.s;
 	- Destructuring de Objetos
-		- extraer la variable dentro del Objeto
-		- const { a } = objeto;
-		- const { p } = objeto;
-		or
-		- const { a , p } = objeto;
+		- extraer la variable dentro del Objeto, se puede reutilizar para no llamar la funcion larga.
+			const producto = {
+				nombre = " monitor",
+				precio = " 10",
+				disponible = true
+			}
+		- version normal
+			const nombre = producto.nombre;
+			console.log(nombre)
+		- version Destructuring
+			- const { nombre } = producto;
+			- const { precio } = producto;
+			or
+			- const { nombre , precio } = producto;
+		- Depues se puede utilizar los elementos dentro de una funcion acortando su elemento.
+			
+
 	- Problemas con los objetos
 		- La funcion "use strict";
 			Hace que las variables declaradas sin var let o const no se inicion por malas practicas.
@@ -631,16 +643,18 @@
 
 	- some()
 		- En un array de objetos se utiliza .some
+			- se utiliza para  comparar si un string esta en otro array y retorna true. Ver ejemplo del proyecto carrito
 		Es una funcion OR
 			const deTodo = [ 
 			{ nombre: 'pedro', trabajo: 'ingeniero'},
 			{ nombre: 'Juan', trabajo: 'Programador'}];
-			cosnt variable = deTodo.some((producto o cualquier valor)) =>{
+			cosnt variable = deTodo.some((array o objeto o cualquier valor)) =>{
 				return producto.nombre === `juan`
 			} Retorna true
+
 		- En un array tradicional con .some
 			const deTodo = ["Hola", 10, true, "si", null, { nombre: 'Juan', trabajo: 'Programador'}, [1,2,3,4]];
-			const existe = deTodo.some( a => a === "Hola");
+			const existe = deTodo.some( variable cualqueira => deTodo === "Hola");
 			return true si lo encuentra.
 
 	- metodos ya vistos en cadenas: toString, indexOf, lastIndexOf, 
