@@ -114,6 +114,7 @@
 		Crea un nuevo array y agrega otros arrays que son copias sin modificar el arrays originales.
 			const meses4 = [...meses,...meses2 ]; // Tienes que asegurarte de que sean arrays cuando usas ...  'Otro mes'
 			console.log(meses4)
+			
 	- parseInt()
 		- Convierte el string en numero
 	- parseFloat()
@@ -689,6 +690,14 @@
 		r = text.filter(numero => numero.length > 4)
 		mostrara pedro , juan.
 
+	- filter encadena
+			function filtrarAuto(auto) {
+				const resultado = autos.filter(filtrarMarca).filter(filtrarYear) ;
+			
+				console.log(resultado);
+				
+			}
+
 
 	- forEach()
 			
@@ -1060,7 +1069,60 @@
 
 			
 	
+	- function TIMER
+			Cada sierto tiempo va repitiendo.
+		- setInterval(function, milliseconds, param1, param2, ...)
+
+		-setTimeout termina la funcion , dependiendo el tiempo asignado
 				
+				
+- LocalStorage 
+	- Es un espacio revesado para guardar informacion, exitos otro tipos de storage.
+		- Solo se puede guardar numero y string solamente. Pero se puede guardar objetos y arrays  tranformandolos en string.
+
+		- Tipos de localStorage
+			- Session storage solo persiste la informacion hasta que se cierre el navegador.
+			- Despues esta  otros mas complejos indexedDB, web sql, cookies.
+
+	- LocalStorage  parametros 
+		-	agregar informacion se usa setItem + el valor del parametro
+			localStorage.setItem('diego','chi');
+		// tranformar objetos y arrays en string
+			// json apartir de una var
+			const producto = {
+				nombre : 'monitor 24 pulgadas'
+				precio: 300
+			}
+		// agregar elementos a localStorage setItem	
+			const productoString = JSON.stringify( producto);
+			localStorage.setItem('producto', productoString)
+
+			// se puede agregar Json.stringify sin crear una var aplicando de esta forma
+			const meses = ['enero', 'febrero', 'marzo'];
+			localStorage.setItem('meses', JSON.stringify(meses));
+
+		// obtener elementos y tranformalos a objeto y arrays
+			const diego = localStorage.getItem('diego');
+			console.log(diego);
+			
+			const productoJSON = localStorage.getItem('producto');
+			console.log(JSON.parse(productoJSON));
+
+			//forma simplificada parse + get item
+			const meses1 = JSON.parse(localStorage.getItem('meses'));
+			console.log(meses1);
+
+		// eliminar elementos de localStorage
+			localStorage.removeItem('diego');
+
+		// actualizar un registro, se podria hacer de forma automatica con funciones y metodos.
+			const mesesArray2 = JSON.parse(localStorage.getItem('meses'));
+			console.log(mesesArray2);
+			mesesArray2.push('nuevo mes');
+			console.log(mesesArray2);
+			localStorage.setItem('meses', JSON.stringify(mesesArray2));
+		// limpiar el resgistro
+			localStorage.clear();
 				
 		
 
