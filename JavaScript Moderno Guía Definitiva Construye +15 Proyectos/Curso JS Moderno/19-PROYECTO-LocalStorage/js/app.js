@@ -136,3 +136,26 @@ function limpiarHTML(){
         listaTweets.removeChild(listaTweets.firstChild);
     }
 }
+
+// COMO emepzar un proyecto
+// 1.1 - visualizar que variables van ser seleccionados
+// 1 -  crear las variables que se van usar y arrays vacios a almacenar
+// 2 -  crear eventlisteners que dispare las funciones y muestre en html 
+// 3 - crear funciones que van obtener el dato y alamcenar
+// 4 - crear validdacion de datos y funcion de mostrarerror  aparte
+// 5 - despues insertar dentro de la funcion mostrarerror un setTimeout para que quite el anuncio
+// 5.5 - crear un un objeto con que contenga los datos y luego otra function que traiga y muestro en html en lista
+// 6 - crear uan function creathtml y mostrar en pantalla
+// 7 -  limpiar el html anterior
+// 8 - limpiar el textarea cada ves se envia la informacion
+// 9 - almacenar la informacion en localstorage , funcion sincronizarstorage
+// 10 - en local storage agregar un or [] para que no colpase las funciones + el llamado crearhtml
+// 10.1 - crear un eventlisteners que actualize el array con el local storage.
+// 11 - funcion de eleminar boton de los tweet del local
+// 12 - agregando btn al boton y html del boton,
+// 13 -  funcion de de tomar el id para depues borrrar
+// 14 - funbcion eliminar los elementos del html con filter (creara otro array nuevo sin el elemento que eliminamos)
+// despues de eso copiar la funcion creahtml para actualizar los datos del array.
+
+
+

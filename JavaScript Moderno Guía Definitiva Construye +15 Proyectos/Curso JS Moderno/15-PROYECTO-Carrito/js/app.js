@@ -137,15 +137,5 @@ artiuclosCarrito = [...artiuclosCarrito, infocurso que es el objeto del paso 5]
 8 - mostrar el objeto en html por each, crear funciones que limpien el codigo
 9 -  agregar cantidad al carrito
 10 - eliminar los objetos 
-
-
-
-13mil ka
-
-10 mil k 23k
-41
-235k
-
-
-
+    
 */

@@ -1125,7 +1125,48 @@
 			localStorage.clear();
 				
 		
+- Fechas 
+	- Date(parametro)
+			- las fechas residen en un 'objeto' llamado DOIT
+		- parametro se puede agegrar una fecha (dia-mes-año)
+		- errores comunes de instanciada
+			Date.now(); no requiere que se isntancie, tampoco new date();
+			Date().getFullYear(); pero con date mas la funcion si necesita instaciarse.
+	- Metodos de fechas
+		- A tener en cuenta existe variedades de metodos de fechas.
+			const diaHoy = new Date(); // marca la fecha actual
+			const diaHoy = new Date(); // retorna los segundos desde el primero de enero hasta la fecha actual.
+			let valor;
 
+			valor = diaHoy;
+			valor = diaHoy.getFullYear();
+			valor = diaHoy.getMonth(); // retorna el valor del mes actual, pero el valor incial es  0 enero(dato importante).
+			valor = diaHoy.getHours();
+			valor = diaHoy.getMinutes();
+			valor = diaHoy.getSeconds();
+			valor = diaHoy.setFullYear(2010);
+		
+	-  Formatos de fechas
+		https://momentjs.com/
+		- Fecha de regiones
+			const EEUU = new Date(); 
+			const Latam = new Date().toLocaleString(); //fecha + hora 
+			const Latam2 = new Date().toLocaleTimeString(); //horario
+			const Latam3 = new Date().toLocaleDateString(); // solo fecha
+		- Formatos con moment (Es una Libreria) (se debe enlasar link de pagina) Existe muchos tipos de formatos
+			const diaHoy = new Date();
+			moment.locale('es');
+			console.log(moment().format('MMMM Do YYYY h:mm:ss a'));
+				// tambien se puede cambiar de lugar datos // a indica pm o am				
+			console.log(moment().format('LLLL', diaHoy)); //domingo, 5 de diciembre de 2021 10:10\	
+			console.log(moment().add(3,'day').calendar());
+			//este formato es muy usado para fecha limite o para cupones o examnes. Se implement como condicion.
+			
+
+		
+			
+
+			
 			
 
 
