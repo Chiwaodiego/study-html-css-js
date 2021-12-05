@@ -21,7 +21,13 @@ COMO emepzar un proyecto
 3 - crear funciones que van obtener el dato y alamcenar
 4 - crear validdacion de datos y funcion de mostrarerror  aparte
 5 - despues insertar dentro de la funcion mostrarerror un setTimeout para que quite el anuncio
-6 - 
+5.5 - crear un un objeto con que contenga los datos y luego otra function que traiga y muestro en html en lista
+6 - crear uan function creathtml y mostrar en pantalla
+7 -  limpiar el html anterior
+8 - limpiar el textarea cada ves se envia la informacion
+9 - almacenar la informacion en localstorage
+10 - en local storage agregar un or [] para que no colpase las funciones + el llamado crearhtml
+11 - funcion de eleminar los tweet del local
 
 
 
