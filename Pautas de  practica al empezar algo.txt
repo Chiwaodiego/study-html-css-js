@@ -25,9 +25,15 @@ COMO emepzar un proyecto
 6 - crear uan function creathtml y mostrar en pantalla
 7 -  limpiar el html anterior
 8 - limpiar el textarea cada ves se envia la informacion
-9 - almacenar la informacion en localstorage
+9 - almacenar la informacion en localstorage , funcion sincronizarstorage
 10 - en local storage agregar un or [] para que no colpase las funciones + el llamado crearhtml
-11 - funcion de eleminar los tweet del local
+10.1 - crear un eventlisteners que actualize el array con el local storage.
+11 - funcion de eleminar boton de los tweet del local
+12 - agregando btn al boton y html del boton,
+13 -  funcion de de tomar el id para depues borrrar
+14 - funbcion eliminar los elementos del html con filter (creara otro array nuevo sin el elemento que eliminamos)
+despues de eso copiar la funcion creahtml para actualizar los datos del array.
+
 
 
 
