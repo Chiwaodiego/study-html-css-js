@@ -13,7 +13,7 @@ ver si se puede solucionar usan funciones sin abordar tantos texto.
 8 - crear funcion que filtre por rango ejemplo precios
 9 - 
 ------------------------
-
+proyecto localstorage 19
 COMO emepzar un proyecto
 1.1 - visualizar que variables van ser seleccionados
 1 -  crear las variables que se van usar y arrays vacios a almacenar
@@ -33,6 +33,24 @@ COMO emepzar un proyecto
 13 -  funcion de de tomar el id para depues borrrar
 14 - funbcion eliminar los elementos del html con filter (creara otro array nuevo sin el elemento que eliminamos)
 despues de eso copiar la funcion creahtml para actualizar los datos del array.
+
+
+23 - proyecto seguro
+
+- crear contrucctor que tenga parametros de las interfaz
+- crear fucion vacia UI
+- crear un prototype que genere HTML que va ser agragado en UI
+el prototype va tener como funcion agregar el año + interfaz html
+- instanciar UI por una variable y luego agregar ui.mas el prototype.
+- validar el formulario
+    - seleccioanr id para poder vericar cad elemeneto
+        primero test del boton submit (intanciar,eventlisteners, function que se ejecute cuando se active event)
+    - depues una funcion que tome los demas selecctores y pase por una validdacion
+    - mostrare en patanlla la validacion creeando otro prototype
+        - dentro del prototyoe se debe crear un div y pasr la validacion de mensaje y error
+        - insertar html 
+- instanciar el seguro
+- calcular cotizacion y insert html
 
 
 

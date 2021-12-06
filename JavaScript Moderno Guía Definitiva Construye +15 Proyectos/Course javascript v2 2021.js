@@ -419,8 +419,10 @@
 			reproductor.borrar = function(id) {// }
 			reproductor.borrar(20); -->
 	- Funciones flechas
-				<!-- const aprendiendo = function() {
+				<!-- 
+                const aprendiendo = function() {
 					console.log('Aprendiendo JavaScript');}
+                    //esto es lo mimso que abajo
 				const aprendiendo = () =>  {
 					console.log('Aprendiendo JavaScript');}
 
@@ -1178,15 +1180,123 @@
 			console.log(juan);		
 	
 	- Creacion y solucion de problemas
-		
+		- Prototype solucionan el problema de poder reutilziar funciones anteriores y expandirlas para no estar creando funciones objetliretals
+
+            function Cliente(nombre, saldo) {
+                this.nombre = nombre;
+                this.saldo = saldo;   
+            }             
+            const juan = new Cliente('juan', 500);
+            console.log(juan)
+            
+            function formatearCliente(Cliente) {
+                const {nombre, saldo} = Cliente;
+                return 'El Cliente ${nombre} tiene un saldo de ${saldo}';
+            }            
+            function formatearEmpresa(Empresa) {
+                const {nombre, saldo,categoria} = Empresa;
+                return 'El Cliente ${nombre} tiene un saldo de ${saldo} y pernetece a la categoria ${categoria}';
+            }            
+            console.log(formatearCliente(juan));
+            
+            function Empresa(nombre, saldo,categoria) {
+                this.nombre = nombre;
+                this.saldo = saldo;   
+                this.categoria = categoria;
+            }             
+            const CCJ = new Empresa ( 'Codigo con juan', 4000, 'Cursos en Linea');
+            console.log(formatearEmpresa(CCJ));   
+
+    - Creando Prototype
+                - Desde la function creada con cosntruccion se puede modificar y agregar funciones dentro del prototype, los prototype estan ligado a los objetos eso hace que se pueda instanciarlos como metodos();
+
+                function Cliente(nombre, saldo) {
+                    this.nombre = nombre;
+                    this.saldo = saldo;}                  
+                //crear funciones Exclusivas dentro del prototype
+                // Diferencias entre arrow y funcionst
+                // functions busca en el objeto actual
+                // arrow busca en la ventana global
+                Cliente.prototype.tipoCliente =  function () {
+                    let tipo;
+                    if (this.saldo > 10000) {
+                        tipo = 'Gold';        
+                    } else if  (this.saldo > 5000) {
+                        tipo = 'Platium';        
+                    }  else{ tipo = 'Normal';}
+                        return tipo;                    
+                }                
+                Cliente.prototype.nombreClienteSaldo = function () {
+                    return `Nombre: ${this.nombre} , Saldo: ${this.saldo} , Tipo de Cliente: ${this.tipoCliente()}`
+                }                
+                Cliente.prototype.retiraSaldo = function (retira) {
+                    this.saldo -= retira
+                }                
+                // instaciarlo                
+                const pedro = new Cliente('Pedro',6000);
+                console.log(pedro.tipoCliente());
+                console.log(pedro.nombreClienteSaldo());
+                pedro.retiraSaldo(1000);
+                pedro.retiraSaldo(1000);
+                console.log(pedro.nombreClienteSaldo());
+                console.log(pedro);
+    
+    - heradar prototype
+                function Cliente(nombre, saldo) {
+                    this.nombre = nombre;
+                    this.saldo = saldo;}   
+
+                Cliente.prototype.tipoCliente =  function () {
+                    let tipo;
+                    if (this.saldo > 10000) {
+                        tipo = 'Gold';        
+                    } else if  (this.saldo > 5000) {
+                        tipo = 'Platium';        
+                    }  else{ tipo = 'Normal';}
+                        return tipo;                    
+                }                
+                Cliente.prototype.nombreClienteSaldo = function () {
+                    return `Nombre: ${this.nombre} , Saldo: ${this.saldo} , Tipo de Cliente: ${this.tipoCliente()}`
+                }                
+                Cliente.prototype.retiraSaldo = function (retira) {
+                    this.saldo -= retira
+                }                
+                
+                
+                function Persona(nombre, saldo, telefono) {
+                    //formas de heredar
+                    Cliente.call(this, nombre,saldo);
+                    this.telefono = telefono;
+                }
+                
+                //Para heradar las funciones de Cliente, object.create va copiar las fucniones y pasar a Persona. Pero se pierde el cosntructor, en la siguiente fucnion se arregla
+                // primero pasar las herancias antes de instanciarlo.
+                Persona.prototype = Object.create(Cliente.prototype);
+                //con esto pasa el cosntructor del cliente a Persona
+                Persona.prototype.constructor = Cliente;
+                
+                //instanciarlo
+                const Juan = new Persona('Juan',5000, 3255412412);
+                console.log(Juan);
+                
+                // como Persona ya heredo las funciones de cliente se isntancia 
+                
+                console.log(Juan.nombreClienteSaldo());
+                
+                //  Tambien debe saber que cliente no toma ningun funcion de persona
+                
+                Persona.prototype.mostrarTelefeno = function () {
+                    return `El telefeno de esta persona es ${this.telefono}`;
+                }
+                
+                console.log(Juan.mostrarTelefeno());      
+- 
 
 
 
 
 
 
-
-	
 
 
 
