@@ -196,23 +196,30 @@
 -----------------------------------------
 
 - Objeto literal / Como crear un objeto, modificar, acceder y manipular.
-
+	- Se utliza {} para la syntaxis de un objeto 
+	//! objeto es el objeto
+	//!  a p s se lo conoce como propiedad del objeto : el valor que contiene esa propiedad , coma como separacion
 	const objeto  = {
+		//! para declarar una propieda se usa la 
+		// * propiedad : valor , propiedad : valor ,
 		a: "abc",
 		p: 300,
 		s: 20,
 	}
+	//* console.log(propiedad)
 	
-	- Para acceder a las variable de un objeto existen 2 formas.
+	- Para acceder a las propiedades de un objeto existen 2 formas.
+	//! por punto  objeto.propiedad
 		- console.log(objeto.a);
+	//! por objeto['propiedad'];
 		- console.log(objeto[`a`]);
-	- agregar variable o eliminar variable dentro de un objeto
+	- agregar una propiedad o eliminar propiedad dentro de un objeto
 		- agregar
-			- producto.img = "imagen.jpg";
+			- objeto.propiedad = valor;
 		- Eleminar 
-			- delete objeto.s;
+			- delete objeto.propiedad;
 	- Destructuring de Objetos
-		- extraer la variable dentro del Objeto, se puede reutilizar para no llamar la funcion larga.
+		- extraer la propiedad y el valor dentro del Objeto, y  se puede reutilizar para no llamar la funcion larga.
 			const producto = {
 				nombre = " monitor",
 				precio = " 10",
@@ -221,13 +228,45 @@
 		- version normal
 			const nombre = producto.nombre;
 			console.log(nombre)
-		- version Destructuring
+		- version Destructuring //! se usan const {propieda} = objeto;
 			- const { nombre } = producto;
 			- const { precio } = producto;
 			or
 			- const { nombre , precio } = producto;
-		- Depues se puede utilizar los elementos dentro de una funcion acortando su elemento.
-			
+		- Depues se puede utilizar las propiedades dentro de una funcion acortando su elemento.
+	//! crear un objeto vacio y poner propiedades y llamarlo.
+			const propieda1 = casa;
+			const propieda2= perro;
+			//* Para no repetir casa: casa, ... se pone solo la porpieda es una abreviacion de JS
+			//* tambien agregar otra propiedad diferente con valor
+			const objeto = {casa,perro, Id: Date.now()}
+	
+	- Crear un objeto dentro de otr objeto
+		const objeto1 = {
+			nombre: "diego";
+			objeto2 : {
+				objeto3: {
+					apellido: 'chi'}
+				objeto4: {
+					telefono: 312313212}
+			}
+		}
+	- acceder al objeto y propiedades se usa '.'
+		console.log(objeto1.objeto2.propiedad);
+	- Para acceder de otra forma 
+		const { nombre, objeto2, objeto2{objeto3: {telefono}}}
+			//! Para accder a los demas volores se repite Destructuring
+			cosole.log(nombre) extrae el valor de nombre
+			cosole.log(objeto2) extrae las demas propiedes objeto 3 y 4
+			cosole.log(telefeno) extrae el valor de telefono
+	- agregar valor a las propiedades o eliminar
+			const objeto1 = {
+					nombre: "diego";
+					disponible: true;					
+				}
+			// para agregar un valor o Eleminar
+			objeto.disponible = false;
+			delete objeto.nombre;
 
 	- Problemas con los objetos
 		- La funcion "use strict";
@@ -331,15 +370,17 @@
 				return  `Articulo: ${ producto.nombre } Precio: $ producto.precio} `;})
 			console.log(nuevoArray);
 			console.log(nuevoArray2); -->
+
+
 - Funciones
 	- Definicion y usos
 		- Son funciones con paremetros que se puede volver utilizar mientras llamemos la misma funcion agregando los valores que se va usar.
 	- Formas de crear funciones y declarar funciones 
 		- Existe 2 formas de crear funciones  y otra mas pero es un metodo.
 			- Declaraacion de funcion
-				- function variable (){ metodo };
+				- function variable (parametros){ metodo };
 			- Expresion de funcion
-				- const variable = function(){ metodo};
+				- const variable = function(parametos){ metodo};
 	
 	- Inicializar la funcion seria
 				- variable()
@@ -347,10 +388,12 @@
 	- Funciones nativas de javascript
 		- Existen mas de 4000 funciones.
 	- Diferencias entre funciones y Metodos
-			<!-- const numero1 = 20;
+			<!-- 
+			const numero1 = 20;
 			const numero2 = "20"; -->
 		// Aunque en realidad terminan siendo practicamente lo mismo, la forma en que se utilizan tiene que ver más que nada en el contexto que son utilizadas..
-			<!-- console.log( parseInt(numero2) ); // Esto es una función
+			<!-- 
+			console.log( parseInt(numero2) ); // Esto es una función
 			console.log( numero1.toString()); // Esto es un método -->
 		// Puedes ver que mientras la función toma el valor en el parentesis, el método añade un punto seguido del nombre, esa seria la diferencia
 		
@@ -358,7 +401,7 @@
 		- Errores comunes en llamar una funcion (asnwer work)
 			- En las 2 formas de crear funciones. Cuando iteramos una funcion y luego creamos una funcion en funcion declarativa va ejecutarse pero en funcion expresiva va dar error porque por el hosting
 			- hosting : hace 2 recorridos en una pagina primero escanea todos los llamados y luegos ejecuta las fuciones y metodos.
-
+	
 	
 	- Parametros y argumentos de una funcion
 		Ej:
@@ -706,7 +749,7 @@
 		array.forEach( (mes))
 		- Ejecuta la funcion indicada una ves por cada elemento del array.
 
-
+		|| isInteger()
 		
 - Objetos math - basico
 	- Se aplica
@@ -778,11 +821,11 @@
 	- Como acceder a los elementos del document html
 		- const variable = document; //  seleccina el document
 		- const variable = document.all; seleciona todos los elementos elementos.
-		- const variable = document.head;
-		- const variable = document.body;
-		- const variable = document.forms;
+		- const variable = document.head; seleciona todos los elementos elementos.
+		- const variable = document.body; seleciona todos los elementos elementos.
+		- const variable = document.forms; seleciona todos los elementos elementos.
 		- const variable = document.form[0]; por indice de los objetos.
-		- const variable = document.Id;
+		- const variable = document.#Id;
 		- const variable = document.links;
 		- const variable = documentlinks[4]; por indice de los links
 		- const variable = document.classList ; retorna los elementos por indice
@@ -795,7 +838,7 @@
 		- const header = document.getElementByClassName('header');
 
 	- acceder a ID
-		- const formulario = document.getElementById('formulario');
+		- const formulario = document.getElementById('#formulario');
 			Si no encuentra el elemento retorna null.
 			Y si tienes 2 id va retornar el primero.
 
@@ -803,7 +846,7 @@
 		- va seleccionar un solo elemento class
 			const card = document.querySelector('.card');
 		- Puedes tener selectores especificos como en css por class
-			const info = document.querySelecto('.premiun .info');
+			const info = document.querySelector('.premiun .info');
 			console.log(infos);
 		- Tambien por Id
 			const info = document.querySelecto('#formulario');
@@ -826,6 +869,7 @@
 
 		- Reemplazar los string por otros o elementos
 			let nuevoHeading = 'Nuevo Heading'
+			//! .textContent = nuevoHeading
 			const encabezado = document.querySelector('.contenido-hero h1').textContent = nuevoHeading ;
 
 		- Vamos a seleccionar el primer card, puedes ver que tiene un parrafo con una categoria llamada concierto, eso le cambia el color: 
@@ -895,8 +939,12 @@
 				enlace.href = 'link de href';
 				enlace.target = "_blank";
 				enlace.onclick = agregas un fucnion que diga alert;
-			// agregar multiples atributos
-				enlace.setAttribute('data-enlace','nuevo enlace')
+			//! agregar nuevos atributpos, 2 formas exitsten.
+				// agregar multiples atributos o uno solo
+					enlace.setAttribute('data-propiedad o id','valor')
+				// agregar atributos personalizados, version nueva Js
+					enlace/objeto.dataset.Id/ otro dato perosnalizado
+					
 			// agregar una class
 				enlace.classList.add('otra clase')
 			
@@ -918,7 +966,6 @@
 				function mostrarOcultarFooter() {
 					if( footer.classList.contains('activo') ) {
 						footer.classList.remove('activo');
-
 						// en  esta parte en ves de poner btnFlotante.classList.revomve se puede abreviar por this. que es exactamente lo mismo //
 
 						this.classList.remove('activo');
@@ -1294,82 +1341,96 @@
 
 
 
-
-
-
-
-
-
-	TTERMINAR DE VER EL DOM
-
-- POO Programacion orientados a objetos
-	- Definicio  y usos
-	 La poo sirve para solucionar problemas y de una mejor forma de optimizarlo.
-
-	- Ejemplos
-
-
-- Conceptos basicos de Poo
-	- Clase 
-		Es es la creacion de los objetos y eso hace que se defina una clase
-	- Objeto
-		Es lo que define una clase.
-		Cuando se trabaja con objetos siempre usar const en ves de let
-		- Llamado consol.log(x);
-	- Atributo
-		Son las caracteristicas que tiene el objeto
-	- Metodo
-		Son las acciones que puede hacer el objeto
-	- Constructor
-		Es una particularidada que tienen la clases que es una funcion obligatoria.
-		Que permite contruir propiedades del objeto
-	-  Instanciacion
-		La clase estara instanciado cuando tenga todos los elementos aplicados.
-		Forma de corroborar si la clase si se instancio usar consolo.log(clase instanciada del const)
-	- Errores comunes:
-		No crear funcion this.var =  afuera del un contructor
+- POO Programcion orientado a objetos var2
+	- Existe 2 formas de crear un POO
+	//  esta forma se le llama  // ! class declaration
+	class Cliente {
+		// * contiene un cosntructor
+			constructor(nombre,saldo)
+				this.nombre = nombre;
+				this.saldo = saldo;
+		}
 		
-		No aplicar const y tampoco usar funciones flechas para crear metodos en las clases.
-	- Ejemplo
+		//instaciar class
+		const juan = new Cliente('juan',400);
+		console.log(juan);
+		
+		//  esta forma es //!class expresion
+		const Cliente2 = class{
+			constructor(nombre,saldo ) {
+				this.nombre = nombre;
+				this.saldo = saldo;
+			}
+		}
+		//instaciar lo mismoq que objet constructor
+		//instaciar class
+		const juan2 = new Cliente2();
+		console.log(juan2);
+	- Metodos y metodos estaticos
+		- Las funciones dentro de las clases se lo conoce como metedos, pero es lo mismo que una funcion.
+		- La cualidades de un metodo puede obtener los datos del cosntructor
+		class Cliente {
+			// * contiene un cosntructor
+				constructor(nombre,saldo){
 
-<!-- 			class animal {
-					constructor(especie,edad,color){
-						this.especie = especie ; 
-						this.edad = edad ; 
-						this.color = color;
-						this.info = `Soy ${this.especie}, tengo ${this.edad}
-						años y soy de color ${this.color}`;
-					}
-					verInfo() {
-						document.write(this.info + "<br>")
-					}
-					}
+				//* atributos
+					this.nombre = nombre;
+					this.saldo = saldo;
+				}	
+			//* propiedades
 
-				const perro = new animal("perro", 5 ,"rojo");
-				const gato = new animal ("gato", 2 , "negro");
-				const bird = new animal ("bird", 5 , "brown");
-				perro.verInfo();
-				gato.verInfo();
-				bird.verInfo();
- -->
+				//! metodos
+				mostrarInformacion(){
+					return`Cliente: ${this.nombre}, tu saldo es de ${this.saldo}`;
+				}
+				//!metodo static
+				static bienvenido( ){
+					return(`Bienvenido al cajero`)
+				}]
 
-- Caracteristicas de la POO
-	- Abstraccion
-		Es tratar de reducir las caracteristicas de la funcion a algo optimo y funcional
-	- Modularidad
-		Seria organizar las tareas por partes en ves de hacerlo todo en uno.
-	- Encapsulamiento
-		Se trata de encriptar los datos, para que no se puede acceder de otra forma.
-	- Polimorfismo
-		Cosiste en ver como un objeto se comporta de manera distinto ante al mismo objeto.
-- Otros conceptos de POO
+		}
+		//isntaciar
+		const juan = new Cliente('juan',400);
+		console.log(juan.mostrarInformacion()); //! metodo
+		// !metodo static no requiere que sea instancia por una var
+		console.log(Cliente.bienvenido());
 	- Herencia
-		- Errores
-		la variable que va llamar la clase no puede tener el mismo nombre que la clase.A menos que sea con mayuscula la letra principal.
-	- metodos estaticos
-		M.e seria darle el atributo 
-		static metodo(){}
-		Con eso podes llamar al metodo de la clase sin cargar los parametros.
+		- Para heradar una clase se crea una clase donde se le pasa extends + clase principal
+		- dentro del cosntructor se usa super para obtener los atributos de la anterior clase y no poner this porque ya lo hereda.
+		- para instanciar una clase heredadas se pasan los parametros normales y para isntanciar un metodo estatico se usa de esta manera
+			var = new claseheredadnueva(parametros);
+			var.claseEstatica();
+		- En claseHeredada crear un metodo igual que en la clasePadre hace que se reescriba los datos tomando la claseHererada
+
+		class Empresa extends Cliente{
+			
+			constructor (nombre,saldo,telefono,categoria){
+				super( nombre,saldo,telefono,categoria);
+				this.telefono = telefono ;
+				this.categoria = categoria;
+
+			}
+			//! reescribe el metodo padre tomande este como actual.
+			static bienvenido( ){
+				return(`Bienvenido al cajero`)
+			}]
+
+		}
+	- Propiedades Privadas
+		Es un variable  dentro de un clase donde se puede acceder y modificar por medio de una clase y no llamando el nombre de la variable para acceder el valor.
+		- ver ejemplo POO 8
+		class Cliente {
+			//! clase privada, solo se puede accer atraves de una clase
+				#nombre;		
+			setNombre(nombre){
+				this.#nombre = nombre;
+			}
+			getNombre(nombre){
+				return this.#nombre;
+			}		
+		const juan = new Cliente();
+		juan.setNombre('juan');
+		console.log(juan.getNombre());
 	- metodos accesores (getters , setters )
 		- Get
 			Se utilizan para obtener un dato
@@ -1390,4 +1451,4 @@
 			}
 			const perro = new Perro ("perro", 5 ,"rojo" , "caniche");
 			perro.setRaza = "carlo" ;
-			document.write(perro.getRaza) -->
+			document.write(perro.getRaza) --></br>
