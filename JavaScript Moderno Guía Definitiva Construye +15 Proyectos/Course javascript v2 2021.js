@@ -709,7 +709,7 @@
 		- Suma una cantidad de variables y los unes ,retorna el resultado.
 		Ej
 		let resultado = carrito.reduce( (total,producto) => total + producto.precio, 0)
-		- total es un variable creada con valor 0, producto es otra variable que va tomar los datos de los objetos. Es parecido un forEach. Y valor 0 es el valor inicial en que numero iniciciar.
+		- total es un variable creada con valor 0, producto es otra variable que va tomar los datos de las propiedades . Es parecido un forEach. Y valor 0 es el valor inicial en que numero iniciciar.
 
 
 	- Filter()
