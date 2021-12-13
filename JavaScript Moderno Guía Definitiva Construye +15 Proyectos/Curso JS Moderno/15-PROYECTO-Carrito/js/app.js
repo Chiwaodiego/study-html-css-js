@@ -22,7 +22,16 @@ function cargarEventListeners() {
         let articulosCarrito = []; // reseteamos el array
 
         limpiarHTML(); // eliminamos todo el hmtl
-    })
+    });
+    //cuando el usuario agrega a nuevo elemento al almance 
+    document.addEventListener('DOMContentLoaded', () =>{
+    listaCursos.addEventListener('click', agregarCurso);
+        articulosCarrito = JSON.parse(localStorage.getItem('articulosCarrito')) || [];
+        console.log(articulosCarrito);
+        
+        carritoHTML();
+
+    });
 }
 
 function agregarCurso(e) {
@@ -33,6 +42,8 @@ function agregarCurso(e) {
     leerDatosCurso(cursoSeleccionado);
     }
 }
+
+
 
 // Elimina el curso del carrito en el DOM
 function eliminarCurso(e) {
@@ -82,11 +93,11 @@ function leerDatosCurso(curso){
 // muestra el carrito de compras en el html
 function carritoHTML(){
 
-    //limpiar el HTML
+ //limpiar el HTML
     limpiarHTML();
 
 
-    // Recorre el carrito y genera el HMTL
+// Recorre el carrito y genera el HMTL
 
     articulosCarrito.forEach ( curso => {
         //Se aplico destrocturing para no estar llamando cada curso.elemento , eso hace que curso ya tenga acceso a los elementos del objeto.
@@ -106,10 +117,18 @@ function carritoHTML(){
         `;
         // agrega el HTML del carrito en el tbody
         contenedorCarrito.appendChild(row);
-
+        sincronizarStorage();
 
     })
+    
 }
+
+//guarda informaicon en LS
+function sincronizarStorage() {
+    localStorage.setItem('articulosCarrito',JSON.stringify(articulosCarrito));
+    
+}
+
 
 // elimina los cursos del tbody antes que pase por el foreach
 function limpiarHTML(){
