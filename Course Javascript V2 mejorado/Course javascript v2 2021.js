@@ -1431,7 +1431,82 @@
 		const juan = new Cliente();
 		juan.setNombre('juan');
 		console.log(juan.getNombre());
-	- metodos accesores (getters , setters )
+
+
+
+- Sets 
+	- Los set permiten crear una lista de valores sin duplicados. Los set son valores
+	- Los sets son iterables 
+	- Metodos de Set(); 
+		- Add
+			// Agrega el valor al set
+			const carrito = new Set();
+			carrito.add('camisa');
+			carrito.add('toalla');
+			carrito.add('camisa'); // No se duplica a menos que se agregue espacio.
+			console.log(carrito);
+		- .zise
+			// Muestra la cantidad de elementos que hay.
+			carrito.zise;
+		- .has('valor');
+			// retorna true si encuentra el valor.
+			console.log(carrito.has('camisa'));
+		- .delete('valor');
+			//elimina el valor y retorna true o sino false si no se encuentra el valor.
+		- clear();
+			// Limpia los valores almacenados en el Set
+			carrito.clear();
+		- carrito.foreEach();
+			// los sets son itereables con foreach y tambien se puede agregar 2 paramentros mas 
+			
+			carrito.forEach((valor, index, pertenece) => {
+				console.log(valor);
+			});
+		// Los parametros pueden ser cualquier nombre. Solo respeta el orden de los parametros.
+		- valor es valor iterable por foreach.
+		- index te indica el index pero con valores.
+		- pertenece te muestra el set original.
+
+	- Usos del set
+		// Del sigueinte arreglo, eliminar los duplicados
+		const numeros = [1,2,3,1,4]
+		const noDuplicados = new Set(numeros);
+		console.log(noDuplicados); //Eso elimina los duplicados.
+
+- WeakSet
+	solo recibe objetos, no acepta ningun otro tipo de valor. Y tampoco se puede iterar con foreach. Pero si usar delete,has,add.
+		const weakset = new WeakSet();
+
+- Maps
+	Son listas ordenas que contienen llave y un valor.
+	se puede aplicar los demas metodos set,get,has,delete,size.
+		const cliente = new Map();
+		cliente.set('nombre','karen');
+		console.log(cliente);
+		console.log(cliente.has('nombre'));
+	- Tambien reescribir arrays dentro de un map
+			const paciente = new Map([ ['nombre','paciente'],['cuarto','no definido']]);
+			paciente.set('dr','Dr asignado'); //agrega
+			paciente.set('nombre','Antonio'); //lo reescribe
+	- Son iterables 
+			paciente.forEach((datos, index) => {
+				console.log(index);
+			});
+
+- WeakMap
+			// ver Ej 27-4js
+	- es lo mismo que WeakSet
+	- No se puede iterar,zise y tampoco agragar string.
+	- Solo aceptan objetos
+
+- Symbols
+	- No se usa new para crear.
+	- Permite crear una propiedad unica , se usa mucho en librerias.
+	- Los Symbols son diferentes si se comparan con valores iguales.
+
+
+
+- metodos accesores (getters , setters )
 		- Get
 			Se utilizan para obtener un dato
 		- Setters
