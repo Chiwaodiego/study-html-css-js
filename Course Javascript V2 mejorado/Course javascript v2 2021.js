@@ -512,8 +512,12 @@
 				default:
 					console.log('Aún no has pagado');
 					break; }  -->
+
+		//! Usado para crear un iterador
 	- Ternario anidado...
-		console.log( autenticado  ?  puedePagar ? 'Si puede pagar' : 'esta autenticado pero no puede pgar' : 'No esta autenticado');
+		
+		console.log( condicion  ?  expresion1 ? 'Si puede pagar' : expresion2 ?  'esta autenticado pero no puede pgar' : 'No esta autenticado');
+		//! Si la condición es true, el operador retorna el valor de la expr1; de lo contrario,  devuelve el valor de expr2
 
 - Operadores en javaScript
 
@@ -1503,6 +1507,138 @@
 	- No se usa new para crear.
 	- Permite crear una propiedad unica , se usa mucho en librerias.
 	- Los Symbols son diferentes si se comparan con valores iguales.
+	-//!Las propiedades que utilizan un Symbol no son iterables.
+			const sym = Symbol('1')
+			const sym2 = Symbol('1')
+
+
+		// los symbol son diferentes y unicos
+			// if (sym === sym2) {
+			//     console.log('son iguales')
+			// } else{
+			//     console.log('Son diferentes')
+			// }
+
+			//----------
+			// retorna false
+			// console.log(Symbol() === Symbol() );
+
+			const nombre = Symbol();
+			const apellido = Symbol();
+
+
+			const persona = {};
+
+		//agregar nombre y apellido como llaves del objeto
+
+			persona[nombre] = 'juan';
+			persona[apellido] = 'pedro';
+			persona.tipoCliente = 'Premiun';
+			persona.saldo = 500;
+
+			console.log(persona);
+			// console.log(persona[nombre]); // para acceder a los valores se usa []
+
+		//!Las propiedades que utilizan un Symbol no son iterables.
+			for ( let i in persona){
+				console.log(i);
+			}
+
+		// Definir una descripcion del symbol
+			const  nombrecliente = Symbol('Nombre del Cliente');
+			const cliente = {};
+
+			cliente[nombrecliente] = 'Pedro';
+
+			console.log(cliente); // accede al objeto completo
+			console.log(cliente[nombrecliente]); // accede al valor Pedro
+			console.log(nombrecliente); // accede a la descricion
+
+- Crear nuestro propio iterador
+			function crearIterador(carrito) {
+				let i = 0;
+				return{
+					siguiente: ()=>{
+						const fin = (i >= carrito.length);
+						const valor = !fin ?  carrito[i++] : undefined;
+						return {
+							fin,valor
+						}        }    }}
+			
+			const carrito = ['producto1','producot2', 'producto 3'];
+			// Utilizar el iterador
+			const recorrerCarrito = crearIterador(carrito);
+			console.log(recorrerCarrito.siguiente());
+			console.log(recorrerCarrito.siguiente());
+			console.log(recorrerCarrito.siguiente());
+			console.log(recorrerCarrito.siguiente());
+
+
+- Generadores
+	- Un gerador es una funcion que retorna un iterador
+		// para indentifica un genredor tienne que tener *
+			function *crearGenerador() {
+				// la palabra yield son valores
+				yield 1;
+				yield 'Juan';
+				yield 3+3;
+				yield true;
+			}
+		// const iterador = crearGenerador();
+		// cada next para recorrer el siguiente elemento
+		// los metod value y done retorna falso hasta que no halla mas elemento y retorne true.
+			// console.log(iterador.next().value);
+			// console.log(iterador.next().done);
+			// console.log(iterador.next().value);
+			// console.log(iterador.next());
+			// console.log(iterador.next());
+
+		// generador para carrito de compras
+			function *generadorCarrito(carrito) {
+				for(let i = 0; i < carrito.length; i++)
+				yield carrito[i];
+			}
+			const carrito = ['Pro1','Pro2','Pro3']
+			const iterador = generadorCarrito(carrito);
+			console.log(iterador.next());
+
+	- Tipos de generadores
+			// entries retorna la llave y valor
+		- entries() / entry
+				const ciudades = ['Londees', 'New york','Madrid','Paris'];
+				const ordenes = new Set([123,231,131,102] );
+				const datos  = new Map();
+				
+				datos.set('nombre', 'Juan');
+				datos.set('Profesion','Deasrrollador Web');
+				
+				for ( let entry of ciudades.entries()){
+					console.log(entry);
+				}
+				for ( let entry of ordenes.entries()){
+					console.log(entry);
+				}
+				for ( let entry of datos.entries()){
+					console.log(entry);
+				}
+
+		- value Iterator
+			- Retorna solo el valor
+				for ( let value of ciudades.values()){
+					console.log(value);
+				}
+			
+		- keys Iterator
+			// retorna las llave de un array, en un set retorna los valores, y map solo la propiedad
+
+				for ( let keys of ciudades.keys() ){
+					console.log(keys);
+				}
+		- Valor default del for
+				- retorna propiedades y valores.
+		
+
+
 
 
 
