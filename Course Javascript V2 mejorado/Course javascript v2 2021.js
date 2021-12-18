@@ -1631,12 +1631,101 @@
 		- keys Iterator
 			// retorna las llave de un array, en un set retorna los valores, y map solo la propiedad
 
-				for ( let keys of ciudades.keys() ){
-					console.log(keys);
-				}
+			// for ( let keys of ciudades.keys() ){
+			//     console.log(keys);
+			// }
+			// for ( let keys of ordenes.keys() ){
+			//     console.log(keys);
+			// }
+			// for ( let keys of datos.keys() ){
+			//     console.log(keys);
+			// }
+				
 		- Valor default del for
 				- retorna propiedades y valores.
 		
+				// for ( let ciudad of ciudades){
+				// 	console.log(ciudad);
+				// }
+				// for ( let ciudad of ordenes){
+				// 	console.log(ciudad);
+				// }
+				// for ( let ciudad of datos){
+				// 	console.log(ciudad);
+				// }
+
+- Modulos
+	-  Comparten informacion  en multiple archivos Js.
+			Para mas facilidad se puede ir agrengando 1 solo archivo y los demas exportant su informacion al archivo principal Js.
+	
+	- Como aplicar un IIFE para que tus archivos sean privados y no accedan los demas archivos js.//! Desuso
+
+			// ( function (){
+			// 	console.log( 'Desde un IIFE')
+			// 	//con window
+			// 	window.nombreCliente = 'Juan';
+			// }) ();
+
+	- Exportar y importar datos
+		Primero se debe poner type='module' // en el archivo que va ser importado.
+		
+		- exportar nombreCliente 
+			export const nombreCliente = 'Juan'
+			export function name(params) {
+			}
+			
+		- exportar funciones
+			export function tieneSaldo(ahorro) {
+				if (ahorro > 0 ) {
+					console.log('Si tiene saldo')
+				} else {console.log('El Cliente no tiene saldo')}
+			}			
+		- export class Cliente{
+				constructor(nombre,ahorro){
+					this.nombre = nombre;
+					this.ahorro = ahorro;
+				}			
+				mostrarInformacion(){					
+					return `Cliente: ${this.nombre} - Ahorro: $${this.ahorro}`;
+				}
+			}
+
+
+		- Importar desde otro archivo a app.js
+				//! si se usa un web pack o bondred no se usa .js sino tiene que ir obligatoriamente
+				import { nombreCliente} from './cliente.js';
+				console.log( nombreCliente);
+
+			- Para importar funciones se nombre en import dentro sin() y de ahi se puede llamar la funcion normal.
+
+			- Class es lo mismo
+				import
+					- const cliente = new Cliente(nombreCliente,ahorro);
+				desde un metodo
+					console.log(cliente.mostrarInformacion());
+			- Importar Herencia a otro archivo
+				- Usar import
+					import { Cliente } from "./cliente.js";
+				- Y exportar class de herencia.
+
+	- Export Default y alias a los imports
+		- para agregar datos que sean por deafult se agregan a fuera de las llaves del import //! Solo se bede de poner 1 default
+		- Para exportar arhivo se declara de esta Forma
+			- export default function nuevaFuncion(){};
+			- import default, { exports} from './archivo.js'
+			//*  En import, el default puede llevar caulquier alias  de nombre.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
