@@ -1715,22 +1715,6 @@
 			- import default, { exports} from './archivo.js'
 			//*  En import, el default puede llevar caulquier alias  de nombre.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 - metodos accesores (getters , setters )
 		- Get
 			Se utilizan para obtener un dato
@@ -1752,3 +1736,200 @@
 			const perro = new Perro ("perro", 5 ,"rojo" , "caniche");
 			perro.setRaza = "carlo" ;
 			document.write(perro.getRaza) --></br>
+
+
+- indexedDB
+	- Es una manera de almacenar datos de manera persistente en el navegador.
+	Almacena pares llave-valor. Los valores pueden ser objetos con estructuras complejas, y las llaves pueden ser propiedades de esos objetos.
+	La API de IndexedDB es mayormente asincrona.
+	IndexedDB usa enventos DOM para notificar cuando losa resultados estan disponibles.
+	IndexedDB es orientada a objetos.
+	
+	
+			let DB;
+
+			document.addEventListener('DOMContentLoaded', () => {
+				crmDB();
+
+				setTimeout( () => {
+					crearCliente();
+				}, 5000 );
+			})
+
+
+			function crmDB() {
+				// Crear base de datos version 1.0
+				// se crea versiones 
+				let crmDB = window.indexedDB.open('crm', 1);
+
+				// Si hay un error , Tipos de error: no soporta el navegador o hay un dato unico repetido
+				crmDB.onerror = function () {
+					console.log('Hubo un error a la hora de crear la DB');
+
+				}
+
+				// si se creo bien
+
+				crmDB.onsuccess = function () {
+					console.log('base de datos creada');
+					DB = crmDB.result;
+				}
+				
+				//  Configuracion de la base de datos\
+				// * Se ejecuta una sola vez si la base de datos a sido creada.
+
+				crmDB.onupgradeneeded = function (e) {
+					const db = e.target.result;
+					
+					const objectStore = db.createObjectStore('crm', {
+						keyPath: 'crm',
+						autoIncrement: true // aumenta a medida que se crea nuevas versiones
+					});
+
+					// Definir las columnas
+						//* parametro1 = es el crm / par2 = keypath / par3 si es unico o no
+					objectStore.createIndex('nombre', 'nombre', {unique: false});
+					objectStore.createIndex('email', 'email', {unique: true});
+					objectStore.createIndex('telefono', 'telefono', {unique: false});
+
+					console.log('comlumnas Creadas');
+
+				}
+
+			}
+
+
+			//* para diferentes operaciones, obtener registros, eleminarlos o actualizarlos
+			function crearCliente () {
+				//TODO crm indica donde va guardar la base de datos , modo de dato: readwrite o readonly  
+
+				let transaction = DB.transaction(['crm'], 'readwrite');
+
+				transaction.oncomplete = function () {
+					console.log('Transaccion Completada');
+				}
+				transaction.onerror = function () {
+					console.log('Hubo un error en la transaccion');
+				}
+				
+				//utilizar la base de datos
+				const objectStore = transaction.objectStore('crm');
+
+				//llenar formulario objeto
+				
+				const nuevoCliente = {
+					telefono: 12352525,
+					nombre: 'Juan',
+					email: 'correo@coreeo.com'
+				}
+				
+
+				//*agregamos el objeto a la  base de datos, o tambien modificar o eliminar
+				// put or delete
+
+				const peticion = objectStore.add(nuevoCliente);
+				console.log(peticion);
+			}
+
+	- metodos indexedDB
+		- openCursor itera sobre los datos
+
+			abrirConexion.onsuccess = function(){
+				DB = abrirConexion.result;
+				const objectStore = DB.transaction('crm').objectStore('crm');
+
+				objectStore.openCursor().onsuccess = function(e) {
+					const cursor = e.target.result;
+					//! cargar la base de datos en el html
+					if (cursor) {
+						const { nombre,empresa,email,telefono,id} = cursor.value;
+
+						const listadoClientes = document.querySelector('#listado-clientes');
+						listadoClientes.innerHTML += ` 
+					cargar los datos insertando en el html `;
+						cursor.continue();
+					} else {
+						console.log('No hay mas registros...');
+					}            }        }    }
+
+- Callbacks
+	- Los callback son funciones que insertan datos despues de otra funcion, utilizando setimeout()
+					
+			const paises  = ['Francia','España','Portugal', 'Australia','Inglaterra'];
+
+			function nuevoPais(pais,callback) {
+				setTimeout(() => {
+					paises.push(pais);
+					callback();
+				}, 2000);
+			}
+			function mostrarPaises() {
+				setTimeout(() => {
+					paises.forEach(pais =>{
+						console.log(pais);
+					})
+				}, 1000);
+			}
+			mostrarPaises();
+			nuevoPais('Alemania',mostrarPaises);
+
+
+- Promises
+	- Sirve para contrarla la funcion si se cumple o no.
+			//! resolve se ejecuta cuando se cumpla el promise
+			//! reject cuando tenemos un problema en el promise
+
+			const aplicarDescuento = new Promise((resolve,reject) => {
+
+				const descuento = true;
+
+				if (descuento) {
+					resolve('Descuento Aplicado')
+				} else { reject('No se pudo aplicar el descuento')
+				}
+			})
+			// console.log(aplicarDescuente);
+
+			//! en los promises se utiliza una syntaxis
+			aplicarDescuento
+				.then(resultado => descuento(resultado))
+				.catch(error => console.log(error))
+
+
+			//TODO Hay 3 valores posibles...
+			// * fulfilled - El promise se cumplio
+			//* reject - El promise no se cumplio
+			//! pending - Caudno nose declara la estructura dentro del promise. No se ha cumplido o rechazado.
+			// Tambien aplicar un mensaje  then y catch
+
+			function descuento(mensaje) {
+				console.log(mensaje);
+			}
+
+-  Promises y callback
+			const paises = [];
+			const nuevoPais = pais => new Promise( resolve => {
+				setTimeout(() => {
+					paises.push(pais);
+					resolve(`Agregado: ${pais}`)
+				}, 1000);
+			})
+
+			nuevoPais('Alemania')
+				.then( resultado => {
+					console.log(resultado);
+					console.log(paises);
+					return nuevoPais('Francia')
+				})
+				.then( resultado => {
+					console.log(resultado);
+					console.log(paises);
+					return nuevoPais('Inglaterra')
+				})
+				.then(resultado => {
+					console.log(resultado);
+				})
+
+
+- APIS
+	- 
