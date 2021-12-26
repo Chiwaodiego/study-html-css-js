@@ -1,0 +1,104 @@
+- Definicion de Css
+    - Hojas de estilo en cascada, que permitiran darle a tu codigo HTML un diseno unico y especial en poco linas.
+
+- Estructura de css
+
+    Selector {
+        propiedades: valor;
+        color: rojo;
+    }
+
+- Funcion para mayor performance es agregar
+    <link rel="preload" href="css.css" as="stylesheet">
+    <link rel="stylesheet" href="css.css">
+    
+
+- Propiedades
+    text-aling: center left righ modifica la posicion
+    font-size: tamaño de la letra
+        - tamaño de letra
+            - px es un medida de la resolucion
+            - rem toma el tamaño del elemento del documento
+            - em toma la medida del elemento padre
+- Truco de adaptacion a todos la pantallas es aplicar este formato
+        html {
+            font-size: 62.5%;
+        }
+        body {
+            font-size: 16px; /* 1rem  = 10px */
+        }
+
+- Selectores 
+    - Se puede seleccionar uno o multiples elementos
+        -Selector selecciona un elemento en base a su etiqueta.
+    - Selector de clase
+        .class {}
+    - Selector por ID 
+        Deben ser unicos
+        #id {}
+    - Atributo
+        - seleccionar por img se usa
+        img {}
+        o
+        [src="logo.jpg"] {propiedad}
+    - Combinacion de descendentes
+        - Selecciona los elementos hijos cuyo padre sea una clase(o ID) en especifico.
+        .cliente .nombre {propiedad}
+    - Todos los hijos
+        - Aplica la siguiente regla a todos los parrafos hijos
+        .cliente > p {}
+
+- Espesificidad
+    - Es el rango de elementos que pueden pasar por arriba a otros elementos
+        !important  / .elemento{c: red; !important } se posicion el inmportant para modeficar elemento puntual
+        style in line /  <h1 class="color-red" id="color-blue" style="color:green" > /
+        indentificadores / id #elemento
+        nivel medio = class // psudo-class // atributo
+        nivel inferior = elemento // pseudo-elemento
+
+- colores y sus tipos
+    Hex()
+    rgb ()- rgba()
+    hsl() - hsla()
+
+    - paleta de colores personalizadas o tambien tamaños de fuentes
+        :root {
+            --rosa: #F0F;
+            --fuente_principal: 3.8rem;
+        }
+        color: var(--rosa);
+
+- Estilo de letras
+    font-famlily: arial, helvetica, sans-serif
+
+- Estilos css en classes
+    class="primero secundo"
+    - A las classes tambien se pueden agregar una segunda classe dentro de class como segundo
+
+-estilos css en propiedades
+    width: ancho
+    padding: modifica el tamaño de adentro hacia afuera
+    margin: top right bottom left; y x; auto; modifica el tamaño de afuera hacia dentro
+    font-modifica la letra tamaño,grosor
+    text-modifican la fuente 
+        text-decoration:none;
+
+- display: valor;
+    block se colocara uno de bajo del otro sin importar su tamaño o contenido...
+    inline el elemento se posiciona a la derecha uan vez que haya tomado el espacio que requiere..
+    inline-block 
+
+- flexbox
+        Modifica los elementos de forma en una direccion row o column
+    - Tipos de flexbox
+        justify-content: valor ; modifica de forma horizontal
+            -valor; 
+                flex-start , center , flex-end 
+                - Center; centra todo el contenido
+                - Space-arround ; es lo mismo que el margin auto pero no hay que usarlo porque no podriamos modificar las cajas por separado.
+                - Space-between ; Deja el mayor espacio entre cajas.
+                - space-evenly ;(main axis) // Le da un margin espesifico a cada caja tenga exactamente lo mismo.
+        - Aling-items: Se usa sentido vertical cross axi
+                - Center centra los items , flex-start o end
+                - stretch Hace que se estire las cajas sin tener heigth
+                - baselin
