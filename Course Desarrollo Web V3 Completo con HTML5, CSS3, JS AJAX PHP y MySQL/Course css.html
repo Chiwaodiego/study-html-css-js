@@ -15,6 +15,8 @@
 
 - Propiedades
     text-aling: center left righ modifica la posicion
+    line-height: 2; /el interlineado, el tamaño 1/2 de letra para arriba y abajo
+	font-weight:100 grosor de la letra;
     font-size: tamaño de la letra
         - tamaño de letra
             - px es un medida de la resolucion
@@ -38,9 +40,12 @@
         #id {}
     - Atributo
         - seleccionar por img se usa
-        img {}
+            img {}
         o
-        [src="logo.jpg"] {propiedad}
+            [src="logo.jpg"] {propiedad}
+        - Fieldset es una legenda que rodea por un cuadradado
+        - input
+        -label
     - Combinacion de descendentes
         - Selecciona los elementos hijos cuyo padre sea una clase(o ID) en especifico.
         .cliente .nombre {propiedad}
@@ -50,6 +55,7 @@
 
 - Espesificidad
     - Es el rango de elementos que pueden pasar por arriba a otros elementos
+        * selecciona todo
         !important  / .elemento{c: red; !important } se posicion el inmportant para modeficar elemento puntual
         style in line /  <h1 class="color-red" id="color-blue" style="color:green" > /
         indentificadores / id #elemento
@@ -68,6 +74,7 @@
         }
         color: var(--rosa);
 
+
 - Estilo de letras
     font-famlily: arial, helvetica, sans-serif
 
@@ -76,9 +83,15 @@
     - A las classes tambien se pueden agregar una segunda classe dentro de class como segundo
 
 -estilos css en propiedades
-    width: ancho
+    width: ancho;
+    width: min(min, 100%);
+        Toma la medida minimo, sino toma el 100% 
     padding: modifica el tamaño de adentro hacia afuera
     margin: top right bottom left; y x; auto; modifica el tamaño de afuera hacia dentro
+    gap: rem ; separa los elementos   a diferencia de margin que agrand el espacio de los elementos.
+    gap tradicional
+        colum-gap:
+        row-gap:
     font-modifica la letra tamaño,grosor
     text-modifican la fuente 
         text-decoration:none;
@@ -90,6 +103,9 @@
 
 - flexbox
         Modifica los elementos de forma en una direccion row o column
+    - flex-direction: column o row;
+        modifca el orden de los elementos 
+        
     - Tipos de flexbox
         justify-content: valor ; modifica de forma horizontal
             -valor; 
@@ -103,8 +119,8 @@
                 - stretch Hace que se estire las cajas sin tener heigth
                 - baselin
 - Eventos en pseudo-classes
-        .class  a:hover{}
-        focus, visited.
+        .class  a:hover{} modifica el elemento al pasar el mouse.
+        focus, visited,link , active
 
 - Responsive web design
     Es un enfoque a nuestros Diseño que se adapten a las iteracciones del usuario y la resolucion que lo utilizan.
@@ -122,3 +138,72 @@
         768px tablets
         1140px notbooks
         1400px Escritorio
+- estilos background
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat; contain, auto, x y
+    background-size: cover;
+
+- Propiedades de background
+        linear-gradient(to direccion, color 0% de inicio, color 100% termina)
+
+
+- box model
+    El tamaño de lo que se mmuestra en pantalla esta delimitado por 4 cosas :
+        tamaño de contenido, tamaño del padding, tamaño del borde y el margen.
+        box-sizing: border-box; ingnora el padding respetando el tamaño
+        box-sizing: inherit;
+
+- Position:
+        -static
+        - relative // concerva su espacio original en el bloque, modificando su estructa en cualquiera posicion.
+        - absolute // no conose su espacio original si no que toma de referencia la posicion de la caja contenedora.
+        opacity: 1 a 0.1;
+        - fixed // Es un bloque fijo que se mantiene en la ventana Ej: Nav
+        - sticky // es un bloque fijo y a la ves movible en funcion de la scroll.
+
+- reglas tipograficas
+    Mantener un skeleto de tipografias a los h1234... y forma establecido.
+
+- botones 
+    
+
+- Grid 
+    Permite definir la ubicacion y tamaño de los elementos de tu sitio web.
+    El cotenido se agrupa dentro de un area definida.
+
+    Formato grid
+    display: grid;
+        - tradicional
+            grid-template-columns: 300px 300px;
+            grid-template-rows: 200px 800px;
+        - simplificado
+            grid: 300px 300px / 200px 800px;
+            
+        - creacion de comlumnas
+        grid-template-columns: repeat(cantidad, 1fr);
+        o
+        - filas
+        grid-template-row: repeat(cantidad, 1fr);
+        
+        - Seleccionar celdas y modificar
+            .class:nth-child(numero del elemento){
+
+            }
+- Scroll
+    - scroll-snap-type: y mandatory; hace que le scroll valla directo a los elemento si que tenga que usar tanto el scroll normal.
+
+- metodologias
+    - BEM
+        Son bloques, elementos, modificadores.
+            - Bloques
+                Son un Contenedor, si una seccion por si sola es significativa y no requiere de otras secciones para su apariencia (CSS) deberia ir en un bloque
+            - elementos
+                Parte  de un bloque, depende del bloque y no es por si solo significativo; tiene la caracteristica de que ustilizan el nombre del bloque y despues doble guion bajo.
+            - modificador
+                Se utiliza un modificador que es una bandera que avisa que ese elemento tendra un Diseño diferente.
+
+            .bloque__elemento {}
+            .bloque__elemento--activeModificador {}
+
+    - Utility first
+    - Modulos

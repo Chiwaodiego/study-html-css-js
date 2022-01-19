@@ -1,0 +1,51 @@
+Working directory|   branch | clone  | remote |
+          <- pull---------------------------
+                 |    <- reset  | <- fetch    |
+    <-reset --hard              |             |
+    <-rebase                    |             |
+    <-chekout                   |             |
+    |  Stage     |              |             |
+    add -> |    commit  -> |    push ->       |
+    |  Stash     |              |             |
+  <-stash/apply->|              |             |
+
+Fetch es traer todos los branch
+commit - add indica los archivos seleccionados
+push para enviar los archivos a la nube
+reset hard desace todo los cambios hechos en la rama
+-chekout es pasar de un rama a otra
+
+commandos de gitbash
+
+git clone + ruta https para clonar el proyecto
+
+
+cd Curso-de-git | entra a la carpeta del proyecto
+dir  sirve | para ver todo los archivos que contiene la carpeta
+git status | para ver el estado y modificaciones
+git add archivo | subir un archivo en especifico
+
+Siempre actualizar la rama, agregar un commit y luego subir
+git add . | sube todas las modificaciones
+gir commit -m "mensaje de commit"  | agregar un comentario localmente
+git push | subir archivos en la nube
+
+git branch | en que rama estamos situado
+git chekout -b ramadeprueba | crea una rama de prueba
+git push --set-upstream origin prueba | subir una rama creada desde local
+git chekout rama | en rama se pone en que brach quieres situarte
+
+git pull | trae todos los cambios almacenados en la nube
+git stash | guarda los cambios realizados de manera local antes de pasar a ver otra rama.
+
+git stash apply | trae todos los cambios temporales que estaba modificando 
+git chekout . | Con el punto revierte los cambios temporales a al archivo que estamos trabajando.
+git log | Se usa para vereficar los commit y modificaciones
+
+--------------------------
+
+- Para ignorar una carpeta o archivo dentro de una rama se crea un archivo
+.gitignore 
+Y dentro del archivo agregar los nombre del archivo o carpeta que no quiera que se suba.
+#comentario
+*.html  *ignora todos los archivo del tipo extension
